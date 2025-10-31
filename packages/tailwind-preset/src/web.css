@@ -1,0 +1,106 @@
+/**
+ * Starscape Tailwind Preset for Web - Tailwind CSS 4.1
+ * 
+ * CSS-first configuration using @theme directive
+ * Extends Tailwind CSS v4 with Starscape design tokens
+ */
+
+@import "tailwindcss";
+
+/* Starscape Design Tokens - Theme Configuration */
+@theme {
+  /* Colors - shadcn-compatible */
+  --color-background: hsl(210 24% 16%);
+  --color-foreground: hsl(0 0% 100%);
+  --color-card: hsl(217 30% 18%);
+  --color-card-foreground: hsl(0 0% 100%);
+  --color-primary: hsl(218 50% 25%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(217 30% 18%);
+  --color-secondary-foreground: hsl(0 0% 100%);
+  --color-muted: hsl(217 20% 22%);
+  --color-muted-foreground: hsl(217 30% 70%);
+  --color-accent: hsl(225 80% 80%);
+  --color-accent-foreground: hsl(210 24% 16%);
+  --color-destructive: hsl(0 84% 70%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(225 50% 70% / 0.2);
+  --color-input: hsl(225 50% 70% / 0.1);
+  --color-ring: hsl(225 80% 80%);
+  
+  /* Starscape-specific colors */
+  --color-dark-navy: hsl(210 24% 16%);
+  --color-mid-navy: hsl(217 30% 18%);
+  --color-deep-blue: hsl(218 50% 25%);
+  --color-light-blue: hsl(225 80% 80%);
+  --color-glass-white: hsl(0 0% 100% / 0.98);
+  --color-overlay-dark: hsl(0 0% 0% / 0.4);
+  --color-border-light: hsl(0 0% 100% / 0.1);
+  --color-border-blue: hsl(225 80% 80% / 0.2);
+  --color-dark-glass: hsl(210 24% 16% / 0.85);
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-xxxl: 64px;
+  --spacing-xxxxl: 96px;
+  
+  /* Border Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 24px;
+  --radius-full: 9999px;
+  
+  /* Typography */
+  --font-size-hero: 56px;
+  --font-size-h1: 48px;
+  --font-size-h2: 36px;
+  --font-size-h3: 24px;
+  --font-size-body-large: 18px;
+  --font-size-body: 16px;
+  --font-size-body-small: 14px;
+  --font-size-caption: 12px;
+  --font-size-button: 16px;
+  
+  /* Shadows */
+  --shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-default: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-elevated: 0 8px 25px rgba(15, 52, 96, 0.3);
+  --shadow-deep: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  
+  /* Background Images (Gradients) */
+  --gradient-cosmic: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  --gradient-cosmic-hover: linear-gradient(135deg, #1f2233 0%, #1a2a47 50%, #0f3c6e 100%);
+  --gradient-cyan-purple: linear-gradient(135deg, #06B6D4, #3B82F6, #8B5CF6);
+  --gradient-purple-blue: linear-gradient(135deg, #9333ea, #3b82f6, #8b5cf6);
+  --gradient-pink-purple: linear-gradient(135deg, #ec4899, #8b5cf6, #6366f1);
+  --gradient-cyan-vibrant: linear-gradient(135deg, #00c4ff, #00ffff, #00aaff, #00e0ff, #00c4ff);
+}
+
+/* Custom Utilities using @utility directive */
+@utility glass-white {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@utility glass-dark {
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+@utility gradient-text {
+  background: linear-gradient(135deg, #fff 0%, #a8c0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+

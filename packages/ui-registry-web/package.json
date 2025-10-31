@@ -1,0 +1,20 @@
+{
+  "name": "@starscape/ui-registry-web",
+  "version": "1.0.0",
+  "description": "Web component templates for Starscape UI system",
+  "main": "./registry/registry.json",
+  "files": [
+    "registry/**/*",
+    "styles/**/*"
+  ],
+  "keywords": [
+    "ui",
+    "components",
+    "starscape",
+    "shadcn",
+    "template"
+  ],
+  "author": "Starscape",
+  "license": "MIT"
+}
+

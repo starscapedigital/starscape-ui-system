@@ -1,0 +1,47 @@
+export declare const colors: {
+    readonly darkNavy: "210 24% 16%";
+    readonly midNavy: "217 30% 18%";
+    readonly deepBlue: "218 50% 25%";
+    readonly lightBlue: "225 80% 80%";
+    readonly white: "0 0% 100%";
+    readonly success: "142 76% 68%";
+    readonly warning: "45 93% 58%";
+    readonly error: "0 84% 70%";
+    readonly info: "217 91% 70%";
+    readonly purple: "271 81% 70%";
+    readonly glassWhite: "0 0% 100% / 0.98";
+    readonly overlayDark: "0 0% 0% / 0.4";
+    readonly subtleOverlay: "0 0% 100% / 0.1";
+    readonly borderLight: "0 0% 100% / 0.1";
+    readonly borderBlue: "225 80% 80% / 0.2";
+    readonly darkGlass: "210 24% 16% / 0.85";
+    readonly gradientListItem: "217 100% 71% / 0.08";
+    readonly primary: "225 80% 80%";
+    readonly secondary: "218 50% 25%";
+    readonly background: "210 24% 16%";
+    readonly surface: "217 30% 18%";
+    readonly text: {
+        readonly primary: "0 0% 100%";
+        readonly secondary: "225 80% 80%";
+        readonly tertiary: "225 80% 80% / 0.5";
+    };
+    readonly hsl: {
+        readonly background: "210 24% 16%";
+        readonly foreground: "0 0% 100%";
+        readonly card: "217 30% 18%";
+        readonly 'card-foreground': "0 0% 100%";
+        readonly primary: "218 50% 25%";
+        readonly 'primary-foreground': "0 0% 100%";
+        readonly secondary: "217 30% 18%";
+        readonly 'secondary-foreground': "0 0% 100%";
+        readonly muted: "217 20% 22%";
+        readonly 'muted-foreground': "217 30% 70%";
+        readonly accent: "225 80% 80%";
+        readonly 'accent-foreground': "210 24% 16%";
+        readonly destructive: "0 84% 70%";
+        readonly 'destructive-foreground': "0 0% 100%";
+        readonly border: "225 50% 70% / 0.2";
+        readonly input: "225 50% 70% / 0.1";
+        readonly ring: "225 80% 80%";
+    };
+};

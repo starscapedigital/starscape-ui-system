@@ -1,0 +1,10 @@
+{
+  "name": "starscape-ui-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Starscape UI System Monorepo",
+  "scripts": {
+    "build": "npm run build --workspace=packages/tokens && npm run build --workspace=packages/tailwind-preset && npm run build --workspace=packages/ui-cli",
+    "clean": "npm run clean --workspace=packages/tokens && npm run clean --workspace=packages/tailwind-preset && npm run clean --workspace=packages/ui-cli"
+  }
+}

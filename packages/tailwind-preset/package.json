@@ -1,0 +1,36 @@
+{
+  "name": "@starscape/tailwind-preset",
+  "version": "1.0.0",
+  "description": "Tailwind CSS preset for Starscape design system (Tailwind 4.1 CSS-first)",
+  "main": "./src/web.css",
+  "exports": {
+    ".": "./src/web.css",
+    "./web": "./src/web.css",
+    "./web.css": "./src/web.css"
+  },
+  "files": [
+    "src/**/*.css"
+  ],
+  "scripts": {
+    "build": "echo 'No build needed - CSS-first configuration'",
+    "clean": "echo 'No build artifacts to clean'"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "preset",
+    "starscape",
+    "design-system",
+    "tailwind-v4"
+  ],
+  "author": "Starscape",
+  "license": "MIT",
+  "peerDependencies": {
+    "tailwindcss": "^4.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "@types/node": "^24.9.1"
+  }
+}
+

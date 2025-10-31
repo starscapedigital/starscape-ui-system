@@ -1,0 +1,33 @@
+{
+  "name": "@starscape/tokens",
+  "version": "1.0.0",
+  "description": "Starscape design system tokens",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./css": "./dist/tokens.css",
+    "./native": "./dist/tokens.native.js"
+  },
+  "files": [
+    "dist/**/*",
+    "src/**/*"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/generate-css.js && node scripts/generate-native.js",
+    "generate-css": "node scripts/generate-css.js",
+    "generate-native": "node scripts/generate-native.js",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "design-tokens",
+    "starscape",
+    "theme"
+  ],
+  "author": "Starscape",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
+

@@ -1,0 +1,86 @@
+const fs = require('fs')
+const path = require('path')
+
+/**
+ * Resolve utils import path from tsconfig.json or use default
+ */
+function resolveUtilsPath(cwd: string, componentsJson: any): string {
+  // First check components.json aliases
+  if (componentsJson.aliases?.utils) {
+    // Remove @ prefix if present for path resolution
+    return componentsJson.aliases.utils
+  }
+  
+  // Try to read tsconfig.json
+  const tsconfigPath = path.join(cwd, 'tsconfig.json')
+  if (fs.existsSync(tsconfigPath)) {
+    try {
+      const tsconfig = JSON.parse(fs.readFileSync(tsconfigPath, 'utf-8'))
+      const paths = tsconfig.compilerOptions?.paths || {}
+      
+      // Look for @/* or similar patterns
+      for (const [key, value] of Object.entries(paths)) {
+        if (key.includes('*')) {
+          const basePath = key.replace('/*', '')
+          // Check if there's a utils path
+          const valueArray = value as string[]
+          const utilsPath = path.join(cwd, valueArray[0].replace('/*', '/lib/utils.ts'))
+          if (fs.existsSync(utilsPath)) {
+            return `${basePath}/lib/utils`
+          }
+        }
+      }
+    } catch (error) {
+      // Fall through to default
+    }
+  }
+  
+  // Default fallback
+  return '@/lib/utils'
+}
+
+/**
+ * Read components.json
+ */
+function readComponentsJson(cwd: string): any | null {
+  const componentsJsonPath = path.join(cwd, 'components.json')
+  if (!fs.existsSync(componentsJsonPath)) {
+    return null
+  }
+  
+  try {
+    return JSON.parse(fs.readFileSync(componentsJsonPath, 'utf-8'))
+  } catch (error) {
+    return null
+  }
+}
+
+/**
+ * Write components.json
+ */
+function writeComponentsJson(cwd: string, componentsJson: any) {
+  const componentsJsonPath = path.join(cwd, 'components.json')
+  fs.writeFileSync(componentsJsonPath, JSON.stringify(componentsJson, null, 2))
+}
+
+/**
+ * Replace template placeholders in content
+ */
+function replaceTemplatePlaceholders(
+  content: string,
+  utilsPath: string,
+  importPath: string = 'tailwindcss'
+): string {
+  return content
+    .replace(/{utilsPath}/g, utilsPath)
+    .replace(/{importPath}/g, importPath)
+}
+
+module.exports = {
+  resolveUtilsPath,
+  readComponentsJson,
+  writeComponentsJson,
+  replaceTemplatePlaceholders,
+}
+
+export {}

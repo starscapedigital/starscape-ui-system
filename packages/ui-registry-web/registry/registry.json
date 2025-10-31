@@ -1,0 +1,38 @@
+{
+  "$schema": "./schema.json",
+  "style": "starscape",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.js",
+    "css": "src/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "components": [
+    {
+      "name": "button",
+      "type": "components:ui",
+      "files": ["components/button.tsx"],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"]
+    },
+    {
+      "name": "card",
+      "type": "components:ui",
+      "files": ["components/card.tsx"]
+    },
+    {
+      "name": "dialog",
+      "type": "components:ui",
+      "files": ["components/dialog.tsx"],
+      "dependencies": ["@radix-ui/react-dialog"]
+    },
+    {
+      "name": "input",
+      "type": "components:ui",
+      "files": ["components/input.tsx"]
+    }
+  ]
+}
+
