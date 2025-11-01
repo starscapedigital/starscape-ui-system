@@ -42,9 +42,11 @@ export default defineConfig({
 
 ```css
 @import "tailwindcss";
+@import "@starscape/tokens/css"; /* IMPORTANT: Must be imported before preset */
 @import "@starscape/tailwind-preset/web.css";
-@import "@starscape/tokens/css"; /* Optional: if you want to use tokens.css variables */
 ```
+
+**Note:** The preset references CSS variables from `@starscape/tokens/css`, so tokens must be imported first.
 
 ### With PostCSS
 
@@ -68,9 +70,11 @@ export default {
 
 ```css
 @import "tailwindcss";
+@import "@starscape/tokens/css"; /* IMPORTANT: Must be imported before preset */
 @import "@starscape/tailwind-preset/web.css";
-@import "@starscape/tokens/css"; /* Optional */
 ```
+
+**Note:** The preset references CSS variables from `@starscape/tokens/css`, so tokens must be imported first.
 
 ## What's Included
 
