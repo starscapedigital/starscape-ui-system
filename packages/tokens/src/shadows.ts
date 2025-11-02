@@ -1,9 +1,9 @@
 // Web shadows (CSS box-shadow values)
 export const shadows = {
-  subtle: '0 2px 4px rgba(0, 0, 0, 0.1)',
-  default: '0 4px 12px rgba(0, 0, 0, 0.15)',
-  elevated: '0 8px 25px rgba(15, 52, 96, 0.3)',
-  deep: '0 20px 60px rgba(0, 0, 0, 0.4), 0 0 1px rgba(255, 255, 255, 0.2) inset',
+  subtle: '0 0.125rem 0.25rem rgba(0, 0, 0, 0.1)',                    // 0 2px 4px
+  default: '0 0.25rem 0.75rem rgba(0, 0, 0, 0.15)',                  // 0 4px 12px
+  elevated: '0 0.5rem 1.5625rem rgba(15, 52, 96, 0.3)',             // 0 8px 25px -> rounded to 1.5625rem
+  deep: '0 1.25rem 3.75rem rgba(0, 0, 0, 0.4), 0 0 0.0625rem rgba(255, 255, 255, 0.2) inset', // 0 20px 60px, 0 0 1px
 } as const
 
 // Native shadows (React Native shadow props)

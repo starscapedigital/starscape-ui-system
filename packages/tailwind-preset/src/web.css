@@ -289,7 +289,7 @@
 
 /* Border Radius Utilities */
 @utility rounded-xs {
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 
 @utility rounded-xl {
@@ -305,43 +305,43 @@
 
 @utility text-h1 {
   font-size: var(--font-h1);
-  line-height: 52.8px;
+  line-height: 3.3rem;
   font-weight: 700;
 }
 
 @utility text-h2 {
   font-size: var(--font-h2);
-  line-height: 43.2px;
+  line-height: 2.7rem;
   font-weight: 600;
 }
 
 @utility text-h3 {
   font-size: var(--font-h3);
-  line-height: 31.2px;
+  line-height: 2rem;
   font-weight: 600;
 }
 
 @utility text-body {
   font-size: var(--font-body);
-  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: 400;
 }
 
 @utility text-body-large {
   font-size: var(--font-body-large);
-  line-height: 28.8px;
+  line-height: 1.8rem;
   font-weight: 400;
 }
 
 @utility text-body-small {
   font-size: var(--font-body-small);
-  line-height: 21px;
+  line-height: 1.3125rem;
   font-weight: 400;
 }
 
 @utility text-caption {
   font-size: var(--font-caption);
-  line-height: 16.8px;
+  line-height: 1.05rem;
   font-weight: 400;
 }
 

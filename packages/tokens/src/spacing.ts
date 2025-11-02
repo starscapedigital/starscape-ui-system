@@ -1,12 +1,12 @@
 export const spacing = {
-  xs: '4px',
-  sm: '8px',
-  md: '16px',
-  lg: '24px',
-  xl: '32px',
-  xxl: '48px',      // Additional from RN theme
-  xxxl: '64px',     // Additional from RN theme
-  xxxxl: '96px',    // Additional from RN theme
+  xs: '0.25rem',    // 4px
+  sm: '0.5rem',     // 8px
+  md: '1rem',       // 16px
+  lg: '1.5rem',     // 24px
+  xl: '2rem',       // 32px
+  xxl: '3rem',      // 48px
+  xxxl: '4rem',     // 64px
+  xxxxl: '6rem',    // 96px
 } as const
 
 // Native spacing (numbers in pixels)

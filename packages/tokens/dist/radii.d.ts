@@ -1,11 +1,11 @@
 export declare const radii: {
-    readonly xs: "4px";
-    readonly sm: "6px";
-    readonly md: "8px";
-    readonly default: "12px";
-    readonly lg: "12px";
-    readonly xl: "16px";
-    readonly xxl: "24px";
+    readonly xs: "0.25rem";
+    readonly sm: "0.375rem";
+    readonly md: "0.5rem";
+    readonly default: "0.75rem";
+    readonly lg: "0.75rem";
+    readonly xl: "1rem";
+    readonly xxl: "1.5rem";
     readonly full: "9999px";
 };
 export declare const radiiNative: {

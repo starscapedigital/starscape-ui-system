@@ -1,12 +1,12 @@
 export const radii = {
-  xs: '4px',
-  sm: '6px',      // Between xs (4px) and md (8px)
-  md: '8px',
-  default: '12px',
-  lg: '12px',
-  xl: '16px',
-  xxl: '24px',    // Additional from RN theme
-  full: '9999px', // Additional from RN theme (for circular elements)
+  xs: '0.25rem',    // 4px
+  sm: '0.375rem',   // 6px
+  md: '0.5rem',     // 8px
+  default: '0.75rem', // 12px
+  lg: '0.75rem',    // 12px
+  xl: '1rem',       // 16px
+  xxl: '1.5rem',    // 24px
+  full: '9999px',   // Keep px for full (circular elements)
 } as const
 
 // Native radii (numbers)

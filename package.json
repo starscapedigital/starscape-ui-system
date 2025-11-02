@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build": "npm run build --workspace=packages/tokens && npm run build --workspace=packages/tailwind-preset && npm run build --workspace=packages/ui-cli",
-    "clean": "npm run clean --workspace=packages/tokens && npm run clean --workspace=packages/tailwind-preset && npm run clean --workspace=packages/ui-cli"
+    "clean": "npm run clean --workspace=packages/tokens && npm run clean --workspace=packages/tailwind-preset && npm run clean --workspace=packages/ui-cli",
+    "update-web-demo": "npm run build --workspace=packages/tokens && cp packages/tokens/dist/tokens.css apps/web-demo/src/styles/tokens.css && echo '✅ Updated tokens.css in web-demo'"
   }
 }

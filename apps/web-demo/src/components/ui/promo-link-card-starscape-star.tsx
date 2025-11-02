@@ -32,7 +32,7 @@ export const PromoLinkCardStarscapeStar: React.FC<PromoLinkCardProps> = ({
         "relative overflow-hidden rounded-2xl",
         "transition-all duration-200",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-blue focus-visible:ring-offset-2",
-        isCompact ? "h-[120px]" : "h-[180px]",
+        isCompact ? "h-[7.5rem]" : "h-[11.25rem]",
         className
       )}
       style={{
@@ -47,8 +47,8 @@ export const PromoLinkCardStarscapeStar: React.FC<PromoLinkCardProps> = ({
         <motion.div
           className="absolute"
           style={{
-            top: isCompact ? '15px' : '30px',
-            right: isCompact ? '15px' : '25px',
+            top: isCompact ? '0.9375rem' : '1.875rem',
+            right: isCompact ? '0.9375rem' : '1.5625rem',
           }}
           animate={{
             opacity: [0.5, 1, 0.5],
@@ -66,8 +66,8 @@ export const PromoLinkCardStarscapeStar: React.FC<PromoLinkCardProps> = ({
         <motion.div
           className="absolute"
           style={{
-            bottom: isCompact ? '20px' : '40px',
-            right: isCompact ? '25px' : '35px',
+            bottom: isCompact ? '1.25rem' : '2.5rem',
+            right: isCompact ? '1.5625rem' : '2.1875rem',
           }}
           animate={{
             opacity: [0.5, 1, 0.5],
@@ -85,8 +85,8 @@ export const PromoLinkCardStarscapeStar: React.FC<PromoLinkCardProps> = ({
         <motion.div
           className="absolute"
           style={{
-            top: isCompact ? '40px' : '60px',
-            left: isCompact ? '20px' : '25px',
+            top: isCompact ? '2.5rem' : '3.75rem',
+            left: isCompact ? '1.25rem' : '1.5625rem',
           }}
           animate={{
             opacity: [0.5, 1, 0.5],

@@ -1,7 +1,7 @@
 export declare const typography: {
     readonly hero: {
-        readonly fontSize: "56px";
-        readonly lineHeight: "56px";
+        readonly fontSize: "3.5rem";
+        readonly lineHeight: "3.5rem";
         readonly fontWeight: "700";
         readonly native: {
             readonly fontSize: 56;
@@ -10,8 +10,8 @@ export declare const typography: {
         };
     };
     readonly h1: {
-        readonly fontSize: "48px";
-        readonly lineHeight: "52.8px";
+        readonly fontSize: "3rem";
+        readonly lineHeight: "3.3rem";
         readonly fontWeight: "700";
         readonly native: {
             readonly fontSize: 48;
@@ -20,8 +20,8 @@ export declare const typography: {
         };
     };
     readonly h2: {
-        readonly fontSize: "36px";
-        readonly lineHeight: "43.2px";
+        readonly fontSize: "2.25rem";
+        readonly lineHeight: "2.7rem";
         readonly fontWeight: "600";
         readonly native: {
             readonly fontSize: 36;
@@ -30,8 +30,8 @@ export declare const typography: {
         };
     };
     readonly h3: {
-        readonly fontSize: "24px";
-        readonly lineHeight: "31.2px";
+        readonly fontSize: "1.5rem";
+        readonly lineHeight: "2rem";
         readonly fontWeight: "600";
         readonly native: {
             readonly fontSize: 24;
@@ -40,8 +40,8 @@ export declare const typography: {
         };
     };
     readonly bodyLarge: {
-        readonly fontSize: "18px";
-        readonly lineHeight: "28.8px";
+        readonly fontSize: "1.125rem";
+        readonly lineHeight: "1.8rem";
         readonly fontWeight: "400";
         readonly native: {
             readonly fontSize: 18;
@@ -50,8 +50,8 @@ export declare const typography: {
         };
     };
     readonly body: {
-        readonly fontSize: "16px";
-        readonly lineHeight: "24px";
+        readonly fontSize: "1rem";
+        readonly lineHeight: "1.5rem";
         readonly fontWeight: "400";
         readonly native: {
             readonly fontSize: 16;
@@ -60,8 +60,8 @@ export declare const typography: {
         };
     };
     readonly bodySmall: {
-        readonly fontSize: "14px";
-        readonly lineHeight: "21px";
+        readonly fontSize: "0.875rem";
+        readonly lineHeight: "1.3125rem";
         readonly fontWeight: "400";
         readonly native: {
             readonly fontSize: 14;
@@ -70,8 +70,8 @@ export declare const typography: {
         };
     };
     readonly caption: {
-        readonly fontSize: "12px";
-        readonly lineHeight: "16.8px";
+        readonly fontSize: "0.75rem";
+        readonly lineHeight: "1.05rem";
         readonly fontWeight: "400";
         readonly native: {
             readonly fontSize: 12;
@@ -80,8 +80,8 @@ export declare const typography: {
         };
     };
     readonly button: {
-        readonly fontSize: "16px";
-        readonly lineHeight: "16px";
+        readonly fontSize: "1rem";
+        readonly lineHeight: "1rem";
         readonly fontWeight: "600";
         readonly native: {
             readonly fontSize: 16;

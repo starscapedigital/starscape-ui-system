@@ -1,12 +1,12 @@
 export declare const spacing: {
-    readonly xs: "4px";
-    readonly sm: "8px";
-    readonly md: "16px";
-    readonly lg: "24px";
-    readonly xl: "32px";
-    readonly xxl: "48px";
-    readonly xxxl: "64px";
-    readonly xxxxl: "96px";
+    readonly xs: "0.25rem";
+    readonly sm: "0.5rem";
+    readonly md: "1rem";
+    readonly lg: "1.5rem";
+    readonly xl: "2rem";
+    readonly xxl: "3rem";
+    readonly xxxl: "4rem";
+    readonly xxxxl: "6rem";
 };
 export declare const spacingNative: {
     readonly xs: 4;

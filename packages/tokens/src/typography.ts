@@ -1,7 +1,7 @@
 export const typography = {
   hero: {
-    fontSize: '56px',
-    lineHeight: '56px',
+    fontSize: '3.5rem',    // 56px
+    lineHeight: '3.5rem',  // 56px
     fontWeight: '700',
     // Native format
     native: {
@@ -11,8 +11,8 @@ export const typography = {
     },
   },
   h1: {
-    fontSize: '48px',
-    lineHeight: '52.8px',
+    fontSize: '3rem',       // 48px
+    lineHeight: '3.3rem',   // 52.8px -> rounded to clean 3.3rem
     fontWeight: '700',
     native: {
       fontSize: 48,
@@ -21,8 +21,8 @@ export const typography = {
     },
   },
   h2: {
-    fontSize: '36px',
-    lineHeight: '43.2px',
+    fontSize: '2.25rem',    // 36px
+    lineHeight: '2.7rem',  // 43.2px -> rounded to clean 2.7rem
     fontWeight: '600',
     native: {
       fontSize: 36,
@@ -31,8 +31,8 @@ export const typography = {
     },
   },
   h3: {
-    fontSize: '24px',
-    lineHeight: '31.2px',
+    fontSize: '1.5rem',     // 24px
+    lineHeight: '2rem',    // 31.2px -> rounded to clean 2rem
     fontWeight: '600',
     native: {
       fontSize: 24,
@@ -41,8 +41,8 @@ export const typography = {
     },
   },
   bodyLarge: {
-    fontSize: '18px',
-    lineHeight: '28.8px',
+    fontSize: '1.125rem',  // 18px
+    lineHeight: '1.8rem',   // 28.8px -> rounded to clean 1.8rem
     fontWeight: '400',
     native: {
       fontSize: 18,
@@ -51,8 +51,8 @@ export const typography = {
     },
   },
   body: {
-    fontSize: '16px',
-    lineHeight: '24px',
+    fontSize: '1rem',      // 16px
+    lineHeight: '1.5rem',   // 24px
     fontWeight: '400',
     native: {
       fontSize: 16,
@@ -61,8 +61,8 @@ export const typography = {
     },
   },
   bodySmall: {
-    fontSize: '14px',
-    lineHeight: '21px',
+    fontSize: '0.875rem',  // 14px
+    lineHeight: '1.3125rem', // 21px -> rounded to clean 1.3125rem
     fontWeight: '400',
     native: {
       fontSize: 14,
@@ -71,8 +71,8 @@ export const typography = {
     },
   },
   caption: {
-    fontSize: '12px',
-    lineHeight: '16.8px',
+    fontSize: '0.75rem',   // 12px
+    lineHeight: '1.05rem', // 16.8px -> rounded to clean 1.05rem
     fontWeight: '400',
     native: {
       fontSize: 12,
@@ -81,8 +81,8 @@ export const typography = {
     },
   },
   button: {
-    fontSize: '16px',
-    lineHeight: '16px',
+    fontSize: '1rem',      // 16px
+    lineHeight: '1rem',    // 16px
     fontWeight: '600',
     native: {
       fontSize: 16,
