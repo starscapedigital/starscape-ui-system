@@ -40,15 +40,15 @@
       "dependencies": ["framer-motion"]
     },
     {
-      "name": "promo-link-card-nova",
+      "name": "promo-link-card-sparkles",
       "type": "components:ui",
-      "files": ["components/promo-link-card-nova.tsx"],
+      "files": ["components/promo-link-card-sparkles.tsx"],
       "dependencies": ["framer-motion", "lucide-react"]
     },
     {
-      "name": "promo-link-card-nebula",
+      "name": "promo-link-card-starscape-star",
       "type": "components:ui",
-      "files": ["components/promo-link-card-nebula.tsx"],
+      "files": ["components/promo-link-card-starscape-star.tsx"],
       "dependencies": ["framer-motion"]
     }
   ]

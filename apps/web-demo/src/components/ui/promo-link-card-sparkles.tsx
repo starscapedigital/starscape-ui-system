@@ -3,7 +3,7 @@
 import { Sparkles } from 'lucide-react'
 import { motion } from 'framer-motion'
 import * as React from 'react'
-import { cn } from "{utilsPath}"
+import { cn } from "@/lib/utils"
 
 interface PromoLinkCardProps {
   onPress?: () => void
@@ -11,7 +11,7 @@ interface PromoLinkCardProps {
   className?: string
 }
 
-export const PromoLinkCard: React.FC<PromoLinkCardProps> = ({ 
+export const PromoLinkCardSparkles: React.FC<PromoLinkCardProps> = ({ 
   onPress, 
   isCompact = false,
   className 

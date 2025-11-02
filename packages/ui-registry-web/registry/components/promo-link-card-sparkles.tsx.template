@@ -1,0 +1,125 @@
+"use client"
+
+import { Sparkles } from 'lucide-react'
+import { motion } from 'framer-motion'
+import * as React from 'react'
+import { cn } from "{utilsPath}"
+
+interface PromoLinkCardProps {
+  onPress?: () => void
+  isCompact?: boolean
+  className?: string
+}
+
+export const PromoLinkCardSparkles: React.FC<PromoLinkCardProps> = ({ 
+  onPress, 
+  isCompact = false,
+  className 
+}) => {
+  const [isPressed, setIsPressed] = React.useState(false)
+
+  const handleClick = () => {
+    onPress?.()
+  }
+
+  return (
+    <motion.button
+      onClick={handleClick}
+      onMouseDown={() => setIsPressed(true)}
+      onMouseUp={() => setIsPressed(false)}
+      onMouseLeave={() => setIsPressed(false)}
+      className={cn(
+        "relative overflow-hidden rounded-2xl",
+        "transition-all duration-200",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-blue focus-visible:ring-offset-2",
+        isCompact ? "h-[120px]" : "h-[180px]",
+        className
+      )}
+      style={{
+        transform: isPressed ? 'scale(0.98)' : 'scale(1)',
+      }}
+    >
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-pink-purple" />
+
+      {/* Animated Sparkles */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          className="absolute"
+          style={{
+            top: isCompact ? '20px' : '25px',
+            left: isCompact ? '30px' : '35px',
+          }}
+          animate={{
+            opacity: [0.5, 1, 0.5],
+            scale: [0.5, 1.2, 0.5],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: 0,
+          }}
+        >
+          <Sparkles size={isCompact ? 20 : 28} className="text-white" />
+        </motion.div>
+
+        <motion.div
+          className="absolute"
+          style={{
+            top: isCompact ? '50px' : '55px',
+            right: isCompact ? '40px' : '45px',
+          }}
+          animate={{
+            opacity: [0.5, 1, 0.5],
+            scale: [0.5, 1.2, 0.5],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: 0.5,
+          }}
+        >
+          <Sparkles size={isCompact ? 24 : 35} className="text-white" />
+        </motion.div>
+
+        <motion.div
+          className="absolute"
+          style={{
+            bottom: isCompact ? '30px' : '35px',
+            left: isCompact ? '50px' : '55px',
+          }}
+          animate={{
+            opacity: [0.5, 1, 0.5],
+            scale: [0.5, 1.2, 0.5],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: 1,
+          }}
+        >
+          <Sparkles size={isCompact ? 16 : 22} className="text-white" />
+        </motion.div>
+      </div>
+
+      {/* Content */}
+      <div className={cn(
+        "relative z-10 flex flex-col items-center justify-center h-full",
+        isCompact ? "p-4" : "p-6"
+      )}>
+        <h3 className={cn(
+          "text-white mb-1 text-center font-semibold",
+          isCompact ? "text-body-large" : "text-h3"
+        )}>
+          ✨ Nova AI Assistant
+        </h3>
+        {!isCompact && (
+          <p className="text-body text-white/90 text-center">
+            Chat with your AI assistant →
+          </p>
+        )}
+      </div>
+    </motion.button>
+  )
+}
+

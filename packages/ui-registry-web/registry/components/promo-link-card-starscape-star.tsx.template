@@ -11,7 +11,7 @@ interface PromoLinkCardProps {
   className?: string
 }
 
-export const PromoLinkCardNebula: React.FC<PromoLinkCardProps> = ({ 
+export const PromoLinkCardStarscapeStar: React.FC<PromoLinkCardProps> = ({ 
   onPress, 
   isCompact = false,
   className 

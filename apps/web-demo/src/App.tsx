@@ -3,9 +3,21 @@ import { Button } from './components/ui/button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/ui/card'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './components/ui/dialog'
 import { Input } from './components/ui/input'
+import { PromoLinkCardSparkles } from './components/ui/promo-link-card-sparkles'
+import { PromoLinkCardStarscapeStar } from './components/ui/promo-link-card-starscape-star'
 import Hero from './components/Hero'
 import ExpandableUISystem from './components/ExpandableUISystem'
 import Footer from './components/Footer'
+
+// # Install components
+// starscape-ui add animated-star
+// starscape-ui add promo-link-card-sparkles
+// starscape-ui add promo-link-card-starscape-star
+
+// # Or install all
+// starscape-ui add --all
+
+// then add 
 
 function App() {
   const [dialogOpen, setDialogOpen] = useState(false)
@@ -115,6 +127,20 @@ function App() {
               </CardContent>
             </Card>
           </div>
+
+          {/* Promo Link Cards Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Promo Link Cards</CardTitle>
+              <CardDescription>Interactive gradient cards with animations</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <PromoLinkCardStarscapeStar />
+                <PromoLinkCardSparkles />
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Input Section */}
           <Card variant="dark-glass">

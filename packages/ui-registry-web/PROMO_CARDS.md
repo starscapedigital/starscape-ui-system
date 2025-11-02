@@ -19,8 +19,8 @@
   - Works with standard `<img>` tag (no Next.js dependency)
 - **Dependencies**: `framer-motion`
 
-#### `promo-link-card-nova`
-- **File**: `packages/ui-registry-web/registry/components/promo-link-card-nova.tsx.template`
+#### `promo-link-card-sparkles`
+- **File**: `packages/ui-registry-web/registry/components/promo-link-card-sparkles.tsx.template`
 - **Purpose**: Web version of React Native `NovaCard`
 - **Features**:
   - Pink-purple gradient background (using Tailwind `bg-gradient-pink-purple`)
@@ -29,8 +29,8 @@
   - Compact mode support
 - **Dependencies**: `framer-motion`, `lucide-react`
 
-#### `promo-link-card-nebula`
-- **File**: `packages/ui-registry-web/registry/components/promo-link-card-nebula.tsx.template`
+#### `promo-link-card-starscape-star`
+- **File**: `packages/ui-registry-web/registry/components/promo-link-card-starscape-star.tsx.template`
 - **Purpose**: Web version of React Native `NebulaCard`
 - **Features**:
   - Purple-blue gradient background (using Tailwind `bg-gradient-purple-blue`)
@@ -66,8 +66,8 @@ Updated `packages/ui-cli/src/install.ts` to:
 ```bash
 # Install individual components
 starscape-ui add animated-star
-starscape-ui add promo-link-card-nova
-starscape-ui add promo-link-card-nebula
+starscape-ui add promo-link-card-sparkles
+starscape-ui add promo-link-card-starscape-star
 
 # Or install all at once
 starscape-ui add --all
@@ -76,18 +76,18 @@ starscape-ui add --all
 ### Import and Use
 
 ```tsx
-import { PromoLinkCard } from '@/components/ui/promo-link-card-nova'
-import { PromoLinkCardNebula } from '@/components/ui/promo-link-card-nebula'
+import { PromoLinkCardSparkles } from '@/components/ui/promo-link-card-sparkles'
+import { PromoLinkCardStarscapeStar } from '@/components/ui/promo-link-card-starscape-star'
 
 export default function MyPage() {
   return (
     <div>
-      <PromoLinkCard 
-        onPress={() => console.log('Nova clicked')}
+      <PromoLinkCardSparkles 
+        onPress={() => console.log('Sparkles clicked')}
         isCompact={false}
       />
-      <PromoLinkCardNebula 
-        onPress={() => console.log('Nebula clicked')}
+      <PromoLinkCardStarscapeStar 
+        onPress={() => console.log('Starscape Star clicked')}
         isCompact={false}
       />
     </div>
@@ -104,8 +104,8 @@ packages/ui-registry-web/
 │   │   └── starscape-star.png        # Brand asset
 │   ├── components/
 │   │   ├── animated-star.tsx.template
-│   │   ├── promo-link-card-nova.tsx.template
-│   │   └── promo-link-card-nebula.tsx.template
+│   │   ├── promo-link-card-sparkles.tsx.template
+│   │   └── promo-link-card-starscape-star.tsx.template
 │   └── registry.json                  # Updated with new components
 └── package.json                        # Includes assets in files array
 ```
