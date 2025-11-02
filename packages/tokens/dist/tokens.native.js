@@ -10,7 +10,7 @@ module.exports = {
     "warning": "rgba(248, 198, 48, 1)",
     "error": "rgba(243, 114, 114, 1)",
     "info": "rgba(109, 162, 248, 1)",
-    "purple": "rgba(181, 117, 240, 1)",
+    "purple": "rgba(181, 117, 241, 1)",
     "glassWhite": "rgba(255, 255, 255, 0.98)",
     "overlayDark": "rgba(0, 0, 0, 0.4)",
     "subtleOverlay": "rgba(255, 255, 255, 0.1)",

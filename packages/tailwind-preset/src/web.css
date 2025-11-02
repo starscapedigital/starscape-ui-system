@@ -24,35 +24,35 @@
 /* These reference CSS variables from @starscape/tokens/css */
 /* Using @theme inline ensures utilities resolve to actual values, not nested CSS variables */
 @theme inline {
-  /* Colors - shadcn-compatible */
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
+  /* Colors - shadcn-compatible (OKLCH format) */
+  --color-background: oklch(var(--background));
+  --color-foreground: oklch(var(--foreground));
+  --color-card: oklch(var(--card));
+  --color-card-foreground: oklch(var(--card-foreground));
+  --color-primary: oklch(var(--primary));
+  --color-primary-foreground: oklch(var(--primary-foreground));
+  --color-secondary: oklch(var(--secondary));
+  --color-secondary-foreground: oklch(var(--secondary-foreground));
+  --color-muted: oklch(var(--muted));
+  --color-muted-foreground: oklch(var(--muted-foreground));
+  --color-accent: oklch(var(--accent));
+  --color-accent-foreground: oklch(var(--accent-foreground));
+  --color-destructive: oklch(var(--destructive));
+  --color-destructive-foreground: oklch(var(--destructive-foreground));
+  --color-border: oklch(var(--border));
+  --color-input: oklch(var(--input));
+  --color-ring: oklch(var(--ring));
   
   /* Starscape-specific colors */
-  --color-dark-navy: hsl(var(--starscape-dark-navy));
-  --color-mid-navy: hsl(var(--starscape-mid-navy));
-  --color-deep-blue: hsl(var(--secondary));  /* Uses secondary theme color */
-  --color-light-blue: hsl(var(--primary));   /* Uses primary theme color */
-  --color-glass-white: hsl(var(--starscape-glass-white));
-  --color-overlay-dark: hsl(var(--starscape-overlay-dark));
-  --color-border-light: hsl(var(--starscape-border-light));
-  --color-border-blue: hsl(var(--starscape-border-blue));
-  --color-dark-glass: hsl(var(--starscape-dark-glass));
+  --color-dark-navy: oklch(var(--starscape-dark-navy));
+  --color-mid-navy: oklch(var(--starscape-mid-navy));
+  --color-deep-blue: oklch(var(--secondary));  /* Uses secondary theme color */
+  --color-light-blue: oklch(var(--primary));   /* Uses primary theme color */
+  --color-glass-white: oklch(var(--starscape-glass-white));
+  --color-overlay-dark: oklch(var(--starscape-overlay-dark));
+  --color-border-light: oklch(var(--starscape-border-light));
+  --color-border-blue: oklch(var(--starscape-border-blue));
+  --color-dark-glass: oklch(var(--starscape-dark-glass));
   
   /* Semantic colors */
   --color-success: #4ade80;
@@ -112,31 +112,31 @@
   --background-image-gradient-violet-purple: var(--gradient-violet-purple);
   
   /* Cosmic colors - references tokens.css variables */
-  --color-cosmic-purple-base: hsl(var(--starscape-cosmic-purple-base));
-  --color-cosmic-purple-light: hsl(var(--starscape-cosmic-purple-light));
-  --color-cosmic-pink-base: hsl(var(--starscape-cosmic-pink-base));
-  --color-cosmic-pink-light: hsl(var(--starscape-cosmic-pink-light));
-  --color-cosmic-violet-base: hsl(var(--starscape-cosmic-violet-base));
-  --color-cosmic-violet-light: hsl(var(--starscape-cosmic-violet-light));
-  --color-cosmic-blue-base: hsl(var(--starscape-cosmic-blue-base));
-  --color-cosmic-blue-light: hsl(var(--starscape-cosmic-blue-light));
-  --color-cosmic-cyan-base: hsl(var(--starscape-cosmic-cyan-base));
-  --color-cosmic-cyan-light: hsl(var(--starscape-cosmic-cyan-light));
-  --color-cosmic-teal-base: hsl(var(--starscape-cosmic-teal-base));
-  --color-cosmic-teal-light: hsl(var(--starscape-cosmic-teal-light));
-  --color-cosmic-yellow-base: hsl(var(--starscape-cosmic-yellow-base));
-  --color-cosmic-yellow-light: hsl(var(--starscape-cosmic-yellow-light));
-  --color-cosmic-emerald-base: hsl(var(--starscape-cosmic-emerald-base));
-  --color-cosmic-emerald-light: hsl(var(--starscape-cosmic-emerald-light));
-  --color-cosmic-zinc-light: hsl(var(--starscape-cosmic-zinc-light));
-  --color-cosmic-gray-base: hsl(var(--starscape-cosmic-gray-base));
-  --color-cosmic-gray-light: hsl(var(--starscape-cosmic-gray-light));
+  --color-cosmic-purple-base: oklch(var(--starscape-cosmic-purple-base));
+  --color-cosmic-purple-light: oklch(var(--starscape-cosmic-purple-light));
+  --color-cosmic-pink-base: oklch(var(--starscape-cosmic-pink-base));
+  --color-cosmic-pink-light: oklch(var(--starscape-cosmic-pink-light));
+  --color-cosmic-violet-base: oklch(var(--starscape-cosmic-violet-base));
+  --color-cosmic-violet-light: oklch(var(--starscape-cosmic-violet-light));
+  --color-cosmic-blue-base: oklch(var(--starscape-cosmic-blue-base));
+  --color-cosmic-blue-light: oklch(var(--starscape-cosmic-blue-light));
+  --color-cosmic-cyan-base: oklch(var(--starscape-cosmic-cyan-base));
+  --color-cosmic-cyan-light: oklch(var(--starscape-cosmic-cyan-light));
+  --color-cosmic-teal-base: oklch(var(--starscape-cosmic-teal-base));
+  --color-cosmic-teal-light: oklch(var(--starscape-cosmic-teal-light));
+  --color-cosmic-yellow-base: oklch(var(--starscape-cosmic-yellow-base));
+  --color-cosmic-yellow-light: oklch(var(--starscape-cosmic-yellow-light));
+  --color-cosmic-emerald-base: oklch(var(--starscape-cosmic-emerald-base));
+  --color-cosmic-emerald-light: oklch(var(--starscape-cosmic-emerald-light));
+  --color-cosmic-zinc-light: oklch(var(--starscape-cosmic-zinc-light));
+  --color-cosmic-gray-base: oklch(var(--starscape-cosmic-gray-base));
+  --color-cosmic-gray-light: oklch(var(--starscape-cosmic-gray-light));
   
   /* White text color variants - auto-generates text-white-primary, text-white-secondary, etc. */
-  --color-white-primary: hsl(var(--starscape-white-primary));
-  --color-white-secondary: hsl(var(--starscape-white-secondary));
-  --color-white-tertiary: hsl(var(--starscape-white-tertiary));
-  --color-white-disabled: hsl(var(--starscape-white-disabled));
+  --color-white-primary: oklch(var(--starscape-white-primary));
+  --color-white-secondary: oklch(var(--starscape-white-secondary));
+  --color-white-tertiary: oklch(var(--starscape-white-tertiary));
+  --color-white-disabled: oklch(var(--starscape-white-disabled));
   
   /* Z-Index Scale */
   --z-base: 0;
@@ -295,27 +295,27 @@
 
 /* Starscape Color Utilities */
 @utility bg-dark-navy {
-  background-color: hsl(var(--starscape-dark-navy));
+  background-color: oklch(var(--starscape-dark-navy));
 }
 
 @utility bg-mid-navy {
-  background-color: hsl(var(--starscape-mid-navy));
+  background-color: oklch(var(--starscape-mid-navy));
 }
 
 @utility bg-deep-blue {
-  background-color: hsl(var(--secondary));  /* Uses secondary theme color */
+  background-color: oklch(var(--secondary));  /* Uses secondary theme color */
 }
 
 @utility text-light-blue {
-  color: hsl(var(--primary));  /* Uses primary theme color */
+  color: oklch(var(--primary));  /* Uses primary theme color */
 }
 
 @utility border-light-blue {
-  border-color: hsl(var(--primary));  /* Uses primary theme color */
+  border-color: oklch(var(--primary));  /* Uses primary theme color */
 }
 
 @utility border-blue-light {
-  border-color: hsl(var(--starscape-border-blue));
+  border-color: oklch(var(--starscape-border-blue));
 }
 
 /* Shadow Utilities */
@@ -464,23 +464,23 @@
 
 /* Icon Color Utilities (from ssd-alpha) */
 @utility cosmic-icon-purple {
-  color: hsl(var(--starscape-cosmic-purple-light));
+  color: oklch(var(--starscape-cosmic-purple-light));
 }
 
 @utility cosmic-icon-blue {
-  color: hsl(var(--starscape-cosmic-blue-light));
+  color: oklch(var(--starscape-cosmic-blue-light));
 }
 
 @utility cosmic-icon-yellow {
-  color: hsl(var(--starscape-cosmic-yellow-light));
+  color: oklch(var(--starscape-cosmic-yellow-light));
 }
 
 @utility cosmic-icon-cyan {
-  color: hsl(var(--starscape-cosmic-cyan-light));
+  color: oklch(var(--starscape-cosmic-cyan-light));
 }
 
 @utility cosmic-icon-muted {
-  color: hsl(var(--starscape-cosmic-zinc-light));
+  color: oklch(var(--starscape-cosmic-zinc-light));
 }
 
 /* Starscape Star Logo Animation */

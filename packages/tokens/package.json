@@ -27,7 +27,10 @@
   "author": "Starscape",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^24.9.2",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "culori": "^4.0.2"
   }
 }
-

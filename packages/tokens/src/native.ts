@@ -6,84 +6,78 @@ import { shadowsNative } from './shadows'
 import { radiiNative } from './radii'
 
 /**
- * Helper function to convert HSL string to RGBA for React Native
- * HSL format: "210 24% 16%" or "210 24% 16% / 0.85"
+ * Helper function to convert OKLCH string to RGBA for React Native
+ * OKLCH format: "0.275 0.0228 248.7" or "0.275 0.0228 248.7 / 0.85"
  * Returns: "rgba(26, 26, 46, 1)" or "rgba(26, 26, 46, 0.85)"
  * 
- * Note: React Native uses RGBA strings, not HSL.
+ * Note: React Native uses RGBA strings, not OKLCH.
  * This conversion enables dynamic theming while maintaining RN compatibility.
  */
-function hslToRgba(hsl: string): string {
-  // Parse HSL string (handles both "h s% l%" and "h s% l% / a")
-  const match = hsl.match(/(\d+)\s+(\d+)%\s+(\d+)%(?:\s*\/\s*([\d.]+))?/)
-  if (!match) throw new Error(`Invalid HSL format: ${hsl}`)
+function oklchToRgba(oklch: string): string {
+  // Parse OKLCH string (handles both "L C H" and "L C H / a")
+  const match = oklch.match(/([\d.]+)\s+([\d.]+)\s+([\d.]+)(?:\s*\/\s*([\d.]+))?/)
+  if (!match) throw new Error(`Invalid OKLCH format: ${oklch}`)
   
-  const [, h, s, l, a = '1'] = match
-  const hNum = parseInt(h) / 360
-  const sNum = parseInt(s) / 100
-  const lNum = parseInt(l) / 100
-  const aNum = parseFloat(a)
+  const [, lStr, cStr, hStr, a] = match
+  const L = parseFloat(lStr)
+  const C = parseFloat(cStr)
+  const H = parseFloat(hStr)
+  const aNum = a ? parseFloat(a) : 1
   
-  // Convert HSL to RGB
-  const c = (1 - Math.abs(2 * lNum - 1)) * sNum
-  const x = c * (1 - Math.abs((hNum * 6) % 2 - 1))
-  const m = lNum - c / 2
+  // Convert OKLCH to RGB using culori (via require since this is a build-time script)
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { rgb } = require('culori')
+  const oklchColor = { mode: 'oklch' as const, l: L, c: C, h: H, ...(a ? { alpha: aNum } : {}) }
+  const rgbColor = rgb(oklchColor)
   
-  let r = 0, g = 0, b = 0
+  if (!rgbColor) throw new Error(`Failed to convert OKLCH to RGB: ${oklch}`)
   
-  if (hNum < 1/6) { r = c; g = x; b = 0 }
-  else if (hNum < 2/6) { r = x; g = c; b = 0 }
-  else if (hNum < 3/6) { r = 0; g = c; b = x }
-  else if (hNum < 4/6) { r = 0; g = x; b = c }
-  else if (hNum < 5/6) { r = x; g = 0; b = c }
-  else { r = c; g = 0; b = x }
-  
-  r = Math.round((r + m) * 255)
-  g = Math.round((g + m) * 255)
-  b = Math.round((b + m) * 255)
+  const r = Math.round(rgbColor.r * 255)
+  const g = Math.round(rgbColor.g * 255)
+  const b = Math.round(rgbColor.b * 255)
   
   return `rgba(${r}, ${g}, ${b}, ${aNum})`
 }
 
 export const nativeTokens = {
   colors: {
-    // Core colors (converted from HSL to RGBA for React Native)
-    darkNavy: hslToRgba(colors.darkNavy),
-    darkBackground: hslToRgba(colors.darkNavy),
-    midNavy: hslToRgba(colors.midNavy),
-    deepBlue: hslToRgba(colors.deepBlue),
-    lightBlue: hslToRgba(colors.lightBlue),
-    white: hslToRgba(colors.whiteBase),
+    // Core colors (converted from OKLCH to RGBA for React Native)
+    darkNavy: oklchToRgba(colors.darkNavy),
+    darkBackground: oklchToRgba(colors.darkNavy),
+    midNavy: oklchToRgba(colors.midNavy),
+    deepBlue: oklchToRgba(colors.deepBlue),
+    lightBlue: oklchToRgba(colors.lightBlue),
+    white: oklchToRgba(colors.whiteBase),
     
-    // Semantic colors (converted from HSL to RGBA)
-    success: hslToRgba(colors.success),
-    warning: hslToRgba(colors.warning),
-    error: hslToRgba(colors.error),
-    info: hslToRgba(colors.info),
-    purple: hslToRgba(colors.purple),
+    // Semantic colors (converted from OKLCH to RGBA)
+    success: oklchToRgba(colors.success),
+    warning: oklchToRgba(colors.warning),
+    error: oklchToRgba(colors.error),
+    info: oklchToRgba(colors.info),
+    purple: oklchToRgba(colors.purple),
     
-    // Opacity variants (already in HSL with alpha, converted to RGBA)
-    glassWhite: hslToRgba(colors.glassWhite),
-    overlayDark: hslToRgba(colors.overlayDark),
-    subtleOverlay: hslToRgba(colors.subtleOverlay),
-    borderLight: hslToRgba(colors.borderLight),
-    borderBlue: hslToRgba(colors.borderBlue),
-    darkGlass: hslToRgba(colors.darkGlass),
-    gradientListItem: hslToRgba(colors.gradientListItem),
+    // Opacity variants (already in OKLCH with alpha, converted to RGBA)
+    glassWhite: oklchToRgba(colors.glassWhite),
+    overlayDark: oklchToRgba(colors.overlayDark),
+    subtleOverlay: oklchToRgba(colors.subtleOverlay),
+    borderLight: oklchToRgba(colors.borderLight),
+    borderBlue: oklchToRgba(colors.borderBlue),
+    darkGlass: oklchToRgba(colors.darkGlass),
+    gradientListItem: oklchToRgba(colors.gradientListItem),
     
-    // Semantic aliases (converted from HSL to RGBA)
-    primary: hslToRgba(colors.primary),
-    secondary: hslToRgba(colors.secondary),
-    background: hslToRgba(colors.background),
-    surface: hslToRgba(colors.surface),
-    border: hslToRgba(colors.borderBlue),
+    // Semantic aliases (converted from OKLCH to RGBA)
+    primary: oklchToRgba(colors.primary),
+    secondary: oklchToRgba(colors.secondary),
+    background: oklchToRgba(colors.background),
+    surface: oklchToRgba(colors.surface),
+    border: oklchToRgba(colors.borderBlue),
     
-    // White text color variants (converted from HSL to RGBA)
+    // White text color variants (converted from OKLCH to RGBA)
     whiteText: {
-      primary: hslToRgba(colors.white.primary),
-      secondary: hslToRgba(colors.white.secondary),
-      tertiary: hslToRgba(colors.white.tertiary),
-      disabled: hslToRgba(colors.white.disabled),
+      primary: oklchToRgba(colors.white.primary),
+      secondary: oklchToRgba(colors.white.secondary),
+      tertiary: oklchToRgba(colors.white.tertiary),
+      disabled: oklchToRgba(colors.white.disabled),
     },
   },
   gradients: {
