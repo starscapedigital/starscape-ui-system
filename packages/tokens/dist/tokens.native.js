@@ -23,10 +23,11 @@ module.exports = {
     "background": "rgba(31, 41, 51, 1)",
     "surface": "rgba(32, 43, 60, 1)",
     "border": "rgba(163, 184, 245, 0.2)",
-    "text": {
+    "whiteText": {
       "primary": "rgba(255, 255, 255, 1)",
-      "secondary": "rgba(163, 184, 245, 1)",
-      "tertiary": "rgba(163, 184, 245, 0.5)"
+      "secondary": "rgba(255, 255, 255, 0.8)",
+      "tertiary": "rgba(255, 255, 255, 0.6)",
+      "disabled": "rgba(255, 255, 255, 0.4)"
     }
   },
   "gradients": {

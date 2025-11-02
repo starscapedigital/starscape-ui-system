@@ -29,6 +29,12 @@ const buttonVariants = cva(
         
         // Starscape gradient button
         gradient: "bg-gradient-cyan-vibrant text-white shadow-elevated hover:scale-105 hover:shadow-glow-cyan active:scale-95",
+        
+        // Cosmic button variants (from ssd-alpha)
+        cosmic: "bg-gradient-to-r from-violet-500/20 to-purple-500/20 border border-violet-400/30 text-violet-200 hover:from-violet-500/30 hover:to-purple-500/30 hover:text-white backdrop-blur-sm",
+        cosmicSolid: "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700",
+        cosmicGhost: "text-purple-300 hover:bg-purple-500/20 hover:text-white",
+        cosmicCreate: "bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30 text-green-200 hover:from-green-500/30 hover:to-emerald-500/30 hover:text-white",
       },
       size: {
         default: "h-10 px-7 py-3.5",

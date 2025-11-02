@@ -6,9 +6,9 @@
     --foreground: 0 0% 100%;
     --card: 217 30% 18%;
     --card-foreground: 0 0% 100%;
-    --primary: 218 50% 25%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 217 30% 18%;
+    --primary: 225 80% 80%;
+    --primary-foreground: 210 24% 16%;
+    --secondary: 218 50% 25%;
     --secondary-foreground: 0 0% 100%;
     --muted: 217 20% 22%;
     --muted-foreground: 217 30% 70%;
@@ -41,6 +41,38 @@
     --gradient-purple-blue: linear-gradient(135deg, #9333ea, #3b82f6, #8b5cf6);
     --gradient-pink-purple: linear-gradient(135deg, #ec4899, #8b5cf6, #6366f1);
     --gradient-cyan-vibrant: linear-gradient(135deg, #00c4ff, #00ffff, #00aaff, #00e0ff, #00c4ff);
+    --gradient-green-emerald: linear-gradient(135deg, #22c55e, #10b981);
+    --gradient-blue-cyan: linear-gradient(135deg, #3b82f6, #06b6d4);
+    --gradient-blue-teal: linear-gradient(135deg, #3b82f6, #14b8a6);
+    --gradient-purple-pink: linear-gradient(135deg, #a855f7, #ec4899);
+    --gradient-violet-purple: linear-gradient(135deg, #8b5cf6, #a855f7);
+    
+    /* Cosmic colors */
+    --starscape-cosmic-purple-base: 271 81% 70%;
+    --starscape-cosmic-purple-light: 269 97% 85%;
+    --starscape-cosmic-pink-base: 330 81% 60%;
+    --starscape-cosmic-pink-light: 327 73% 80%;
+    --starscape-cosmic-violet-base: 258 90% 66%;
+    --starscape-cosmic-violet-light: 252 95% 85%;
+    --starscape-cosmic-blue-base: 217 91% 60%;
+    --starscape-cosmic-blue-light: 213 94% 68%;
+    --starscape-cosmic-cyan-base: 188 94% 43%;
+    --starscape-cosmic-cyan-light: 188 85% 53%;
+    --starscape-cosmic-teal-base: 173 80% 40%;
+    --starscape-cosmic-teal-light: 173 80% 51%;
+    --starscape-cosmic-yellow-base: 48 96% 53%;
+    --starscape-cosmic-yellow-light: 52 98% 67%;
+    --starscape-cosmic-emerald-base: 160 84% 39%;
+    --starscape-cosmic-emerald-light: 160 84% 47%;
+    --starscape-cosmic-zinc-light: 0 0% 63%;
+    --starscape-cosmic-gray-base: 0 0% 51%;
+    --starscape-cosmic-gray-light: 0 0% 65%;
+    
+    /* White text color variants - for auto-generated utilities */
+    --starscape-white-primary: 0 0% 100%;
+    --starscape-white-secondary: 0 0% 100% / 0.8;
+    --starscape-white-tertiary: 0 0% 100% / 0.6;
+    --starscape-white-disabled: 0 0% 100% / 0.4;
     
     /* Spacing */
     --spacing-xs: 0.25rem;

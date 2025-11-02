@@ -46,8 +46,8 @@
   /* Starscape-specific colors */
   --color-dark-navy: hsl(var(--starscape-dark-navy));
   --color-mid-navy: hsl(var(--starscape-mid-navy));
-  --color-deep-blue: hsl(var(--starscape-deep-blue));
-  --color-light-blue: hsl(var(--starscape-light-blue));
+  --color-deep-blue: hsl(var(--secondary));  /* Uses secondary theme color */
+  --color-light-blue: hsl(var(--primary));   /* Uses primary theme color */
   --color-glass-white: hsl(var(--starscape-glass-white));
   --color-overlay-dark: hsl(var(--starscape-overlay-dark));
   --color-border-light: hsl(var(--starscape-border-light));
@@ -105,6 +105,38 @@
   --background-image-gradient-purple-blue: var(--gradient-purple-blue);
   --background-image-gradient-pink-purple: var(--gradient-pink-purple);
   --background-image-gradient-cyan-vibrant: var(--gradient-cyan-vibrant);
+  --background-image-gradient-green-emerald: var(--gradient-green-emerald);
+  --background-image-gradient-blue-cyan: var(--gradient-blue-cyan);
+  --background-image-gradient-blue-teal: var(--gradient-blue-teal);
+  --background-image-gradient-purple-pink: var(--gradient-purple-pink);
+  --background-image-gradient-violet-purple: var(--gradient-violet-purple);
+  
+  /* Cosmic colors - references tokens.css variables */
+  --color-cosmic-purple-base: hsl(var(--starscape-cosmic-purple-base));
+  --color-cosmic-purple-light: hsl(var(--starscape-cosmic-purple-light));
+  --color-cosmic-pink-base: hsl(var(--starscape-cosmic-pink-base));
+  --color-cosmic-pink-light: hsl(var(--starscape-cosmic-pink-light));
+  --color-cosmic-violet-base: hsl(var(--starscape-cosmic-violet-base));
+  --color-cosmic-violet-light: hsl(var(--starscape-cosmic-violet-light));
+  --color-cosmic-blue-base: hsl(var(--starscape-cosmic-blue-base));
+  --color-cosmic-blue-light: hsl(var(--starscape-cosmic-blue-light));
+  --color-cosmic-cyan-base: hsl(var(--starscape-cosmic-cyan-base));
+  --color-cosmic-cyan-light: hsl(var(--starscape-cosmic-cyan-light));
+  --color-cosmic-teal-base: hsl(var(--starscape-cosmic-teal-base));
+  --color-cosmic-teal-light: hsl(var(--starscape-cosmic-teal-light));
+  --color-cosmic-yellow-base: hsl(var(--starscape-cosmic-yellow-base));
+  --color-cosmic-yellow-light: hsl(var(--starscape-cosmic-yellow-light));
+  --color-cosmic-emerald-base: hsl(var(--starscape-cosmic-emerald-base));
+  --color-cosmic-emerald-light: hsl(var(--starscape-cosmic-emerald-light));
+  --color-cosmic-zinc-light: hsl(var(--starscape-cosmic-zinc-light));
+  --color-cosmic-gray-base: hsl(var(--starscape-cosmic-gray-base));
+  --color-cosmic-gray-light: hsl(var(--starscape-cosmic-gray-light));
+  
+  /* White text color variants - auto-generates text-white-primary, text-white-secondary, etc. */
+  --color-white-primary: hsl(var(--starscape-white-primary));
+  --color-white-secondary: hsl(var(--starscape-white-secondary));
+  --color-white-tertiary: hsl(var(--starscape-white-tertiary));
+  --color-white-disabled: hsl(var(--starscape-white-disabled));
   
   /* Z-Index Scale */
   --z-base: 0;
@@ -143,6 +175,17 @@
   100% { transform: translateX(100%); }
 }
 
+@keyframes pulse-star {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
 /* Background Gradients */
 @utility bg-gradient-cosmic {
   background: var(--gradient-cosmic);
@@ -164,8 +207,16 @@
   background: var(--gradient-pink-purple);
 }
 
-@utility bg-gradient-cyan-vibrant {
-  background: var(--gradient-cyan-vibrant);
+@utility bg-gradient-blue-teal {
+  background: var(--gradient-blue-teal);
+}
+
+@utility bg-gradient-purple-pink {
+  background: var(--gradient-purple-pink);
+}
+
+@utility bg-gradient-violet-purple {
+  background: var(--gradient-violet-purple);
 }
 
 /* Glass Morphism */
@@ -185,6 +236,46 @@
   background: rgba(249, 249, 249, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+/* Cosmic Glass Morphism (from ssd-alpha) */
+@utility cosmic-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@utility cosmic-glass-hover {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+
+.cosmic-glass-hover:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@utility cosmic-glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .cosmic-glass-card {
+    border-radius: 1rem;
+  }
+}
+
+@utility cosmic-backdrop {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* Gradient Text */
@@ -212,15 +303,15 @@
 }
 
 @utility bg-deep-blue {
-  background-color: hsl(var(--starscape-deep-blue));
+  background-color: hsl(var(--secondary));  /* Uses secondary theme color */
 }
 
 @utility text-light-blue {
-  color: hsl(var(--starscape-light-blue));
+  color: hsl(var(--primary));  /* Uses primary theme color */
 }
 
 @utility border-light-blue {
-  border-color: hsl(var(--starscape-light-blue));
+  border-color: hsl(var(--primary));  /* Uses primary theme color */
 }
 
 @utility border-blue-light {
@@ -369,6 +460,33 @@
   background: var(--gradient-cosmic);
   position: relative;
   overflow: hidden;
+}
+
+/* Icon Color Utilities (from ssd-alpha) */
+@utility cosmic-icon-purple {
+  color: hsl(var(--starscape-cosmic-purple-light));
+}
+
+@utility cosmic-icon-blue {
+  color: hsl(var(--starscape-cosmic-blue-light));
+}
+
+@utility cosmic-icon-yellow {
+  color: hsl(var(--starscape-cosmic-yellow-light));
+}
+
+@utility cosmic-icon-cyan {
+  color: hsl(var(--starscape-cosmic-cyan-light));
+}
+
+@utility cosmic-icon-muted {
+  color: hsl(var(--starscape-cosmic-zinc-light));
+}
+
+/* Starscape Star Logo Animation */
+@utility pulse-star {
+  animation: pulse-star 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
 }
 
 /* Companion pseudo-element for cosmic background starfield */

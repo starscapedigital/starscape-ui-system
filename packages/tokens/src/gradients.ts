@@ -65,6 +65,56 @@ export const gradients = {
       end: { x: 1, y: 1 },
     },
   },
+  
+  // Green to Emerald gradient (from ssd-alpha)
+  greenEmerald: {
+    web: 'linear-gradient(135deg, #22c55e, #10b981)',
+    native: {
+      colors: ['#22c55e', '#10b981'],
+      start: { x: 0, y: 0 },
+      end: { x: 1, y: 1 },
+    },
+  },
+  
+  // Blue to Cyan gradient (from ssd-alpha)
+  blueCyan: {
+    web: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
+    native: {
+      colors: ['#3b82f6', '#06b6d4'],
+      start: { x: 0, y: 0 },
+      end: { x: 1, y: 1 },
+    },
+  },
+  
+  // Blue to Teal gradient (from ssd-alpha)
+  blueTeal: {
+    web: 'linear-gradient(135deg, #3b82f6, #14b8a6)',
+    native: {
+      colors: ['#3b82f6', '#14b8a6'],
+      start: { x: 0, y: 0 },
+      end: { x: 1, y: 1 },
+    },
+  },
+  
+  // Purple to Pink gradient (from ssd-alpha)
+  purplePink: {
+    web: 'linear-gradient(135deg, #a855f7, #ec4899)',
+    native: {
+      colors: ['#a855f7', '#ec4899'],
+      start: { x: 0, y: 0 },
+      end: { x: 1, y: 1 },
+    },
+  },
+  
+  // Violet to Purple gradient (from ssd-alpha)
+  violetPurple: {
+    web: 'linear-gradient(135deg, #8b5cf6, #a855f7)',
+    native: {
+      colors: ['#8b5cf6', '#a855f7'],
+      start: { x: 0, y: 0 },
+      end: { x: 1, y: 1 },
+    },
+  },
 } as const
 
 // Alias for RN compatibility

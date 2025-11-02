@@ -23,10 +23,11 @@ export declare const nativeTokens: {
         readonly background: string;
         readonly surface: string;
         readonly border: string;
-        readonly text: {
+        readonly whiteText: {
             readonly primary: string;
             readonly secondary: string;
             readonly tertiary: string;
+            readonly disabled: string;
         };
     };
     readonly gradients: {

@@ -40,6 +40,12 @@
       "dependencies": ["framer-motion"]
     },
     {
+      "name": "starscape-star",
+      "type": "components:ui",
+      "files": ["components/starscape-star.tsx"],
+      "dependencies": ["class-variance-authority"]
+    },
+    {
       "name": "promo-link-card-sparkles",
       "type": "components:ui",
       "files": ["components/promo-link-card-sparkles.tsx"],

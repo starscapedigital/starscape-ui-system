@@ -87,6 +87,76 @@ export declare const gradients: {
             };
         };
     };
+    readonly greenEmerald: {
+        readonly web: "linear-gradient(135deg, #22c55e, #10b981)";
+        readonly native: {
+            readonly colors: readonly ["#22c55e", "#10b981"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+    };
+    readonly blueCyan: {
+        readonly web: "linear-gradient(135deg, #3b82f6, #06b6d4)";
+        readonly native: {
+            readonly colors: readonly ["#3b82f6", "#06b6d4"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+    };
+    readonly blueTeal: {
+        readonly web: "linear-gradient(135deg, #3b82f6, #14b8a6)";
+        readonly native: {
+            readonly colors: readonly ["#3b82f6", "#14b8a6"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+    };
+    readonly purplePink: {
+        readonly web: "linear-gradient(135deg, #a855f7, #ec4899)";
+        readonly native: {
+            readonly colors: readonly ["#a855f7", "#ec4899"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+    };
+    readonly violetPurple: {
+        readonly web: "linear-gradient(135deg, #8b5cf6, #a855f7)";
+        readonly native: {
+            readonly colors: readonly ["#8b5cf6", "#a855f7"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+    };
 };
 export declare const loginCyan: {
     readonly web: "linear-gradient(135deg, #00c4ff, #00ffff, #00aaff, #00e0ff, #00c4ff)";

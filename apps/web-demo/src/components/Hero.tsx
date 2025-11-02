@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { StarscapeStar } from './ui/starscape-star';
 
 export default function Hero() {
   return (
@@ -11,13 +12,7 @@ export default function Hero() {
       >
         {/* Pulsing Star */}
         <div className="relative mb-8">
-          <img
-            src="/starscape-star.png"
-            alt="Starscape Star"
-            width={150}
-            height={150}
-            className="pulse-star"
-          />
+          <StarscapeStar size="hero" />
         </div>
 
         {/* Title with gradient */}

@@ -53,7 +53,7 @@ export const nativeTokens = {
     midNavy: hslToRgba(colors.midNavy),
     deepBlue: hslToRgba(colors.deepBlue),
     lightBlue: hslToRgba(colors.lightBlue),
-    white: hslToRgba(colors.white),
+    white: hslToRgba(colors.whiteBase),
     
     // Semantic colors (converted from HSL to RGBA)
     success: hslToRgba(colors.success),
@@ -78,11 +78,12 @@ export const nativeTokens = {
     surface: hslToRgba(colors.surface),
     border: hslToRgba(colors.borderBlue),
     
-    // Text colors (converted from HSL to RGBA)
-    text: {
-      primary: hslToRgba(colors.text.primary),
-      secondary: hslToRgba(colors.text.secondary),
-      tertiary: hslToRgba(colors.text.tertiary),
+    // White text color variants (converted from HSL to RGBA)
+    whiteText: {
+      primary: hslToRgba(colors.white.primary),
+      secondary: hslToRgba(colors.white.secondary),
+      tertiary: hslToRgba(colors.white.tertiary),
+      disabled: hslToRgba(colors.white.disabled),
     },
   },
   gradients: {

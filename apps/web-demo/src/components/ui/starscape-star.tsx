@@ -1,0 +1,56 @@
+import * as React from 'react'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '@/lib/utils'
+
+const starscapeStarVariants = cva(
+  "relative inline-block",
+  {
+    variants: {
+      size: {
+        hero: "w-[150px] h-[150px]",
+        sm: "w-8 h-8",
+      },
+    },
+    defaultVariants: {
+      size: "hero",
+    },
+  }
+)
+
+export interface StarscapeStarProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof starscapeStarVariants> {
+  alt?: string
+}
+
+function StarscapeStar({ 
+  className, 
+  size, 
+  alt = "Starscape Star",
+  ...props 
+}: StarscapeStarProps) {
+  const sizeValues = {
+    hero: 150,
+    sm: 32,
+  } as const
+
+  const imgSize = sizeValues[size || "hero"]
+
+  return (
+    <div
+      className={cn(starscapeStarVariants({ size }), className)}
+      {...props}
+    >
+      <img
+        src="/starscape-star.png"
+        alt={alt}
+        width={imgSize}
+        height={imgSize}
+        className="pulse-star w-full h-full object-contain"
+      />
+    </div>
+  )
+}
+
+export { StarscapeStar, starscapeStarVariants }
+

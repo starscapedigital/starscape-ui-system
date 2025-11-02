@@ -1511,8 +1511,8 @@ The following shadcn/ui components have not yet been themed/extended with Starsc
 - ⚠️ **Alert** - Alert dialogs and notifications
 - ⚠️ **Alert Dialog** - Modal confirmation dialogs
 - ⚠️ **Aspect Ratio** - Maintain aspect ratios
-- ⚠️ **Avatar** - User profile images
-- ⚠️ **Badge** - Status indicators and labels
+- ✅ **Avatar** - User profile images
+- ✅ **Badge** - Status indicators and labels
 - ⚠️ **Breadcrumb** - Navigation breadcrumbs
 - ⚠️ **Calendar** - Date picker calendar
 - ⚠️ **Checkbox** - Form checkbox inputs
@@ -1520,6 +1520,7 @@ The following shadcn/ui components have not yet been themed/extended with Starsc
 - ⚠️ **Command** - Command palette/search
 - ⚠️ **Data Table** - Sortable data tables
 - ⚠️ **Date Picker** - Date selection input
+- ✅ **Divider** - Vertical dividers
 - ⚠️ **Form** - Form wrapper with validation
 - ⚠️ **Hover Card** - Hover-triggered cards
 - ⚠️ **Label** - Form labels
@@ -1531,7 +1532,7 @@ The following shadcn/ui components have not yet been themed/extended with Starsc
 - ⚠️ **Resizable** - Resizable panels
 - ⚠️ **Scroll Area** - Custom scrollbars
 - ⚠️ **Select** - Dropdown select inputs
-- ⚠️ **Separator** - Visual dividers
+- ⚠️ **Separator** - Horizontal dividers
 - ⚠️ **Sheet** - Slide-out panels
 - ⚠️ **Skeleton** - Loading placeholders
 - ⚠️ **Switch** - Toggle switches

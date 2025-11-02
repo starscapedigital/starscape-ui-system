@@ -73,7 +73,7 @@ exports.nativeTokens = {
         midNavy: hslToRgba(colors_1.colors.midNavy),
         deepBlue: hslToRgba(colors_1.colors.deepBlue),
         lightBlue: hslToRgba(colors_1.colors.lightBlue),
-        white: hslToRgba(colors_1.colors.white),
+        white: hslToRgba(colors_1.colors.whiteBase),
         // Semantic colors (converted from HSL to RGBA)
         success: hslToRgba(colors_1.colors.success),
         warning: hslToRgba(colors_1.colors.warning),
@@ -94,11 +94,12 @@ exports.nativeTokens = {
         background: hslToRgba(colors_1.colors.background),
         surface: hslToRgba(colors_1.colors.surface),
         border: hslToRgba(colors_1.colors.borderBlue),
-        // Text colors (converted from HSL to RGBA)
-        text: {
-            primary: hslToRgba(colors_1.colors.text.primary),
-            secondary: hslToRgba(colors_1.colors.text.secondary),
-            tertiary: hslToRgba(colors_1.colors.text.tertiary),
+        // White text color variants (converted from HSL to RGBA)
+        whiteText: {
+            primary: hslToRgba(colors_1.colors.white.primary),
+            secondary: hslToRgba(colors_1.colors.white.secondary),
+            tertiary: hslToRgba(colors_1.colors.white.tertiary),
+            disabled: hslToRgba(colors_1.colors.white.disabled),
         },
     },
     gradients: {
