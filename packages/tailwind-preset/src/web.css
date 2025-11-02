@@ -6,6 +6,16 @@
  * 
  * NOTE: This preset expects @starscape/tokens/css to be imported first
  * to provide CSS variables that are referenced here.
+
+ * You don't need to update tailwind-preset/src/web.css when:
+  Adding new components to the registry
+  Making changes to the CLI
+  Adding component templates that use existing Tailwind utilities
+
+ * You do need to update tailwind-preset/src/web.css when:
+  A new component needs a new custom utility class (e.g., @utility bg-something-new)
+  A new component needs new theme mappings (e.g., new colors, spacing, etc.)
+  New design tokens are added that need Tailwind mappings
  */
 
 @import "tailwindcss";
@@ -314,6 +324,12 @@
 @utility text-body {
   font-size: var(--font-body);
   line-height: 24px;
+  font-weight: 400;
+}
+
+@utility text-body-large {
+  font-size: var(--font-body-large);
+  line-height: 28.8px;
   font-weight: 400;
 }
 

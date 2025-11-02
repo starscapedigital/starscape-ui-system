@@ -67,7 +67,43 @@ function App() {
               </CardContent>
             </Card>
 
-            <Card variant="gradient">
+            <Card variant="gradient-cyan-purple">
+              <CardHeader>
+                <CardTitle>Gradient Card</CardTitle>
+                <CardDescription>Purple-blue gradient</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body text-white/80">
+                  This card uses the gradient variant with a vibrant purple-blue gradient.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card variant="gradient-purple-blue">
+              <CardHeader>
+                <CardTitle>Gradient Card</CardTitle>
+                <CardDescription>Purple-blue gradient</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body text-white/80">
+                  This card uses the gradient variant with a vibrant purple-blue gradient.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card variant="gradient-pink-purple">
+              <CardHeader>
+                <CardTitle>Gradient Card</CardTitle>
+                <CardDescription>Purple-blue gradient</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-body text-white/80">
+                  This card uses the gradient variant with a vibrant purple-blue gradient.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card variant="gradient-cyan-vibrant">
               <CardHeader>
                 <CardTitle>Gradient Card</CardTitle>
                 <CardDescription>Purple-blue gradient</CardDescription>

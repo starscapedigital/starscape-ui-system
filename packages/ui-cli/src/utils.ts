@@ -69,11 +69,19 @@ function writeComponentsJson(cwd: string, componentsJson: any) {
 function replaceTemplatePlaceholders(
   content: string,
   utilsPath: string,
-  importPath: string = 'tailwindcss'
+  importPath: string = 'tailwindcss',
+  uiPath?: string
 ): string {
-  return content
+  let result = content
     .replace(/{utilsPath}/g, utilsPath)
     .replace(/{importPath}/g, importPath)
+  
+  // Replace @/components/ui with resolved UI path if provided
+  if (uiPath) {
+    result = result.replace(/@\/components\/ui/g, uiPath)
+  }
+  
+  return result
 }
 
 module.exports = {

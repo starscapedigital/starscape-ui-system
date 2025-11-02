@@ -26,7 +26,7 @@ async function init() {
             rsc: false,
             tsx: true,
             tailwind: {
-                config: 'tailwind.config.js',
+                config: '',
                 css: 'src/globals.css',
                 baseColor: 'neutral',
                 cssVariables: true,
@@ -64,97 +64,10 @@ async function init() {
             spinner.text = 'Creating globals.css...';
             const globalsCssContent = `@import "tailwindcss";
 @import "./styles/tokens.css";
-
+@import "@starscape/tailwind-preset/src/web.css";
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
-
-/* Tailwind v4 theme extensions */
-@theme {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-  
-  --color-dark-navy: hsl(var(--starscape-dark-navy));
-  --color-mid-navy: hsl(var(--starscape-mid-navy));
-  --color-deep-blue: hsl(var(--starscape-deep-blue));
-  --color-light-blue: hsl(var(--starscape-light-blue));
-  
-  --spacing-xs: var(--spacing-xs);
-  --spacing-sm: var(--spacing-sm);
-  --spacing-md: var(--spacing-md);
-  --spacing-lg: var(--spacing-lg);
-  --spacing-xl: var(--spacing-xl);
-  --spacing-xxl: var(--spacing-xxl);
-  --spacing-xxxl: var(--spacing-xxxl);
-  --spacing-xxxxl: var(--spacing-xxxxl);
-  
-  --radius-xs: var(--radius-xs);
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
-  --radius-xl: var(--radius-xl);
-  --radius-xxl: var(--radius-xxl);
-  --radius-full: var(--radius-full);
-  
-  --shadow-subtle: var(--shadow-subtle);
-  --shadow-default: var(--shadow-default);
-  --shadow-elevated: var(--shadow-elevated);
-  --shadow-deep: var(--shadow-deep);
-  
-  --font-size-hero: var(--font-hero);
-  --font-size-h1: var(--font-h1);
-  --font-size-h2: var(--font-h2);
-  --font-size-h3: var(--font-h3);
-  --font-size-body-large: var(--font-body-large);
-  --font-size-body: var(--font-body);
-  --font-size-body-small: var(--font-body-small);
-  --font-size-caption: var(--font-caption);
-  --font-size-button: var(--font-button);
-  
-  --gradient-cosmic: var(--gradient-cosmic);
-  --gradient-cosmic-hover: var(--gradient-cosmic-hover);
-  --gradient-cyan-purple: var(--gradient-cyan-purple);
-  --gradient-purple-blue: var(--gradient-purple-blue);
-  --gradient-pink-purple: var(--gradient-pink-purple);
-  --gradient-cyan-vibrant: var(--gradient-cyan-vibrant);
-}
-
-/* Custom utilities */
-@layer utilities {
-  .glass-white {
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-  
-  .glass-dark {
-    background: rgba(26, 26, 46, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-  
-  .gradient-text {
-    background: linear-gradient(135deg, #fff 0%, #a8c0ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-}
 
 /* Base styles */
 @layer base {

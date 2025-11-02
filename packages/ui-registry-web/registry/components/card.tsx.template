@@ -4,12 +4,15 @@ import { cn } from "{utilsPath}"
 
 const Card = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { variant?: 'glass' | 'dark-glass' | 'gradient' | 'default' }
+  React.HTMLAttributes<HTMLDivElement> & { variant?: 'glass' | 'dark-glass' | 'gradient-cyan-purple' | 'gradient-purple-blue' |  'gradient-pink-purple' | 'gradient-cyan-vibrant' | 'default' }
 >(({ className, variant = 'default', ...props }, ref) => {
   const variantClasses = {
     glass: "glass-white border border-white/10 shadow-deep",
     'dark-glass': "glass-dark border border-light-blue/20 shadow-elevated",
-    gradient: "bg-gradient-purple-blue shadow-elevated text-white",
+    'gradient-cyan-purple': "bg-gradient-cyan-purple shadow-elevated text-white",
+    'gradient-purple-blue': "bg-gradient-purple-blue shadow-elevated text-white",
+    'gradient-pink-purple': "bg-gradient-pink-purple shadow-elevated text-white",
+    'gradient-cyan-vibrant': "bg-gradient-cyan-vibrant shadow-elevated text-white",
     default: "bg-card text-card-foreground shadow-default",
   }
   

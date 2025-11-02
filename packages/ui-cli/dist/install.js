@@ -121,6 +121,45 @@ async function install(componentName, options) {
                 }
             }
         }
+        // Copy assets (shared assets like starscape-star.png)
+        const assetsPath = path.join(registryPath, 'assets');
+        if (fs.existsSync(assetsPath)) {
+            spinner.text = 'Copying assets...';
+            // Try to find public directory (common patterns: public, src/public, app/public)
+            const possiblePublicDirs = [
+                path.join(cwd, 'public'),
+                path.join(cwd, 'src', 'public'),
+                path.join(cwd, 'app', 'public'),
+            ];
+            let publicDir = null;
+            for (const dir of possiblePublicDirs) {
+                if (fs.existsSync(dir)) {
+                    publicDir = dir;
+                    break;
+                }
+            }
+            // If no public dir found, create one
+            if (!publicDir) {
+                publicDir = path.join(cwd, 'public');
+                if (!fs.existsSync(publicDir)) {
+                    fs.mkdirSync(publicDir, { recursive: true });
+                }
+            }
+            // Copy all assets from registry/assets to project public
+            const assets = fs.readdirSync(assetsPath);
+            for (const asset of assets) {
+                const srcAssetPath = path.join(assetsPath, asset);
+                const destAssetPath = path.join(publicDir, asset);
+                if (fs.statSync(srcAssetPath).isFile()) {
+                    if (fs.existsSync(destAssetPath)) {
+                        spinner.warn(`Asset ${asset} already exists, skipping`);
+                    }
+                    else {
+                        fs.copyFileSync(srcAssetPath, destAssetPath);
+                    }
+                }
+            }
+        }
         spinner.succeed(`Installed ${componentsToInstall.length} component(s)`);
         console.log(chalk.green(`✅ Components installed to ${componentsJson.aliases?.ui || 'src/components/ui'}`));
     }

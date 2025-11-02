@@ -4,7 +4,7 @@
   "rsc": false,
   "tsx": true,
   "tailwind": {
-    "config": "tailwind.config.js",
+    "config": "",
     "css": "src/globals.css",
     "baseColor": "neutral",
     "cssVariables": true,
@@ -32,6 +32,24 @@
       "name": "input",
       "type": "components:ui",
       "files": ["components/input.tsx"]
+    },
+    {
+      "name": "animated-star",
+      "type": "components:ui",
+      "files": ["components/animated-star.tsx"],
+      "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "promo-link-card-nova",
+      "type": "components:ui",
+      "files": ["components/promo-link-card-nova.tsx"],
+      "dependencies": ["framer-motion", "lucide-react"]
+    },
+    {
+      "name": "promo-link-card-nebula",
+      "type": "components:ui",
+      "files": ["components/promo-link-card-nebula.tsx"],
+      "dependencies": ["framer-motion"]
     }
   ]
 }

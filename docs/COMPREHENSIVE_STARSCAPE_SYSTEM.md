@@ -1060,7 +1060,7 @@ export interface ButtonProps
   children: React.ReactNode
 }
 
-const Button = React.forwardRef<React.ElementRef<typeof Pressable>, ButtonProps>(
+const Button = React.forwardRef<React.ComponentRef<typeof Pressable>, ButtonProps>(
   ({ className, variant, size, children, ...props }, ref) => {
     return (
       <Pressable
