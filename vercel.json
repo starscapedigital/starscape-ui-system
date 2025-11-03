@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build --workspace=packages/tokens && npm run build --workspace=apps/web-demo",
+  "outputDirectory": "apps/web-demo/dist",
+  "installCommand": "npm install",
+  "framework": "vite"
+}
+

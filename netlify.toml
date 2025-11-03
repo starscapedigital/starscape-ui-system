@@ -1,0 +1,8 @@
+[build]
+  base = "apps/web-demo"
+  command = "npm run build --workspace=packages/tokens && npm run build --workspace=apps/web-demo"
+  publish = "apps/web-demo/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+

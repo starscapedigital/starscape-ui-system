@@ -11,7 +11,8 @@ import { PromoLinkCardStarscapeStar } from './components/ui/promo-link-card-star
 import Hero from './components/Hero'
 import ExpandableUISystem from './components/ExpandableUISystem'
 import Footer from './components/Footer'
-import { Sparkles, Star, SunDim, Zap } from 'lucide-react'
+import GlassMorphismPlayground from './components/GlassMorphismPlayground'
+import { Sparkles, Star, SunDim, Zap, Heart, Wand2, Waves, Leaf, Circle } from 'lucide-react'
 
 // # Install components
 // starscape-ui add animated-star
@@ -71,35 +72,35 @@ function App() {
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="space-y-2">
-                  <div className="h-16 rounded-md" style={{ backgroundColor: 'hsl(271, 81%, 70%)' }}></div>
+                  <div className="h-16 rounded-md bg-chromatic-purple"></div>
                   <p className="text-caption text-white-tertiary">Purple Base</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-16 rounded-md" style={{ backgroundColor: 'hsl(330, 81%, 60%)' }}></div>
+                  <div className="h-16 rounded-md bg-chromatic-pink"></div>
                   <p className="text-caption text-white-tertiary">Pink Base</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-16 rounded-md" style={{ backgroundColor: 'hsl(258, 90%, 66%)' }}></div>
+                  <div className="h-16 rounded-md bg-chromatic-violet"></div>
                   <p className="text-caption text-white-tertiary">Violet Base</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-16 rounded-md" style={{ backgroundColor: 'hsl(217, 91%, 60%)' }}></div>
+                  <div className="h-16 rounded-md bg-chromatic-blue"></div>
                   <p className="text-caption text-white-tertiary">Blue Base</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-16 rounded-md" style={{ backgroundColor: 'hsl(188, 94%, 43%)' }}></div>
+                  <div className="h-16 rounded-md bg-chromatic-cyan"></div>
                   <p className="text-caption text-white-tertiary">Cyan Base</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-16 rounded-md" style={{ backgroundColor: 'hsl(173, 80%, 40%)' }}></div>
+                  <div className="h-16 rounded-md bg-chromatic-teal"></div>
                   <p className="text-caption text-white-tertiary">Teal Base</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-16 rounded-md" style={{ backgroundColor: 'hsl(48, 96%, 53%)' }}></div>
+                  <div className="h-16 rounded-md bg-chromatic-yellow"></div>
                   <p className="text-caption text-white-tertiary">Yellow Base</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-16 rounded-md" style={{ backgroundColor: 'hsl(160, 84%, 39%)' }}></div>
+                  <div className="h-16 rounded-md bg-chromatic-emerald"></div>
                   <p className="text-caption text-white-tertiary">Emerald Base</p>
                 </div>
               </div>
@@ -210,25 +211,139 @@ function App() {
             </Card>
           </div>
 
-          {/* New Gradients Section */}
+          {/* All Gradients Section */}
           <Card variant="dark-glass">
             <CardHeader>
-              <CardTitle>New Gradients</CardTitle>
-              <CardDescription>Green-Emerald, Blue-Cyan, Blue-Teal gradients</CardDescription>
+              <CardTitle>All Gradients</CardTitle>
+              <CardDescription>Complete gradient palette</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="space-y-2">
-                  <div className="h-24 rounded-lg bg-gradient-green-emerald"></div>
-                  <p className="text-caption text-white-tertiary">Green → Emerald</p>
+              <div className="space-y-6">
+                {/* Primary Gradients */}
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Primary Gradients</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-deepspace"></div>
+                      <p className="text-caption text-white-tertiary">Deepspace</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-deepspace-hover"></div>
+                      <p className="text-caption text-white-tertiary">Deepspace Hover</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-cyan-vibrant"></div>
+                      <p className="text-caption text-white-tertiary">Cyan Vibrant</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-cosmic"></div>
+                      <p className="text-caption text-white-tertiary">Cosmic</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="h-24 rounded-lg bg-gradient-blue-cyan"></div>
-                  <p className="text-caption text-white-tertiary">Blue → Cyan</p>
+
+                {/* Purple/Pink Family */}
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Purple & Pink Family</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-purple-pink"></div>
+                      <p className="text-caption text-white-tertiary">Purple → Pink</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-pink-purple"></div>
+                      <p className="text-caption text-white-tertiary">Pink → Purple</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-pink-violet"></div>
+                      <p className="text-caption text-white-tertiary">Pink → Violet</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-violet-purple"></div>
+                      <p className="text-caption text-white-tertiary">Violet → Purple</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-violet-purple-light"></div>
+                      <p className="text-caption text-white-tertiary">Violet-Purple Light</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-pink-orange"></div>
+                      <p className="text-caption text-white-tertiary">Pink → Orange</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="h-24 rounded-lg bg-gradient-blue-teal"></div>
-                  <p className="text-caption text-white-tertiary">Blue → Teal</p>
+
+                {/* Blue/Cyan/Teal Family */}
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Blue, Cyan & Teal Family</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-cyan-purple"></div>
+                      <p className="text-caption text-white-tertiary">Cyan → Purple</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-purple-blue"></div>
+                      <p className="text-caption text-white-tertiary">Purple → Blue</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-blue-cyan"></div>
+                      <p className="text-caption text-white-tertiary">Blue → Cyan</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-blue-cyan-light"></div>
+                      <p className="text-caption text-white-tertiary">Blue-Cyan Light</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-blue-teal"></div>
+                      <p className="text-caption text-white-tertiary">Blue → Teal</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-cyan-teal"></div>
+                      <p className="text-caption text-white-tertiary">Cyan → Teal</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-blues"></div>
+                      <p className="text-caption text-white-tertiary">Blues</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Green/Emerald/Yellow Family */}
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Green, Emerald & Yellow Family</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-green-emerald"></div>
+                      <p className="text-caption text-white-tertiary">Green → Emerald</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-teal-emerald"></div>
+                      <p className="text-caption text-white-tertiary">Teal → Emerald</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-emerald-cyan"></div>
+                      <p className="text-caption text-white-tertiary">Emerald → Cyan</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-yellow-green"></div>
+                      <p className="text-caption text-white-tertiary">Yellow → Green</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-green-cyan-blue"></div>
+                      <p className="text-caption text-white-tertiary">Green-Cyan-Blue</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Neutral Gradients */}
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Neutral Gradients</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="space-y-2">
+                      <div className="h-24 rounded-lg bg-gradient-gray"></div>
+                      <p className="text-caption text-white-tertiary">Gray</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -238,23 +353,10 @@ function App() {
           <Card variant="dark-glass">
             <CardHeader>
               <CardTitle>Glass Morphism</CardTitle>
-              <CardDescription>Cosmic glass effects from ssd-alpha</CardDescription>
+              <CardDescription>Interactive glass morphism playground - adjust blur, refraction, depth, and colors</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="cosmic-glass p-6 rounded-xl">
-                  <h3 className="text-h3 text-white-primary mb-2">Cosmic Glass</h3>
-                  <p className="text-body text-white-tertiary">Basic glass morphism effect</p>
-                </div>
-                <div className="cosmic-glass-hover p-6 rounded-xl cursor-pointer">
-                  <h3 className="text-h3 text-white-primary mb-2">Cosmic Glass Hover</h3>
-                  <p className="text-body text-white-tertiary">Hover for enhanced effect</p>
-                </div>
-                <div className="cosmic-glass-card p-6">
-                  <h3 className="text-h3 text-white-primary mb-2">Cosmic Glass Card</h3>
-                  <p className="text-body text-white-tertiary">Card variant with responsive rounding</p>
-                </div>
-              </div>
+              <GlassMorphismPlayground />
             </CardContent>
           </Card>
 
@@ -291,16 +393,36 @@ function App() {
                   <span className="text-caption text-white-tertiary">Purple</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
+                  <Heart className="w-8 h-8 cosmic-icon-pink" />
+                  <span className="text-caption text-white-tertiary">Pink</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Wand2 className="w-8 h-8 cosmic-icon-violet" />
+                  <span className="text-caption text-white-tertiary">Violet</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
                   <Zap className="w-8 h-8 cosmic-icon-blue" />
                   <span className="text-caption text-white-tertiary">Blue</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <SunDim className="w-8 h-8 cosmic-icon-cyan" />
+                  <span className="text-caption text-white-tertiary">Cyan</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Waves className="w-8 h-8 cosmic-icon-teal" />
+                  <span className="text-caption text-white-tertiary">Teal</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <Star className="w-8 h-8 cosmic-icon-yellow" />
                   <span className="text-caption text-white-tertiary">Yellow</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <SunDim className="w-8 h-8 cosmic-icon-cyan" />
-                  <span className="text-caption text-white-tertiary">Cyan</span>
+                  <Leaf className="w-8 h-8 cosmic-icon-emerald" />
+                  <span className="text-caption text-white-tertiary">Emerald</span>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Circle className="w-8 h-8 cosmic-icon-gray" />
+                  <span className="text-caption text-white-tertiary">Gray</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <Sparkles className="w-8 h-8 cosmic-icon-muted" />
@@ -317,82 +439,288 @@ function App() {
               <CardDescription>Cosmic gradient dividers</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex items-center gap-6">
-                <div className="flex flex-col items-center gap-2">
-                  <Divider variant="purple" size="sm" />
-                  <span className="text-caption text-white-tertiary">Purple (sm)</span>
+              <div className="space-y-8">
+                {/* Size Variants */}
+                <div>
+                  <h4 className="text-h3 text-white-primary mb-4">Size Variants</h4>
+                  <div className="flex items-center gap-6">
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="purple-pink" size="sm" />
+                      <span className="text-caption text-white-tertiary">Purple (sm)</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="purple-pink" size="md" />
+                      <span className="text-caption text-white-tertiary">Purple (md)</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="purple-pink" size="lg" />
+                      <span className="text-caption text-white-tertiary">Purple (lg)</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Divider variant="purple" size="md" />
-                  <span className="text-caption text-white-tertiary">Purple (md)</span>
+                
+                {/* Color Variants - All Divider Gradients */}
+                <div>
+                  <h4 className="text-h3 text-white-primary mb-4">All Divider Gradient Variants</h4>
+                  <div className="flex flex-wrap items-center gap-6">
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="purple-pink" size="md" />
+                      <span className="text-caption text-white-tertiary">Purple-Pink</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="violet-purple" size="md" />
+                      <span className="text-caption text-white-tertiary">Violet-Purple</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="pink-violet" size="md" />
+                      <span className="text-caption text-white-tertiary">Pink-Violet</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="blue-cyan" size="md" />
+                      <span className="text-caption text-white-tertiary">Blue-Cyan</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="cyan-teal" size="md" />
+                      <span className="text-caption text-white-tertiary">Cyan-Teal</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="teal-emerald" size="md" />
+                      <span className="text-caption text-white-tertiary">Teal-Emerald</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="emerald-cyan" size="md" />
+                      <span className="text-caption text-white-tertiary">Emerald-Cyan</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="yellow-green" size="md" />
+                      <span className="text-caption text-white-tertiary">Yellow-Green</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="blues" size="md" />
+                      <span className="text-caption text-white-tertiary">Blues</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Divider variant="cosmic" size="md" />
+                      <span className="text-caption text-white-tertiary">Cosmic</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Divider variant="purple" size="lg" />
-                  <span className="text-caption text-white-tertiary">Purple (lg)</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Divider variant="blue" size="md" />
-                  <span className="text-caption text-white-tertiary">Blue</span>
+                
+                {/* Gradient Cards Preview - All Variants */}
+                <div>
+                  <h4 className="text-h3 text-white-primary mb-4">All Gradient Cards</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <Card variant="gradient-deepspace" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Deepspace</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-cyan-vibrant" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Cyan Vibrant</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-cosmic" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Cosmic</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-purple-pink" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Purple-Pink</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-pink-purple" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Pink-Purple</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-pink-violet" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Pink-Violet</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-violet-purple" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Violet-Purple</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-cyan-purple" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Cyan-Purple</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-purple-blue" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Purple-Blue</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-blue-cyan" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Blue-Cyan</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-blue-teal" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Blue-Teal</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-cyan-teal" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Cyan-Teal</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-teal-emerald" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Teal-Emerald</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-green-emerald" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Green-Emerald</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-emerald-cyan" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Emerald-Cyan</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-yellow-green" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Yellow-Green</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-blues" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Blues</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-pink-orange" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Pink-Orange</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-green-cyan-blue" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Green-Cyan-Blue</p>
+                      </CardContent>
+                    </Card>
+                    <Card variant="gradient-gray" className="h-28">
+                      <CardContent className="p-4 h-full flex items-center justify-center">
+                        <p className="text-body-small text-white-primary font-semibold text-center">Gray</p>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Avatars Section */}
+          {/* Avatars Section - All Gradient Variants */}
           <Card variant="dark-glass">
             <CardHeader>
-              <CardTitle>Avatars</CardTitle>
-              <CardDescription>Cosmic avatar placeholders</CardDescription>
+              <CardTitle>All Avatar Gradients</CardTitle>
+              <CardDescription>Complete avatar gradient palette</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap items-end gap-8">
-                <div className="flex flex-col items-center gap-2">
-                  <Avatar variant="default" size="sm">
-                    <span className="text-white-primary text-lg">A</span>
-                  </Avatar>
-                  <span className="text-caption text-white-tertiary">Default (sm)</span>
+              <div className="space-y-6">
+                {/* Size Variants */}
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Size Variants</h4>
+                  <div className="flex flex-wrap items-end gap-8">
+                    <div className="flex flex-col items-center gap-2">
+                      <Avatar variant="default" size="sm">
+                        <span className="text-white-primary text-lg">A</span>
+                      </Avatar>
+                      <span className="text-caption text-white-tertiary">Default (sm)</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Avatar variant="default" size="md">
+                        <span className="text-white-primary text-xl">B</span>
+                      </Avatar>
+                      <span className="text-caption text-white-tertiary">Default (md)</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Avatar variant="default" size="lg">
+                        <span className="text-white-primary text-2xl">C</span>
+                      </Avatar>
+                      <span className="text-caption text-white-tertiary">Default (lg)</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Avatar variant="default" size="md">
-                    <span className="text-white-primary text-xl">B</span>
-                  </Avatar>
-                  <span className="text-caption text-white-tertiary">Default (md)</span>
+
+                {/* All Avatar Gradient Variants */}
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">All Avatar Gradient Variants</h4>
+                  <div className="flex flex-wrap items-end gap-6">
+                    <div className="flex flex-col items-center gap-2">
+                      <Avatar variant="default" size="md">
+                        <span className="text-white-primary text-xl">PP</span>
+                      </Avatar>
+                      <span className="text-caption text-white-tertiary">Purple-Pink</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Avatar variant="violetPurple" size="md">
+                        <span className="text-white-primary text-xl">VP</span>
+                      </Avatar>
+                      <span className="text-caption text-white-tertiary">Violet-Purple</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Avatar variant="blueCyan" size="md">
+                        <span className="text-white-primary text-xl">BC</span>
+                      </Avatar>
+                      <span className="text-caption text-white-tertiary">Blue-Cyan</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Avatar variant="pinkOrange" size="md">
+                        <span className="text-white-primary text-xl">PO</span>
+                      </Avatar>
+                      <span className="text-caption text-white-tertiary">Pink-Orange</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Avatar variant="greenCyanBlue" size="md">
+                        <span className="text-white-primary text-xl">GCB</span>
+                      </Avatar>
+                      <span className="text-caption text-white-tertiary">Green-Cyan-Blue</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                      <Avatar variant="gray" size="md">
+                        <span className="text-white-primary text-xl">GY</span>
+                      </Avatar>
+                      <span className="text-caption text-white-tertiary">Gray</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Avatar variant="default" size="lg">
-                    <span className="text-white-primary text-2xl">C</span>
-                  </Avatar>
-                  <span className="text-caption text-white-tertiary">Default (lg)</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Avatar variant="violetPurple" size="md">
-                    <span className="text-white-primary text-xl">V</span>
-                  </Avatar>
-                  <span className="text-caption text-white-tertiary">Violet-Purple</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Avatar variant="blueCyan" size="md">
-                    <span className="text-white-primary text-xl">B</span>
-                  </Avatar>
-                  <span className="text-caption text-white-tertiary">Blue-Cyan</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Avatar variant="gray" size="md">
-                    <span className="text-white-primary text-xl">G</span>
-                  </Avatar>
-                  <span className="text-caption text-white-tertiary">Gray</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Avatar variant="pinkOrange" size="md">
-                    <span className="text-white-primary text-xl">P</span>
-                  </Avatar>
-                  <span className="text-caption text-white-tertiary">Pink-Orange</span>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Avatar variant="greenCyanBlue" size="md">
-                    <span className="text-white-primary text-xl">G</span>
-                  </Avatar>
-                  <span className="text-caption text-white-tertiary">Green-Cyan-Blue</span>
+
+                {/* Avatar Gradient Swatches */}
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Avatar Gradient Swatches</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div className="space-y-2">
+                      <div className="h-16 w-16 rounded-full bg-gradient-purple-pink mx-auto"></div>
+                      <p className="text-caption text-white-tertiary text-center">Purple-Pink</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-16 w-16 rounded-full bg-gradient-violet-purple-light mx-auto"></div>
+                      <p className="text-caption text-white-tertiary text-center">Violet-Purple</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-16 w-16 rounded-full bg-gradient-blue-cyan-light mx-auto"></div>
+                      <p className="text-caption text-white-tertiary text-center">Blue-Cyan</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-16 w-16 rounded-full bg-gradient-pink-orange mx-auto"></div>
+                      <p className="text-caption text-white-tertiary text-center">Pink-Orange</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-16 w-16 rounded-full bg-gradient-green-cyan-blue mx-auto"></div>
+                      <p className="text-caption text-white-tertiary text-center">Green-Cyan-Blue</p>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-16 w-16 rounded-full bg-gradient-gray mx-auto"></div>
+                      <p className="text-caption text-white-tertiary text-center">Gray</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -434,8 +762,8 @@ function App() {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <PromoLinkCardStarscapeStar />
-                <PromoLinkCardSparkles />
+                <PromoLinkCardStarscapeStar href="https://starscape.example.com/nebula" />
+                <PromoLinkCardSparkles href="https://starscape.example.com/nova" />
               </div>
             </CardContent>
           </Card>

@@ -86,7 +86,7 @@ export declare const nativeTokens: {
                 readonly y: 1;
             };
         };
-        readonly cosmic: {
+        readonly deepspace: {
             readonly colors: readonly ["#1a1a2e", "#16213e", "#0f3460"];
             readonly start: {
                 readonly x: 0;
@@ -97,8 +97,195 @@ export declare const nativeTokens: {
                 readonly y: 1;
             };
         };
-        readonly cosmicHover: {
+        readonly deepspaceHover: {
             readonly colors: readonly ["#1f2233", "#1a2a47", "#0f3c6e"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly greenEmerald: {
+            readonly colors: readonly ["#22c55e", "#10b981"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly blueCyan: {
+            readonly colors: readonly ["#3b82f6", "#06b6d4"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly blueTeal: {
+            readonly colors: readonly ["#3b82f6", "#14b8a6"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly purplePink: {
+            readonly colors: readonly ["#a855f7", "#ec4899"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly violetPurple: {
+            readonly colors: readonly ["#8b5cf6", "#a855f7"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly pinkViolet: {
+            readonly colors: readonly ["#ec4899", "#8b5cf6"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly cyanTeal: {
+            readonly colors: readonly ["#06b6d4", "#14b8a6"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly tealEmerald: {
+            readonly colors: readonly ["#14b8a6", "#10b981"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly emeraldCyan: {
+            readonly colors: readonly ["#10b981", "#06b6d4"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly yellowGreen: {
+            readonly colors: readonly ["#eab308", "#22c55e"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly blues: {
+            readonly colors: readonly ["#2563eb", "#1e40af"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly violetPurpleLight: {
+            readonly colors: readonly ["#a78bfa", "#c084fc"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly blueCyanLight: {
+            readonly colors: readonly ["#60a5fa", "#22d3ee"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly pinkOrange: {
+            readonly colors: readonly ["#ec4899", "#f97316"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly greenCyanBlue: {
+            readonly colors: readonly ["#22c55e", "#06b6d4", "#3b82f6"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly gray: {
+            readonly colors: readonly ["#4b5563", "#6b7280"];
+            readonly start: {
+                readonly x: 0;
+                readonly y: 0;
+            };
+            readonly end: {
+                readonly x: 1;
+                readonly y: 1;
+            };
+        };
+        readonly cosmic: {
+            readonly colors: readonly ["#a855f7", "#ec4899", "#3b82f6", "#06b6d4", "#14b8a6"];
             readonly start: {
                 readonly x: 0;
                 readonly y: 0;

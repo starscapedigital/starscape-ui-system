@@ -6,38 +6,42 @@ import { cn } from "@/lib/utils"
 import { AnimatedStar } from "@/components/ui/animated-star"
 
 interface PromoLinkCardProps {
-  onPress?: () => void
+  href?: string
+  onClick?: () => void
   isCompact?: boolean
   className?: string
 }
 
 export const PromoLinkCardStarscapeStar: React.FC<PromoLinkCardProps> = ({ 
-  onPress, 
+  href = "#",
+  onClick, 
   isCompact = false,
   className 
 }) => {
-  const [isPressed, setIsPressed] = React.useState(false)
+  const [_isHovered, setIsHovered] = React.useState(false)
 
-  const handleClick = () => {
-    onPress?.()
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      e.preventDefault()
+      onClick()
+    }
   }
 
   return (
-    <motion.button
+    <motion.a
+      href={href}
       onClick={handleClick}
-      onMouseDown={() => setIsPressed(true)}
-      onMouseUp={() => setIsPressed(false)}
-      onMouseLeave={() => setIsPressed(false)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.98 }}
       className={cn(
-        "relative overflow-hidden rounded-2xl",
+        "relative overflow-hidden rounded-2xl block cursor-pointer",
         "transition-all duration-200",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-blue focus-visible:ring-offset-2",
         isCompact ? "h-[7.5rem]" : "h-[11.25rem]",
         className
       )}
-      style={{
-        transform: isPressed ? 'scale(0.98)' : 'scale(1)',
-      }}
     >
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-purple-blue" />
@@ -119,7 +123,7 @@ export const PromoLinkCardStarscapeStar: React.FC<PromoLinkCardProps> = ({
           </p>
         )}
       </div>
-    </motion.button>
+    </motion.a>
   )
 }
 

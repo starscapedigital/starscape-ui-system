@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.colors = void 0;
 exports.colors = {
-    // Core Starscape colors (HSL format)
+    // Core Starscape colors (OKLCH format)
     darkNavy: '0.275 0.0228 248.7', // hsl(210, 24%, 16%) - #1a1a2e
     midNavy: '0.286 0.0347 259.7', // hsl(217, 30%, 18%) - #16213e
     deepBlue: '0.341 0.0771 260.6', // hsl(218, 50%, 25%) - #0f3460
@@ -88,7 +88,7 @@ exports.colors = {
         'secondary-foreground': '1 0 0',
         muted: '0.329 0.0273 259.8',
         'muted-foreground': '0.744 0.0455 259.9',
-        accent: '0.788 0.0904 270', // lightBlue
+        accent: '0.788 0.0904 270', // lightBlue - same as primary???
         'accent-foreground': '0.275 0.0228 248.7',
         destructive: '0.705 0.1587 22',
         'destructive-foreground': '1 0 0',

@@ -9,8 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Starscape primary button (cosmic gradient)
-        default: "bg-gradient-cosmic text-white shadow-default hover:bg-gradient-cosmic-hover hover:-translate-y-0.5 hover:shadow-elevated active:translate-y-0",
+        // Starscape primary button (deepspace gradient)
+        default: "bg-gradient-deepspace text-white shadow-default hover:bg-gradient-deepspace-hover hover:-translate-y-0.5 hover:shadow-elevated active:translate-y-0",
         
         // Starscape destructive button
         destructive: "bg-error text-white shadow-default hover:bg-error/90",

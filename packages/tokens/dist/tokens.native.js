@@ -110,7 +110,7 @@ module.exports = {
         "y": 1
       }
     },
-    "cosmic": {
+    "deepspace": {
       "colors": [
         "#1a1a2e",
         "#16213e",
@@ -125,11 +125,253 @@ module.exports = {
         "y": 1
       }
     },
-    "cosmicHover": {
+    "deepspaceHover": {
       "colors": [
         "#1f2233",
         "#1a2a47",
         "#0f3c6e"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "greenEmerald": {
+      "colors": [
+        "#22c55e",
+        "#10b981"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "blueCyan": {
+      "colors": [
+        "#3b82f6",
+        "#06b6d4"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "blueTeal": {
+      "colors": [
+        "#3b82f6",
+        "#14b8a6"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "purplePink": {
+      "colors": [
+        "#a855f7",
+        "#ec4899"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "violetPurple": {
+      "colors": [
+        "#8b5cf6",
+        "#a855f7"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "pinkViolet": {
+      "colors": [
+        "#ec4899",
+        "#8b5cf6"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "cyanTeal": {
+      "colors": [
+        "#06b6d4",
+        "#14b8a6"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "tealEmerald": {
+      "colors": [
+        "#14b8a6",
+        "#10b981"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "emeraldCyan": {
+      "colors": [
+        "#10b981",
+        "#06b6d4"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "yellowGreen": {
+      "colors": [
+        "#eab308",
+        "#22c55e"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "blues": {
+      "colors": [
+        "#2563eb",
+        "#1e40af"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "violetPurpleLight": {
+      "colors": [
+        "#a78bfa",
+        "#c084fc"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "blueCyanLight": {
+      "colors": [
+        "#60a5fa",
+        "#22d3ee"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "pinkOrange": {
+      "colors": [
+        "#ec4899",
+        "#f97316"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "greenCyanBlue": {
+      "colors": [
+        "#22c55e",
+        "#06b6d4",
+        "#3b82f6"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "gray": {
+      "colors": [
+        "#4b5563",
+        "#6b7280"
+      ],
+      "start": {
+        "x": 0,
+        "y": 0
+      },
+      "end": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "cosmic": {
+      "colors": [
+        "#a855f7",
+        "#ec4899",
+        "#3b82f6",
+        "#06b6d4",
+        "#14b8a6"
       ],
       "start": {
         "x": 0,

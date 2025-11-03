@@ -3,14 +3,22 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const dividerVariants = cva(
-  "bg-gradient-to-b rounded-full",
+  "rounded-full",
   {
     variants: {
       variant: {
         default: "w-px h-full bg-border",
         horizontal: "w-full h-px bg-border",
-        purple: "from-purple-500 to-pink-500",
-        blue: "from-blue-500 to-cyan-500",
+        "purple-pink": "bg-gradient-purple-pink",
+        "violet-purple": "bg-gradient-violet-purple",
+        "pink-violet": "bg-gradient-pink-violet",
+        "blue-cyan": "bg-gradient-blue-cyan",
+        "cyan-teal": "bg-gradient-cyan-teal",
+        "teal-emerald": "bg-gradient-teal-emerald",
+        "emerald-cyan": "bg-gradient-emerald-cyan",
+        "yellow-green": "bg-gradient-yellow-green",
+        "blues": "bg-gradient-blues",
+        "cosmic": "bg-gradient-cosmic",
       },
       size: {
         sm: "w-1 h-6",

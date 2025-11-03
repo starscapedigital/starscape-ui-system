@@ -100,4 +100,3 @@ export const colors = {
     ring: '0.788 0.0904 270',
   },
 } as const
-

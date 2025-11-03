@@ -44,8 +44,8 @@ export function generateCSSVariables(): string {
     --starscape-dark-glass: ${colors.darkGlass};
     
     /* Gradients */
-    --gradient-cosmic: ${gradients.cosmic.web};
-    --gradient-cosmic-hover: ${gradients.cosmicHover.web};
+    --gradient-deepspace: ${gradients.deepspace.web};
+    --gradient-deepspace-hover: ${gradients.deepspaceHover.web};
     --gradient-cyan-purple: ${gradients.cyanPurple.web};
     --gradient-purple-blue: ${gradients.purpleBlue.web};
     --gradient-pink-purple: ${gradients.pinkPurple.web};
@@ -55,6 +55,18 @@ export function generateCSSVariables(): string {
     --gradient-blue-teal: ${gradients.blueTeal.web};
     --gradient-purple-pink: ${gradients.purplePink.web};
     --gradient-violet-purple: ${gradients.violetPurple.web};
+    --gradient-pink-violet: ${gradients.pinkViolet.web};
+    --gradient-cyan-teal: ${gradients.cyanTeal.web};
+    --gradient-teal-emerald: ${gradients.tealEmerald.web};
+    --gradient-emerald-cyan: ${gradients.emeraldCyan.web};
+    --gradient-yellow-green: ${gradients.yellowGreen.web};
+    --gradient-blues: ${gradients.blues.web};
+    --gradient-violet-purple-light: ${gradients.violetPurpleLight.web};
+    --gradient-blue-cyan-light: ${gradients.blueCyanLight.web};
+    --gradient-pink-orange: ${gradients.pinkOrange.web};
+    --gradient-green-cyan-blue: ${gradients.greenCyanBlue.web};
+    --gradient-gray: ${gradients.gray.web};
+    --gradient-cosmic: ${gradients.cosmic.web};
     
     /* Cosmic colors */
     --starscape-cosmic-purple-base: ${colors.cosmic.purple.base};
@@ -123,4 +135,3 @@ export function generateCSSVariables(): string {
 }
 `
 }
-
