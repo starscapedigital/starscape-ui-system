@@ -4,7 +4,8 @@
   "private": true,
   "description": "Starscape UI System Monorepo",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
     "build": "npm run build --workspace=packages/tokens && npm run build --workspace=packages/tailwind-preset && npm run build --workspace=packages/ui-cli",
