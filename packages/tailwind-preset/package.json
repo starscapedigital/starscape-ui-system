@@ -1,5 +1,8 @@
 {
   "name": "@starscape/tailwind-preset",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "version": "1.0.0",
   "description": "Tailwind CSS preset for Starscape design system (Tailwind 4.1 CSS-first)",
   "main": "./src/web.css",

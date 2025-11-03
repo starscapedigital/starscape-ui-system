@@ -17,7 +17,7 @@ export declare const colors: {
     readonly darkGlass: "0.275 0.0228 248.7 / 0.85";
     readonly gradientListItem: "0.719 0.1465 259.5 / 0.08";
     readonly primary: "0.788 0.0904 270";
-    readonly secondary: "0.341 0.0771 260.6";
+    readonly secondary: "0.68 0.1841 305.9";
     readonly background: "0.275 0.0228 248.7";
     readonly surface: "0.286 0.0347 259.7";
     readonly white: {

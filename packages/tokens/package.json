@@ -1,5 +1,12 @@
 {
   "name": "@starscape/tokens",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brucestarlove/starscape-ui-system.git"
+  },
   "version": "1.0.0",
   "description": "Starscape design system tokens",
   "main": "./dist/index.js",
@@ -32,5 +39,9 @@
   },
   "dependencies": {
     "culori": "^4.0.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/brucestarlove/starscape-ui-system/issues"
+  },
+  "homepage": "https://github.com/brucestarlove/starscape-ui-system#readme"
 }

@@ -19,7 +19,7 @@ module.exports = {
     "darkGlass": "rgba(31, 41, 51, 0.85)",
     "gradientListItem": "rgba(107, 164, 255, 0.08)",
     "primary": "rgba(163, 184, 245, 1)",
-    "secondary": "rgba(32, 55, 96, 1)",
+    "secondary": "rgba(181, 117, 241, 1)",
     "background": "rgba(31, 41, 51, 1)",
     "surface": "rgba(32, 43, 60, 1)",
     "border": "rgba(163, 184, 245, 0.2)",

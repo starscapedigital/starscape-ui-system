@@ -194,6 +194,26 @@ export default function GlassMorphismPlayground() {
             className="glass-card-preview"
             style={cardStyle}
           >
+            {/* Sample content to test blur effect */}
+            <div className="p-6 h-full flex flex-col justify-between relative z-10">
+              <div>
+                <h4 className="text-lg font-semibold text-white mb-2">Glass Card</h4>
+                <p className="text-sm text-white/80 mb-4">
+                  Adjust the blur value to see how it affects the background through this card.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="flex gap-2">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-400 to-pink-400 opacity-60"></div>
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-400 opacity-60"></div>
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-400 to-orange-400 opacity-60"></div>
+                </div>
+                <div className="text-xs text-white/70">
+                  Blur: {blurValue}px • Refraction: {refraction.toFixed(2)} • Depth: {depth}
+                </div>
+              </div>
+            </div>
+            
             {/* ::before pseudo-element effect */}
             <div
               style={{
@@ -204,6 +224,7 @@ export default function GlassMorphismPlayground() {
                 height: '1px',
                 background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent)',
                 pointerEvents: 'none',
+                zIndex: 20,
               }}
             />
             {/* ::after pseudo-element effect */}
@@ -216,6 +237,7 @@ export default function GlassMorphismPlayground() {
                 height: '100%',
                 background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3))',
                 pointerEvents: 'none',
+                zIndex: 20,
               }}
             />
           </div>

@@ -1,5 +1,8 @@
 {
   "name": "@starscape/ui-cli",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "version": "1.0.0",
   "description": "CLI tool for installing Starscape UI components",
   "main": "./dist/index.js",
