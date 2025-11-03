@@ -24,7 +24,7 @@ export const colors = {
   
   // Semantic color aliases (for component APIs - HSL format)
   primary: '0.788 0.0904 270',       // lightBlue
-  secondary: '0.341 0.0771 260.6',     // deepBlue
+  secondary: '0.68 0.1841 305.9',    // purpleBase (chromatic purple)
   background: '0.275 0.0228 248.7',    // darkNavy
   surface: '0.286 0.0347 259.7',       // midNavy
   
