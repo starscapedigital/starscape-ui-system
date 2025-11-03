@@ -8,8 +8,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@starscape/tokens': path.resolve(__dirname, '../../packages/tokens'),
-      '@starscape/tailwind-preset': path.resolve(__dirname, '../../packages/tailwind-preset'),
     },
   },
 })

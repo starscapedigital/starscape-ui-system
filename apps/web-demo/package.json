@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
+  "overrides": {
+    "@types/react": "^19.1.8"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -23,7 +26,6 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
-    "@starscape/tailwind-preset": "*",
     "tailwindcss": "^4.1.16",
     "@tailwindcss/vite": "^4.1.16",
     "tailwindcss-animate": "^1.0.7",

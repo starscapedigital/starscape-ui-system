@@ -1,0 +1,627 @@
+/**
+ * Starscape Tailwind Preset for Web - Tailwind CSS 4.1
+ * 
+ * CSS-first configuration using @theme directive
+ * Extends Tailwind CSS v4 with Starscape design tokens
+ * 
+ * NOTE: This preset expects @starscape/tokens/css to be imported first
+ * to provide CSS variables that are referenced here.
+
+ * You don't need to update tailwind-preset/src/web.css when:
+  Adding new components to the registry
+  Making changes to the CLI
+  Adding component templates that use existing Tailwind utilities
+
+ * You do need to update tailwind-preset/src/web.css when:
+  A new component needs a new custom utility class (e.g., @utility bg-something-new)
+  A new component needs new theme mappings (e.g., new colors, spacing, etc.)
+  New design tokens are added that need Tailwind mappings
+ */
+
+@import "tailwindcss";
+
+/* Starscape Design Tokens - Theme Configuration */
+/* These reference CSS variables from @starscape/tokens/css */
+/* Using @theme inline ensures utilities resolve to actual values, not nested CSS variables */
+@theme inline {
+  /* Colors - shadcn-compatible (OKLCH format) */
+  --color-background: oklch(var(--background));
+  --color-foreground: oklch(var(--foreground));
+  --color-card: oklch(var(--card));
+  --color-card-foreground: oklch(var(--card-foreground));
+  --color-primary: oklch(var(--primary));
+  --color-primary-foreground: oklch(var(--primary-foreground));
+  --color-secondary: oklch(var(--secondary));
+  --color-secondary-foreground: oklch(var(--secondary-foreground));
+  --color-muted: oklch(var(--muted));
+  --color-muted-foreground: oklch(var(--muted-foreground));
+  --color-accent: oklch(var(--accent));
+  --color-accent-foreground: oklch(var(--accent-foreground));
+  --color-destructive: oklch(var(--destructive));
+  --color-destructive-foreground: oklch(var(--destructive-foreground));
+  --color-border: oklch(var(--border));
+  --color-input: oklch(var(--input));
+  --color-ring: oklch(var(--ring));
+  
+  /* Starscape-specific colors */
+  --color-dark-navy: oklch(var(--starscape-dark-navy));
+  --color-mid-navy: oklch(var(--starscape-mid-navy));
+  --color-deep-blue: oklch(var(--secondary));  /* Uses secondary theme color */
+  --color-light-blue: oklch(var(--primary));   /* Uses primary theme color */
+  --color-glass-white: oklch(var(--starscape-glass-white));
+  --color-overlay-dark: oklch(var(--starscape-overlay-dark));
+  --color-border-light: oklch(var(--starscape-border-light));
+  --color-border-blue: oklch(var(--starscape-border-blue));
+  --color-dark-glass: oklch(var(--starscape-dark-glass));
+  
+  /* Semantic colors */
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --color-info: #60a5fa;
+  --color-purple: #a855f7;
+  
+  /* Spacing - references tokens.css variables */
+  --spacing-xs: var(--spacing-xs);
+  --spacing-sm: var(--spacing-sm);
+  --spacing-md: var(--spacing-md);
+  --spacing-lg: var(--spacing-lg);
+  --spacing-xl: var(--spacing-xl);
+  --spacing-xxl: var(--spacing-xxl);
+  --spacing-xxxl: var(--spacing-xxxl);
+  --spacing-xxxxl: var(--spacing-xxxxl);
+  
+  /* Border Radius - references tokens.css variables */
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-xxl: var(--radius-xxl);
+  --radius-full: var(--radius-full);
+  
+  /* Typography - references tokens.css variables */
+  --font-size-hero: var(--font-hero);
+  --font-size-h1: var(--font-h1);
+  --font-size-h2: var(--font-h2);
+  --font-size-h3: var(--font-h3);
+  --font-size-body-large: var(--font-body-large);
+  --font-size-body: var(--font-body);
+  --font-size-body-small: var(--font-body-small);
+  --font-size-caption: var(--font-caption);
+  --font-size-button: var(--font-button);
+  
+  /* Shadows - references tokens.css variables */
+  --shadow-subtle: var(--shadow-subtle);
+  --shadow-default: var(--shadow-default);
+  --shadow-elevated: var(--shadow-elevated);
+  --shadow-deep: var(--shadow-deep);
+  --shadow-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.5);
+  
+  /* Background Images (Gradients) - references tokens.css variables */
+  --background-image-gradient-deepspace: var(--gradient-deepspace);
+  --background-image-gradient-deepspace-hover: var(--gradient-deepspace-hover);
+  --background-image-gradient-cyan-purple: var(--gradient-cyan-purple);
+  --background-image-gradient-purple-blue: var(--gradient-purple-blue);
+  --background-image-gradient-pink-purple: var(--gradient-pink-purple);
+  --background-image-gradient-cyan-vibrant: var(--gradient-cyan-vibrant);
+  --background-image-gradient-green-emerald: var(--gradient-green-emerald);
+  --background-image-gradient-blue-cyan: var(--gradient-blue-cyan);
+  --background-image-gradient-blue-teal: var(--gradient-blue-teal);
+  --background-image-gradient-purple-pink: var(--gradient-purple-pink);
+  --background-image-gradient-violet-purple: var(--gradient-violet-purple);
+  --background-image-gradient-pink-violet: var(--gradient-pink-violet);
+  --background-image-gradient-cyan-teal: var(--gradient-cyan-teal);
+  --background-image-gradient-teal-emerald: var(--gradient-teal-emerald);
+  --background-image-gradient-emerald-cyan: var(--gradient-emerald-cyan);
+  --background-image-gradient-yellow-green: var(--gradient-yellow-green);
+  --background-image-gradient-blues: var(--gradient-blues);
+  --background-image-gradient-violet-purple-light: var(--gradient-violet-purple-light);
+  --background-image-gradient-blue-cyan-light: var(--gradient-blue-cyan-light);
+  --background-image-gradient-pink-orange: var(--gradient-pink-orange);
+  --background-image-gradient-green-cyan-blue: var(--gradient-green-cyan-blue);
+  --background-image-gradient-gray: var(--gradient-gray);
+  --background-image-gradient-cosmic: var(--gradient-cosmic);
+  
+  /* Cosmic colors - references tokens.css variables */
+  --color-cosmic-purple-base: oklch(var(--starscape-cosmic-purple-base));
+  --color-cosmic-purple-light: oklch(var(--starscape-cosmic-purple-light));
+  --color-cosmic-pink-base: oklch(var(--starscape-cosmic-pink-base));
+  --color-cosmic-pink-light: oklch(var(--starscape-cosmic-pink-light));
+  --color-cosmic-violet-base: oklch(var(--starscape-cosmic-violet-base));
+  --color-cosmic-violet-light: oklch(var(--starscape-cosmic-violet-light));
+  --color-cosmic-blue-base: oklch(var(--starscape-cosmic-blue-base));
+  --color-cosmic-blue-light: oklch(var(--starscape-cosmic-blue-light));
+  --color-cosmic-cyan-base: oklch(var(--starscape-cosmic-cyan-base));
+  --color-cosmic-cyan-light: oklch(var(--starscape-cosmic-cyan-light));
+  --color-cosmic-teal-base: oklch(var(--starscape-cosmic-teal-base));
+  --color-cosmic-teal-light: oklch(var(--starscape-cosmic-teal-light));
+  --color-cosmic-yellow-base: oklch(var(--starscape-cosmic-yellow-base));
+  --color-cosmic-yellow-light: oklch(var(--starscape-cosmic-yellow-light));
+  --color-cosmic-emerald-base: oklch(var(--starscape-cosmic-emerald-base));
+  --color-cosmic-emerald-light: oklch(var(--starscape-cosmic-emerald-light));
+  --color-cosmic-zinc-light: oklch(var(--starscape-cosmic-zinc-light));
+  --color-cosmic-gray-base: oklch(var(--starscape-cosmic-gray-base));
+  --color-cosmic-gray-light: oklch(var(--starscape-cosmic-gray-light));
+  
+  /* White text color variants - auto-generates text-white-primary, text-white-secondary, etc. */
+  --color-white-primary: oklch(var(--starscape-white-primary));
+  --color-white-secondary: oklch(var(--starscape-white-secondary));
+  --color-white-tertiary: oklch(var(--starscape-white-tertiary));
+  --color-white-disabled: oklch(var(--starscape-white-disabled));
+  
+  /* Z-Index Scale */
+  --z-base: 0;
+  --z-panels: 10;
+  --z-toolbar: 20;
+  --z-header: 30;
+  --z-modal-backdrop: 40;
+  --z-modal: 50;
+  --z-tooltip: 60;
+  --z-notification: 70;
+}
+
+/* Keyframe Animations */
+@keyframes move-stars {
+  from { transform: translate(0, 0); }
+  to { transform: translate(50px, 50px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(168, 192, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(168, 192, 255, 0.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes pulse-star {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+/* Background Gradients */
+@utility bg-gradient-deepspace {
+  background: var(--gradient-deepspace);
+}
+
+@utility bg-gradient-deepspace-hover {
+  background: var(--gradient-deepspace-hover);
+}
+
+@utility bg-gradient-cyan-purple {
+  background: var(--gradient-cyan-purple);
+}
+
+@utility bg-gradient-purple-blue {
+  background: var(--gradient-purple-blue);
+}
+
+@utility bg-gradient-pink-purple {
+  background: var(--gradient-pink-purple);
+}
+
+@utility bg-gradient-cyan-vibrant {
+  background: var(--gradient-cyan-vibrant);
+}
+
+@utility bg-gradient-green-emerald {
+  background: var(--gradient-green-emerald);
+}
+
+@utility bg-gradient-blue-cyan {
+  background: var(--gradient-blue-cyan);
+}
+
+@utility bg-gradient-blue-teal {
+  background: var(--gradient-blue-teal);
+}
+
+@utility bg-gradient-purple-pink {
+  background: var(--gradient-purple-pink);
+}
+
+@utility bg-gradient-violet-purple {
+  background: var(--gradient-violet-purple);
+}
+
+@utility bg-gradient-pink-violet {
+  background: var(--gradient-pink-violet);
+}
+
+@utility bg-gradient-cyan-teal {
+  background: var(--gradient-cyan-teal);
+}
+
+@utility bg-gradient-teal-emerald {
+  background: var(--gradient-teal-emerald);
+}
+
+@utility bg-gradient-emerald-cyan {
+  background: var(--gradient-emerald-cyan);
+}
+
+@utility bg-gradient-yellow-green {
+  background: var(--gradient-yellow-green);
+}
+
+@utility bg-gradient-blues {
+  background: var(--gradient-blues);
+}
+
+@utility bg-gradient-violet-purple-light {
+  background: var(--gradient-violet-purple-light);
+}
+
+@utility bg-gradient-blue-cyan-light {
+  background: var(--gradient-blue-cyan-light);
+}
+
+@utility bg-gradient-pink-orange {
+  background: var(--gradient-pink-orange);
+}
+
+@utility bg-gradient-green-cyan-blue {
+  background: var(--gradient-green-cyan-blue);
+}
+
+@utility bg-gradient-gray {
+  background: var(--gradient-gray);
+}
+
+@utility bg-gradient-cosmic {
+  background: var(--gradient-cosmic);
+}
+
+@utility cosmic-icon-pink {
+  color: oklch(var(--starscape-cosmic-pink-light));
+}
+
+@utility cosmic-icon-violet {
+  color: oklch(var(--starscape-cosmic-violet-light));
+}
+
+@utility cosmic-icon-teal {
+  color: oklch(var(--starscape-cosmic-teal-light));
+}
+
+@utility cosmic-icon-emerald {
+  color: oklch(var(--starscape-cosmic-emerald-light));
+}
+
+@utility cosmic-icon-gray {
+  color: oklch(var(--starscape-cosmic-gray-light));
+}
+
+/* Chromatic Base Background Utilities */
+@utility bg-chromatic-purple {
+  background: oklch(var(--starscape-cosmic-purple-base));
+}
+
+@utility bg-chromatic-pink {
+  background: oklch(var(--starscape-cosmic-pink-base));
+}
+
+@utility bg-chromatic-violet {
+  background: oklch(var(--starscape-cosmic-violet-base));
+}
+
+@utility bg-chromatic-blue {
+  background: oklch(var(--starscape-cosmic-blue-base));
+}
+
+@utility bg-chromatic-cyan {
+  background: oklch(var(--starscape-cosmic-cyan-base));
+}
+
+@utility bg-chromatic-teal {
+  background: oklch(var(--starscape-cosmic-teal-base));
+}
+
+@utility bg-chromatic-yellow {
+  background: oklch(var(--starscape-cosmic-yellow-base));
+}
+
+@utility bg-chromatic-emerald {
+  background: oklch(var(--starscape-cosmic-emerald-base));
+}
+
+/* Glass Morphism */
+@utility glass-white {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@utility glass-dark {
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+@utility glass-light {
+  background: rgba(249, 249, 249, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Cosmic Glass Morphism (from ssd-alpha) */
+@utility cosmic-glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@utility cosmic-glass-hover {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+
+.cosmic-glass-hover:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@utility cosmic-glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .cosmic-glass-card {
+    border-radius: 1rem;
+  }
+}
+
+@utility cosmic-backdrop {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Gradient Text */
+@utility gradient-text {
+  background: linear-gradient(135deg, #fff 0%, #a8c0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility gradient-text-cyan {
+  background: linear-gradient(135deg, #00c4ff, #00ffff, #00aaff, #00e0ff, #00c4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Starscape Color Utilities */
+@utility bg-dark-navy {
+  background-color: oklch(var(--starscape-dark-navy));
+}
+
+@utility bg-mid-navy {
+  background-color: oklch(var(--starscape-mid-navy));
+}
+
+@utility bg-deep-blue {
+  background-color: oklch(var(--secondary));  /* Uses secondary theme color */
+}
+
+@utility text-light-blue {
+  color: oklch(var(--primary));  /* Uses primary theme color */
+}
+
+@utility border-light-blue {
+  border-color: oklch(var(--primary));  /* Uses primary theme color */
+}
+
+@utility border-blue-light {
+  border-color: oklch(var(--starscape-border-blue));
+}
+
+/* Shadow Utilities */
+@utility shadow-subtle {
+  box-shadow: var(--shadow-subtle);
+}
+
+@utility shadow-default {
+  box-shadow: var(--shadow-default);
+}
+
+@utility shadow-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+
+@utility shadow-deep {
+  box-shadow: var(--shadow-deep);
+}
+
+@utility shadow-glow-cyan {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+}
+
+/* Spacing Utilities */
+@utility p-xs { padding: var(--spacing-xs); }
+@utility p-sm { padding: var(--spacing-sm); }
+@utility p-md { padding: var(--spacing-md); }
+@utility p-lg { padding: var(--spacing-lg); }
+@utility p-xl { padding: var(--spacing-xl); }
+
+@utility px-xs {
+  padding-left: var(--spacing-xs);
+  padding-right: var(--spacing-xs);
+}
+
+@utility px-sm {
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+}
+
+@utility py-xs {
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+}
+
+@utility py-sm {
+  padding-top: var(--spacing-sm);
+  padding-bottom: var(--spacing-sm);
+}
+
+@utility pt-md {
+  padding-top: var(--spacing-md);
+}
+
+@utility pb-md {
+  padding-bottom: var(--spacing-md);
+}
+
+@utility mb-xs {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Border Radius Utilities */
+@utility rounded-xs {
+  border-radius: 0.25rem;
+}
+
+@utility rounded-xl {
+  border-radius: var(--radius-xl);
+}
+
+/* Typography Utilities */
+@utility text-hero {
+  font-size: var(--font-hero);
+  line-height: var(--font-hero);
+  font-weight: 700;
+}
+
+@utility text-h1 {
+  font-size: var(--font-h1);
+  line-height: 3.3rem;
+  font-weight: 700;
+}
+
+@utility text-h2 {
+  font-size: var(--font-h2);
+  line-height: 2.7rem;
+  font-weight: 600;
+}
+
+@utility text-h3 {
+  font-size: var(--font-h3);
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+@utility text-body {
+  font-size: var(--font-body);
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+@utility text-body-large {
+  font-size: var(--font-body-large);
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+@utility text-body-small {
+  font-size: var(--font-body-small);
+  line-height: 1.3125rem;
+  font-weight: 400;
+}
+
+@utility text-caption {
+  font-size: var(--font-caption);
+  line-height: 1.05rem;
+  font-weight: 400;
+}
+
+@utility text-button {
+  font-size: var(--font-button);
+  line-height: var(--font-button);
+  font-weight: 600;
+}
+
+/* Z-Index Utilities */
+@utility z-header {
+  z-index: 30;
+}
+
+@utility z-tooltip {
+  z-index: 60;
+}
+
+@utility z-modal-backdrop {
+  z-index: 40;
+}
+
+/* Deepspace Background Utility */
+@utility deepspace-bg {
+  background: var(--gradient-deepspace);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Icon Color Utilities (from ssd-alpha) */
+@utility cosmic-icon-purple {
+  color: oklch(var(--starscape-cosmic-purple-light));
+}
+
+@utility cosmic-icon-blue {
+  color: oklch(var(--starscape-cosmic-blue-light));
+}
+
+@utility cosmic-icon-yellow {
+  color: oklch(var(--starscape-cosmic-yellow-light));
+}
+
+@utility cosmic-icon-cyan {
+  color: oklch(var(--starscape-cosmic-cyan-light));
+}
+
+@utility cosmic-icon-muted {
+  color: oklch(var(--starscape-cosmic-zinc-light));
+}
+
+/* Starscape Star Logo Animation */
+@utility pulse-star {
+  animation: pulse-star 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+}
+
+/* Companion pseudo-element for cosmic background starfield */
+.cosmic-bg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: move-stars 30s linear infinite;
+  pointer-events: none;
+}

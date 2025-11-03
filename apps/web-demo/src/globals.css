@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "./styles/tokens.css";
-@import "@starscape/tailwind-preset/src/web.css";
+@import "./styles/tailwind-preset.css";
 
 @plugin "tailwindcss-animate";
 
