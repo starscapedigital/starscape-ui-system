@@ -4,7 +4,7 @@
  * CSS-first configuration using @theme directive
  * Extends Tailwind CSS v4 with Starscape design tokens
  * 
- * NOTE: This preset expects @starscape/tokens/css to be imported first
+ * NOTE: This preset expects @starscapedigital/tokens/css to be imported first
  * to provide CSS variables that are referenced here.
 
  * You don't need to update tailwind-preset/src/web.css when:
@@ -21,7 +21,7 @@
 @import "tailwindcss";
 
 /* Starscape Design Tokens - Theme Configuration */
-/* These reference CSS variables from @starscape/tokens/css */
+/* These reference CSS variables from @starscapedigital/tokens/css */
 /* Using @theme inline ensures utilities resolve to actual values, not nested CSS variables */
 @theme inline {
   /* Colors - shadcn-compatible (OKLCH format) */

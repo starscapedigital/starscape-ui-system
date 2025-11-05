@@ -1,5 +1,5 @@
 {
-  "name": "@starscape/ui-registry-web",
+  "name": "@starscapedigital/ui-registry-web",
   "version": "1.0.0",
   "description": "Web component templates for Starscape UI system",
   "main": "./registry/registry.json",

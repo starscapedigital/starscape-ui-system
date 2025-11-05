@@ -74,14 +74,14 @@ Updated all packages to use Tailwind CSS 4.1 with CSS-first configuration:
 ```javascript
 // tailwind.config.js
 export default {
-  presets: [require('@starscape/tailwind-preset')],
+  presets: [require('@starscapedigital/tailwind-preset')],
 }
 ```
 
 **After (Tailwind 4.1 CSS-first):**
 ```css
 @import "tailwindcss";
-@import "@starscape/tailwind-preset/web.css";
+@import "@starscapedigital/tailwind-preset/web.css";
 ```
 
 ### Features
@@ -177,7 +177,7 @@ npm run build
 Since `tailwind-preset` is CSS-first, no build step is needed. The CSS file is imported directly via:
 
 ```css
-@import "@starscape/tailwind-preset/web.css";
+@import "@starscapedigital/tailwind-preset/web.css";
 ```
 
 The preset is ready to use. All utilities from the StarscapeStudio electron app have been integrated into the Tailwind 4.1 CSS-first preset.
@@ -220,7 +220,7 @@ Updated the preset to reference tokens.css variables instead of duplicating valu
 
 1. Updated `packages/tailwind-preset/src/web.css`:
    - Removed hardcoded values
-   - Now references CSS variables from `@starscape/tokens/css` using `var()`
+   - Now references CSS variables from `@starscapedigital/tokens/css` using `var()`
    - Makes `tokens.css` the single source of truth
 
 2. `packages/tokens/src/gradients.ts`:
@@ -267,8 +267,8 @@ Make sure tokens are built first, then import order matters:
 
 ```css
 @import "tailwindcss";
-@import "@starscape/tokens/css";  /* Must be first */
-@import "@starscape/tailwind-preset/web.css";  /* References tokens.css variables */
+@import "@starscapedigital/tokens/css";  /* Must be first */
+@import "@starscapedigital/tailwind-preset/web.css";  /* References tokens.css variables */
 ```
 
 The preset now references tokens.css variables, keeping everything in sync. Update values in `packages/tokens/src/*.ts` and rebuild tokens; the preset will pick them up automatically.

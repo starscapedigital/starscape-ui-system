@@ -49,18 +49,39 @@ async function init() {
     
     // Copy tokens.css to project
     spinner.text = 'Copying tokens CSS...'
-    const tokensCssPath = path.join(__dirname, '../../packages/tokens/dist/tokens.css')
+    let tokensCssPath: string | null = null
     const targetCssPath = path.join(cwd, 'src/styles/tokens.css')
     
-    if (fs.existsSync(tokensCssPath)) {
+    // Try to find tokens.css from installed package
+    try {
+      // First try: look for installed @starscapedigital/tokens package
+      const tokensPackagePath = path.join(cwd, 'node_modules/@starscapedigital/tokens/dist/tokens.css')
+      if (fs.existsSync(tokensPackagePath)) {
+        tokensCssPath = tokensPackagePath
+      } else {
+        // Fallback: try relative path (for monorepo development)
+        const relativePath = path.join(__dirname, '../../packages/tokens/dist/tokens.css')
+        if (fs.existsSync(relativePath)) {
+          tokensCssPath = relativePath
+        }
+      }
+    } catch (e) {
+      // Ignore errors, try fallback
+    }
+    
+    let tokensCopied = false
+    if (tokensCssPath && fs.existsSync(tokensCssPath)) {
       const targetDir = path.dirname(targetCssPath)
       if (!fs.existsSync(targetDir)) {
         fs.mkdirSync(targetDir, { recursive: true })
       }
       fs.copyFileSync(tokensCssPath, targetCssPath)
+      tokensCopied = true
     } else {
-      spinner.warn('tokens.css not found in registry')
-      console.log(chalk.yellow('⚠ Note: You may need to build @starscape/tokens first'))
+      spinner.warn('tokens.css not found')
+      console.log(chalk.yellow('⚠ Note: Install @starscapedigital/tokens first:'))
+      console.log(chalk.yellow('   npm install @starscapedigital/tokens'))
+      console.log(chalk.yellow('   Then run starscape-ui init again'))
     }
     
     // Set up globals.css if it doesn't exist
@@ -69,7 +90,7 @@ async function init() {
       spinner.text = 'Creating globals.css...'
       const globalsCssContent = `@import "tailwindcss";
 @import "./styles/tokens.css";
-@import "@starscape/tailwind-preset/src/web.css";
+@import "@starscapedigital/tailwind-preset/src/web.css";
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
@@ -98,7 +119,9 @@ async function init() {
     spinner.succeed('Initialized Starscape UI')
     console.log(chalk.green('✅ Created components.json'))
     console.log(chalk.green('✅ Set up globals.css'))
-    console.log(chalk.green('✅ Copied tokens.css'))
+    if (tokensCopied) {
+      console.log(chalk.green('✅ Copied tokens.css'))
+    }
     console.log(chalk.dim('\nNext steps:'))
     console.log(chalk.dim('  1. Install dependencies: npm install @radix-ui/react-slot class-variance-authority clsx tailwind-merge'))
     console.log(chalk.dim('  2. Run: starscape-ui add <component>'))

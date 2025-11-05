@@ -1,6 +1,6 @@
 @import "{importPath}";
 @import "./styles/tokens.css";
-@import "@starscape/tailwind-preset/src/web.css";
+@import "@starscapedigital/tailwind-preset/src/web.css";
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));

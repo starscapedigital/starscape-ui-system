@@ -1,5 +1,5 @@
 {
-  "name": "@starscape/tailwind-preset",
+  "name": "@starscapedigital/tailwind-preset",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -28,6 +28,10 @@
   ],
   "author": "Starscape",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/starscapedigital/starscape-ui-system.git"
+  },
   "peerDependencies": {
     "tailwindcss": "^4.1.0"
   }

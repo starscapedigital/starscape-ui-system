@@ -13,7 +13,7 @@ async function list() {
     const registryJsonPath = path.join(registryPath, 'registry.json')
     
     if (!fs.existsSync(registryJsonPath)) {
-      console.error(chalk.red('Registry not found. Make sure @starscape/ui-registry-web is installed.'))
+      console.error(chalk.red('Registry not found. Make sure @starscapedigital/ui-registry-web is installed.'))
       console.error(chalk.dim(`Looking for: ${registryJsonPath}`))
       process.exit(1)
     }

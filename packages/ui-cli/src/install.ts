@@ -27,7 +27,7 @@ async function install(componentName: string, options: { all?: boolean }) {
     
     if (!fs.existsSync(registryJsonPath)) {
       spinner.fail('Registry not found')
-      console.error(chalk.red('Registry files not found. Make sure @starscape/ui-registry-web is installed.'))
+      console.error(chalk.red('Registry files not found. Make sure @starscapedigital/ui-registry-web is installed.'))
       console.error(chalk.dim(`Looking for: ${registryJsonPath}`))
       process.exit(1)
     }
