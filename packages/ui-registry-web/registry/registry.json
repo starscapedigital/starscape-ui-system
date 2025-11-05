@@ -170,6 +170,54 @@
       "type": "components:ui",
       "files": ["components/slider.tsx"],
       "dependencies": ["@radix-ui/react-slider"]
+    },
+    {
+      "name": "toggle",
+      "type": "components:ui",
+      "files": ["components/toggle.tsx"],
+      "dependencies": ["@radix-ui/react-toggle", "class-variance-authority"]
+    },
+    {
+      "name": "toggle-group",
+      "type": "components:ui",
+      "files": ["components/toggle-group.tsx"],
+      "dependencies": ["@radix-ui/react-toggle-group", "class-variance-authority"]
+    },
+    {
+      "name": "menubar",
+      "type": "components:ui",
+      "files": ["components/menubar.tsx"],
+      "dependencies": ["@radix-ui/react-menubar", "lucide-react"]
+    },
+    {
+      "name": "sheet",
+      "type": "components:ui",
+      "files": ["components/sheet.tsx"],
+      "dependencies": ["@radix-ui/react-dialog", "class-variance-authority", "lucide-react"]
+    },
+    {
+      "name": "popover",
+      "type": "components:ui",
+      "files": ["components/popover.tsx"],
+      "dependencies": ["@radix-ui/react-popover"]
+    },
+    {
+      "name": "hover-card",
+      "type": "components:ui",
+      "files": ["components/hover-card.tsx"],
+      "dependencies": ["@radix-ui/react-hover-card"]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "components:ui",
+      "files": ["components/navigation-menu.tsx"],
+      "dependencies": ["@radix-ui/react-navigation-menu", "class-variance-authority", "lucide-react"]
+    },
+    {
+      "name": "spinner",
+      "type": "components:ui",
+      "files": ["components/spinner.tsx"],
+      "dependencies": ["class-variance-authority"]
     }
   ]
 }

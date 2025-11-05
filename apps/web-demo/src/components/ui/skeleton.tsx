@@ -1,8 +1,10 @@
 import { cva } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
-type GradientColorScheme = 
+export type GradientColorScheme = 
   | 'chic'
+  | 'deepspace'
+  | 'deepspace-hover'
   | 'purple-pink'
   | 'violet-purple'
   | 'pink-violet'
@@ -13,6 +15,7 @@ type GradientColorScheme =
   | 'yellow-green'
   | 'blues'
   | 'cosmic'
+  | 'green-cyan-blue'
 
 const skeletonVariants = cva(
   "animate-pulse rounded-md",
@@ -20,6 +23,8 @@ const skeletonVariants = cva(
     variants: {
       colorScheme: {
         chic: "bg-mid-navy/50",
+        deepspace: "bg-gradient-deepspace",
+        'deepspace-hover': "bg-gradient-deepspace-hover",
         'purple-pink': "bg-purple-900/30",
         'violet-purple': "bg-violet-900/30",
         'pink-violet': "bg-pink-900/30",
@@ -29,7 +34,8 @@ const skeletonVariants = cva(
         'emerald-cyan': "bg-emerald-900/30",
         'yellow-green': "bg-yellow-900/30",
         'blues': "bg-blue-900/30",
-        'cosmic': "bg-purple-900/30",
+        'cosmic': "bg-gradient-cosmic",
+        'green-cyan-blue': "bg-gradient-green-cyan-blue",
       },
     },
     defaultVariants: {

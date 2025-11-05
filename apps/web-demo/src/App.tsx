@@ -12,7 +12,7 @@ import Hero from './components/Hero'
 import ExpandableUISystem from './components/ExpandableUISystem'
 import Footer from './components/Footer'
 import GlassMorphismPlayground from './components/GlassMorphismPlayground'
-import { Sparkles, Star, SunDim, Zap, Heart, Wand2, Waves, Leaf, Circle, Info, AlertCircle } from 'lucide-react'
+import { Sparkles, Star, SunDim, Zap, Heart, Wand2, Waves, Leaf, Circle, Info, AlertCircle, Bold, Italic, Underline, Bookmark } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './components/ui/table'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './components/ui/tooltip'
@@ -29,6 +29,14 @@ import { Label } from './components/ui/label'
 import { RadioGroup, RadioGroupItem } from './components/ui/radio-group'
 import { Separator } from './components/ui/separator'
 import { Slider } from './components/ui/slider'
+import { Toggle } from './components/ui/toggle'
+import { ToggleGroup, ToggleGroupItem } from './components/ui/toggle-group'
+import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarItem, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from './components/ui/menubar'
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from './components/ui/sheet'
+import { Popover, PopoverContent, PopoverTrigger } from './components/ui/popover'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from './components/ui/hover-card'
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from './components/ui/navigation-menu'
+import { Spinner } from './components/ui/spinner'
 
 // # Install components
 // starscape-ui add animated-star
@@ -496,6 +504,99 @@ function App() {
                       <Divider variant="cosmic" size="md" />
                       <span className="text-caption text-white-tertiary">Cosmic</span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Separator Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Separators</CardTitle>
+              <CardDescription>Horizontal gradient separators similar to dividers</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-8">
+                {/* Horizontal Gradient Separators */}
+                <div>
+                  <h4 className="text-h3 text-white-primary mb-4">Horizontal Separators</h4>
+                  <div className="space-y-6">
+                    <div className="space-y-2">
+                      <p className="text-caption text-white-tertiary">Thin (1px)</p>
+                      <Separator className="h-px" />
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-caption text-white-tertiary">Default (2px)</p>
+                      <Separator />
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-caption text-white-tertiary">Medium (4px)</p>
+                      <Separator className="h-1" />
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-caption text-white-tertiary">Thick (6px)</p>
+                      <Separator className="h-1.5" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* All Gradient Variants */}
+                <div>
+                  <h4 className="text-h3 text-white-primary mb-4">All Variants</h4>
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <span className="text-caption text-white-tertiary">Purple-Pink</span>
+                      <Separator variant="purple-pink" />
+                    </div>
+                    <div className="space-y-2">
+                      <span className="text-caption text-white-tertiary">Violet-Purple</span>
+                      <Separator variant="violet-purple" />
+                    </div>
+                    <div className="space-y-2">
+                      <span className="text-caption text-white-tertiary">Pink-Violet</span>
+                      <Separator variant="pink-violet" />
+                    </div>
+                    <div className="space-y-2">
+                      <span className="text-caption text-white-tertiary">Blue-Cyan</span>
+                      <Separator variant="blue-cyan" />
+                    </div>
+                    <div className="space-y-2">
+                      <span className="text-caption text-white-tertiary">Cyan-Teal</span>
+                      <Separator variant="cyan-teal" />
+                    </div>
+                    <div className="space-y-2">
+                      <span className="text-caption text-white-tertiary">Teal-Emerald</span>
+                      <Separator variant="teal-emerald" />
+                    </div>
+                    <div className="space-y-2">
+                      <span className="text-caption text-white-tertiary">Emerald-Cyan</span>
+                      <Separator variant="emerald-cyan" />
+                    </div>
+                    <div className="space-y-2">
+                      <span className="text-caption text-white-tertiary">Yellow-Green</span>
+                      <Separator variant="yellow-green" />
+                    </div>
+                    <div className="space-y-2">
+                      <span className="text-caption text-white-tertiary">Blues</span>
+                      <Separator variant="blues" />
+                    </div>
+                    <div className="space-y-2">
+                      <span className="text-caption text-white-tertiary">Cosmic</span>
+                      <Separator variant="cosmic" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vertical Usage Example */}
+                <div>
+                  <h4 className="text-h3 text-white-primary mb-4">Vertical Separator Usage</h4>
+                  <div className="flex h-12 items-center justify-center space-x-4">
+                    <span className="text-body text-white-secondary">Item 1</span>
+                    <Separator variant="cosmic" orientation="vertical" className="h-8" />
+                    <span className="text-body text-white-secondary">Item 2</span>
+                    <Separator variant="purple-pink" orientation="vertical" className="h-8" />
+                    <span className="text-body text-white-secondary">Item 3</span>
                   </div>
                 </div>
               </div>
@@ -1046,28 +1147,24 @@ function App() {
               <div>
                 <h4 className="text-body-large text-white-primary mb-3">Chic Color Scheme</h4>
                 <div className="space-y-4">
-                  <Skeleton colorScheme="chic" className="h-4 w-full" />
-                  <Skeleton colorScheme="chic" className="h-4 w-5/6" />
-                  <Skeleton colorScheme="chic" className="h-4 w-4/6" />
-                  <Skeleton colorScheme="chic" className="h-20 w-full rounded-md" />
+                  <Skeleton colorScheme="deepspace-hover" className="h-4 w-full" />
+                  <Skeleton colorScheme="deepspace-hover" className="h-4 w-5/6" />
+                  <Skeleton colorScheme="deepspace-hover" className="h-4 w-4/6" />
+                  <Skeleton colorScheme="deepspace-hover" className="h-20 w-full rounded-md" />
                 </div>
               </div>
               <div>
                 <h4 className="text-body-large text-white-primary mb-3">Gradient Variants</h4>
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <p className="text-caption text-white-tertiary mb-2">Purple-Pink</p>
-                    <Skeleton colorScheme="purple-pink" className="h-4 w-full" />
-                    <Skeleton colorScheme="purple-pink" className="h-4 w-5/6" />
+                    <p className="text-caption text-white-tertiary mb-2">Cosmic</p>
+                    <Skeleton colorScheme="cosmic" className="h-4 w-full" />
+                    <Skeleton colorScheme="cosmic" className="h-4 w-5/6" />
                   </div>
                   <div className="space-y-2">
-                    <p className="text-caption text-white-tertiary mb-2">Blue-Cyan</p>
-                    <Skeleton colorScheme="blue-cyan" className="h-4 w-full" />
-                    <Skeleton colorScheme="blue-cyan" className="h-4 w-5/6" />
-                  </div>
-                  <div>
-                    <p className="text-caption text-white-tertiary mb-2">Cosmic</p>
-                    <Skeleton colorScheme="cosmic" className="h-20 w-full rounded-md" />
+                    <p className="text-caption text-white-tertiary mb-2">Green-Cyan-Blue</p>
+                    <Skeleton colorScheme="green-cyan-blue" className="h-4 w-full" />
+                    <Skeleton colorScheme="green-cyan-blue" className="h-4 w-5/6" />
                   </div>
                 </div>
               </div>
@@ -1244,34 +1341,6 @@ function App() {
             </CardContent>
           </Card>
 
-          {/* Separator Section */}
-          <Card variant="dark-glass">
-            <CardHeader>
-              <CardTitle>Separator</CardTitle>
-              <CardDescription>Horizontal and vertical dividers</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <h4 className="text-sm font-medium text-white-primary">Horizontal</h4>
-                <div className="space-y-1">
-                  <p className="text-sm text-white-secondary">Content above</p>
-                  <Separator />
-                  <p className="text-sm text-white-secondary">Content below</p>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <h4 className="text-sm font-medium text-white-primary">Vertical</h4>
-                <div className="flex h-5 items-center space-x-4">
-                  <span className="text-sm text-white-secondary">Item 1</span>
-                  <Separator orientation="vertical" />
-                  <span className="text-sm text-white-secondary">Item 2</span>
-                  <Separator orientation="vertical" />
-                  <span className="text-sm text-white-secondary">Item 3</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
           {/* Slider Section */}
           <Card variant="dark-glass">
             <CardHeader>
@@ -1290,6 +1359,483 @@ function App() {
               <div className="space-y-2">
                 <Label htmlFor="range-slider">Range</Label>
                 <Slider id="range-slider" defaultValue={[25, 75]} max={100} step={1} />
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Toggle Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Toggle</CardTitle>
+              <CardDescription>Toggle buttons for state control</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Single Toggles</h4>
+                  <div className="flex flex-wrap gap-4">
+                    <Toggle aria-label="Toggle bold" className="text-white">
+                      <Bold className="h-4 w-4" />
+                    </Toggle>
+                    <Toggle variant="outline" aria-label="Toggle italic" className="text-white">
+                      <Italic className="h-4 w-4" />
+                    </Toggle>
+                    <Toggle variant="cosmic" aria-label="Toggle underline" className="text-white">
+                      <Underline className="h-4 w-4" />
+                    </Toggle>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Toggle Group</h4>
+                  <ToggleGroup type="single" defaultValue="star" variant="outline">
+                    <ToggleGroupItem value="star" aria-label="Star" className="gap-2 text-white">
+                      <Star className="h-4 w-4" />
+                      <span>Star</span>
+                    </ToggleGroupItem>
+                    <ToggleGroupItem value="heart" aria-label="Heart" className="gap-2 text-white">
+                      <Heart className="h-4 w-4" />
+                      <span>Heart</span>
+                    </ToggleGroupItem>
+                    <ToggleGroupItem value="bookmark" aria-label="Bookmark" className="gap-2 text-white">
+                      <Bookmark className="h-4 w-4" />
+                      <span>Bookmark</span>
+                    </ToggleGroupItem>
+                  </ToggleGroup>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Menubar Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Menubar</CardTitle>
+              <CardDescription>Application menu bar</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Menubar>
+                <MenubarMenu>
+                  <MenubarTrigger>File</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem>
+                      New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      New Window <MenubarShortcut>⌘N</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem disabled>New Incognito Window</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarSub>
+                      <MenubarSubTrigger>Share</MenubarSubTrigger>
+                      <MenubarSubContent>
+                        <MenubarItem>Email link</MenubarItem>
+                        <MenubarItem>Messages</MenubarItem>
+                        <MenubarItem>Notes</MenubarItem>
+                      </MenubarSubContent>
+                    </MenubarSub>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      Print... <MenubarShortcut>⌘P</MenubarShortcut>
+                    </MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                  <MenubarTrigger>Edit</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem>
+                      Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarSub>
+                      <MenubarSubTrigger>Find</MenubarSubTrigger>
+                      <MenubarSubContent>
+                        <MenubarItem>Search the web</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>Find...</MenubarItem>
+                        <MenubarItem>Find Next</MenubarItem>
+                        <MenubarItem>Find Previous</MenubarItem>
+                      </MenubarSubContent>
+                    </MenubarSub>
+                    <MenubarSeparator />
+                    <MenubarItem>Cut</MenubarItem>
+                    <MenubarItem>Copy</MenubarItem>
+                    <MenubarItem>Paste</MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                  <MenubarTrigger>View</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
+                    <MenubarCheckboxItem checked>
+                      Always Show Full URLs
+                    </MenubarCheckboxItem>
+                    <MenubarSeparator />
+                    <MenubarItem inset>
+                      Reload <MenubarShortcut>⌘R</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem disabled inset>
+                      Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem inset>Hide Sidebar</MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                  <MenubarTrigger>Profiles</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarRadioGroup value="pedro">
+                      <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
+                      <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
+                      <MenubarRadioItem value="luis">Luis</MenubarRadioItem>
+                      <MenubarRadioItem value="pedro">Pedro</MenubarRadioItem>
+                    </MenubarRadioGroup>
+                    <MenubarSeparator />
+                    <MenubarItem inset>Edit...</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem inset>Add Profile...</MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+              </Menubar>
+            </CardContent>
+          </Card>
+
+          {/* Sheet Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Sheet</CardTitle>
+              <CardDescription>Side panel dialogs</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex flex-wrap gap-4">
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <Button variant="outline">Open Sheet</Button>
+                  </SheetTrigger>
+                  <SheetContent>
+                    <SheetHeader>
+                      <SheetTitle>Edit profile</SheetTitle>
+                      <SheetDescription>
+                        Make changes to your profile here. Click save when you're done.
+                      </SheetDescription>
+                    </SheetHeader>
+                    <div className="grid gap-4 py-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="name">Name</Label>
+                        <Input id="name" placeholder="Pedro Duarte" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="username">Username</Label>
+                        <Input id="username" placeholder="@peduarte" />
+                      </div>
+                    </div>
+                    <SheetFooter>
+                      <SheetClose asChild>
+                        <Button type="submit">Save changes</Button>
+                      </SheetClose>
+                    </SheetFooter>
+                  </SheetContent>
+                </Sheet>
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <Button variant="cosmic">Left Side Sheet</Button>
+                  </SheetTrigger>
+                  <SheetContent side="left">
+                    <SheetHeader>
+                      <SheetTitle>Left Panel</SheetTitle>
+                      <SheetDescription>
+                        This sheet opens from the left side.
+                      </SheetDescription>
+                    </SheetHeader>
+                  </SheetContent>
+                </Sheet>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Popover Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Popover</CardTitle>
+              <CardDescription>Display content in a floating panel</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex flex-wrap gap-4">
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button variant="outline">Open popover</Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-80">
+                    <div className="space-y-2">
+                      <h4 className="font-medium leading-none text-white-primary">Dimensions</h4>
+                      <p className="text-sm text-white-secondary">
+                        Set the dimensions for the layer.
+                      </p>
+                    </div>
+                    <div className="grid gap-2 mt-4">
+                      <div className="grid grid-cols-3 items-center gap-4">
+                        <Label htmlFor="width">Width</Label>
+                        <Input
+                          id="width"
+                          defaultValue="100%"
+                          className="col-span-2 h-8"
+                        />
+                      </div>
+                      <div className="grid grid-cols-3 items-center gap-4">
+                        <Label htmlFor="maxWidth">Max. width</Label>
+                        <Input
+                          id="maxWidth"
+                          defaultValue="300px"
+                          className="col-span-2 h-8"
+                        />
+                      </div>
+                      <div className="grid grid-cols-3 items-center gap-4">
+                        <Label htmlFor="height">Height</Label>
+                        <Input
+                          id="height"
+                          defaultValue="25px"
+                          className="col-span-2 h-8"
+                        />
+                      </div>
+                      <div className="grid grid-cols-3 items-center gap-4">
+                        <Label htmlFor="maxHeight">Max. height</Label>
+                        <Input
+                          id="maxHeight"
+                          defaultValue="none"
+                          className="col-span-2 h-8"
+                        />
+                      </div>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Hover Card Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Hover Card</CardTitle>
+              <CardDescription>Display information on hover</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex gap-4">
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <Button variant="link">@nextjs</Button>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-80">
+                    <div className="flex justify-between space-x-4">
+                      <Avatar variant="blueCyan" size="md">
+                        <span className="text-white-primary text-xl">N</span>
+                      </Avatar>
+                      <div className="space-y-1">
+                        <h4 className="text-sm font-semibold text-white-primary">@nextjs</h4>
+                        <p className="text-sm text-white-secondary">
+                          The React Framework – created and maintained by @vercel.
+                        </p>
+                        <div className="flex items-center pt-2">
+                          <span className="text-xs text-white-tertiary">
+                            Joined December 2021
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </HoverCardContent>
+                </HoverCard>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Navigation Menu Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Navigation Menu</CardTitle>
+              <CardDescription>Accessible navigation with dropdown menus</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                        <li className="row-span-3">
+                          <NavigationMenuLink asChild>
+                            <a
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-purple-500/50 to-pink-500/50 p-6 no-underline outline-none focus:shadow-md"
+                              href="/"
+                            >
+                              <Sparkles className="h-6 w-6" />
+                              <div className="mb-2 mt-4 text-lg font-medium text-white-primary">
+                                shadcn/ui
+                              </div>
+                              <p className="text-sm leading-tight text-white-secondary">
+                                Beautifully designed components built with Radix UI and
+                                Tailwind CSS.
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                        <li>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-light-blue/20 hover:text-light-blue focus:bg-light-blue/20 focus:text-light-blue"
+                              href="/docs"
+                            >
+                              <div className="text-sm font-medium leading-none text-white-primary">Introduction</div>
+                              <p className="line-clamp-2 text-sm leading-snug text-white-secondary">
+                                Re-usable components built using Radix UI and Tailwind CSS.
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                        <li>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-light-blue/20 hover:text-light-blue focus:bg-light-blue/20 focus:text-light-blue"
+                              href="/docs/installation"
+                            >
+                              <div className="text-sm font-medium leading-none text-white-primary">Installation</div>
+                              <p className="line-clamp-2 text-sm leading-snug text-white-secondary">
+                                How to install dependencies and structure your app.
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                        <li>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-light-blue/20 hover:text-light-blue focus:bg-light-blue/20 focus:text-light-blue"
+                              href="/docs/primitives/typography"
+                            >
+                              <div className="text-sm font-medium leading-none text-white-primary">Typography</div>
+                              <p className="line-clamp-2 text-sm leading-snug text-white-secondary">
+                                Styles for headings, paragraphs, lists...etc
+                              </p>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        {[
+                          {
+                            title: "Alert Dialog",
+                            description: "A modal dialog that interrupts the user with important content.",
+                          },
+                          {
+                            title: "Hover Card",
+                            description: "For sighted users to preview content available behind a link.",
+                          },
+                          {
+                            title: "Progress",
+                            description:
+                              "Displays an indicator showing the completion progress of a task.",
+                          },
+                          {
+                            title: "Scroll-area",
+                            description: "Visually or semantically separates content.",
+                          },
+                          {
+                            title: "Tabs",
+                            description:
+                              "A set of layered sections of content—known as tab panels.",
+                          },
+                          {
+                            title: "Tooltip",
+                            description:
+                              "A popup that displays information related to an element.",
+                          },
+                        ].map((component) => (
+                          <li key={component.title}>
+                            <NavigationMenuLink asChild>
+                              <a
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-light-blue/20 hover:text-light-blue focus:bg-light-blue/20 focus:text-light-blue"
+                                href={`/docs/primitives/${component.title.toLowerCase().replace(' ', '-')}`}
+                              >
+                                <div className="text-sm font-medium leading-none text-white-primary">
+                                  {component.title}
+                                </div>
+                                <p className="line-clamp-2 text-sm leading-snug text-white-secondary">
+                                  {component.description}
+                                </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink
+                      href="/docs"
+                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-light-blue/20 hover:text-light-blue focus:bg-light-blue/20 focus:text-light-blue focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-white-secondary"
+                    >
+                      Documentation
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </CardContent>
+          </Card>
+
+          {/* Spinner Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Spinner</CardTitle>
+              <CardDescription>Loading spinners</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Sizes</h4>
+                <div className="flex items-center gap-6">
+                  <div className="flex flex-col items-center gap-2">
+                    <Spinner size="sm" />
+                    <span className="text-caption text-white-tertiary">Small</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <Spinner size="md" />
+                    <span className="text-caption text-white-tertiary">Medium</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <Spinner size="lg" />
+                    <span className="text-caption text-white-tertiary">Large</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <Spinner size="xl" />
+                    <span className="text-caption text-white-tertiary">Extra Large</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Variants</h4>
+                <div className="flex items-center gap-6">
+                  <div className="flex flex-col items-center gap-2">
+                    <Spinner variant="default" />
+                    <span className="text-caption text-white-tertiary">Default</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <Spinner variant="primary" />
+                    <span className="text-caption text-white-tertiary">Primary</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <Spinner variant="secondary" />
+                    <span className="text-caption text-white-tertiary">Secondary</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <Spinner variant="cosmic" />
+                    <span className="text-caption text-white-tertiary">Cosmic</span>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
