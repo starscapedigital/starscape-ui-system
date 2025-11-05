@@ -1507,42 +1507,41 @@ These belong in the `@starscape/ui-native` package or component templates, not i
 The following shadcn/ui components have not yet been themed/extended with Starscape styling. These should be added to the registry as the system is built out:
 
 ### Form Components
-- ⚠️ **Accordion** - Expandable content sections
-- ⚠️ **Alert** - Alert dialogs and notifications
-- ⚠️ **Alert Dialog** - Modal confirmation dialogs
+- ✅ **Accordion** - Expandable content sections
+- ✅ **Alert** - Alert dialogs and notifications
+- ✅ **Alert Dialog** - Modal confirmation dialogs
 - ⚠️ **Aspect Ratio** - Maintain aspect ratios
 - ✅ **Avatar** - User profile images
 - ✅ **Badge** - Status indicators and labels
 - ⚠️ **Breadcrumb** - Navigation breadcrumbs
 - ⚠️ **Calendar** - Date picker calendar
-- ⚠️ **Checkbox** - Form checkbox inputs
+- ✅ **Checkbox** - Form checkbox inputs
 - ⚠️ **Collapsible** - Show/hide content
 - ⚠️ **Command** - Command palette/search
-- ⚠️ **Data Table** - Sortable data tables
 - ⚠️ **Date Picker** - Date selection input
 - ✅ **Divider** - Vertical dividers
 - ⚠️ **Form** - Form wrapper with validation
 - ⚠️ **Hover Card** - Hover-triggered cards
-- ⚠️ **Label** - Form labels
+- ✅ **Label** - Form labels
 - ⚠️ **Menubar** - Application menu bar
 - ⚠️ **Navigation Menu** - Navigation menus
 - ⚠️ **Popover** - Floating content containers
-- ⚠️ **Progress** - Progress bars
-- ⚠️ **Radio Group** - Radio button groups
+- ✅ **Progress** - Progress bars
+- ✅ **Radio Group** - Radio button groups
 - ⚠️ **Resizable** - Resizable panels
-- ⚠️ **Scroll Area** - Custom scrollbars
-- ⚠️ **Select** - Dropdown select inputs
-- ⚠️ **Separator** - Horizontal dividers
+- ✅ **Scroll Area** - Custom scrollbars
+- ✅ **Select** - Dropdown select inputs
+- ✅ **Separator** - Horizontal dividers
 - ⚠️ **Sheet** - Slide-out panels
-- ⚠️ **Skeleton** - Loading placeholders
-- ⚠️ **Switch** - Toggle switches
-- ⚠️ **Table** - Data tables
-- ⚠️ **Tabs** - Tabbed interfaces
-- ⚠️ **Textarea** - Multi-line text inputs
-- ⚠️ **Toast** - Toast notifications
+- ✅ **Skeleton** - Loading placeholders
+- ✅ **Switch** - Toggle switches
+- ✅ **Table** - Data tables
+- ✅ **Tabs** - Tabbed interfaces
+- ✅ **Textarea** - Multi-line text inputs
+- ✅ **Toast** - Toast notifications
 - ⚠️ **Toggle** - Toggle buttons
 - ⚠️ **Toggle Group** - Grouped toggles
-- ⚠️ **Tooltip** - Hover tooltips
+- ✅ **Tooltip** - Hover tooltips
 
 ### Already Themed ✅
 - ✅ **Button** - Starscape variants (cosmic, gradient, outline)
@@ -1581,4 +1580,3 @@ The following shadcn/ui components have not yet been themed/extended with Starsc
 - Use HSL color tokens for theming
 - Convert to RGBA for React Native implementations
 - Maintain API compatibility with shadcn base components
-

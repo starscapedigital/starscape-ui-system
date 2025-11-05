@@ -21,16 +21,21 @@ import { Progress } from './components/ui/progress'
 import { useToast } from './components/ui/use-toast'
 import { Alert, AlertDescription, AlertTitle } from './components/ui/alert'
 import { Skeleton } from './components/ui/skeleton'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './components/ui/accordion'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select'
+import { Switch } from './components/ui/switch'
+import { Checkbox } from './components/ui/checkbox'
+import { Label } from './components/ui/label'
+import { RadioGroup, RadioGroupItem } from './components/ui/radio-group'
+import { Separator } from './components/ui/separator'
+import { Slider } from './components/ui/slider'
 
 // # Install components
 // starscape-ui add animated-star
-// starscape-ui add promo-link-card-sparkles
-// starscape-ui add promo-link-card-starscape-star
+// starscape-ui add promo-link-card-sparkles promo-link-card-starscape-star
 
 // # Or install all
 // starscape-ui add --all
-
-// then add 
 
 function App() {
   const [dialogOpen, setDialogOpen] = useState(false)
@@ -1101,6 +1106,191 @@ function App() {
                   </div>
                 </DialogContent>
               </Dialog>
+            </CardContent>
+          </Card>
+
+          {/* Accordion Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Accordion</CardTitle>
+              <CardDescription>Expandable content sections</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                  <AccordionContent>
+                    Yes. It adheres to the WAI-ARIA design pattern.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>Is it styled?</AccordionTrigger>
+                  <AccordionContent>
+                    Yes. It comes with Starscape styling by default.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger>Is it animated?</AccordionTrigger>
+                  <AccordionContent>
+                    Yes. It has smooth expand and collapse animations.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </CardContent>
+          </Card>
+
+          {/* Select Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Select</CardTitle>
+              <CardDescription>Dropdown select inputs</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="theme-select">Theme</Label>
+                <Select defaultValue="dark">
+                  <SelectTrigger id="theme-select" className="w-[180px]">
+                    <SelectValue placeholder="Select theme" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="light">Light</SelectItem>
+                    <SelectItem value="dark">Dark</SelectItem>
+                    <SelectItem value="system">System</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="framework-select">Framework</Label>
+                <Select defaultValue="nextjs">
+                  <SelectTrigger id="framework-select" className="w-[180px]">
+                    <SelectValue placeholder="Select framework" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="nextjs">Next.js</SelectItem>
+                    <SelectItem value="react">React</SelectItem>
+                    <SelectItem value="vue">Vue</SelectItem>
+                    <SelectItem value="svelte">Svelte</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Switch Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Switch</CardTitle>
+              <CardDescription>Toggle switches</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <Switch id="airplane-mode" />
+                <Label htmlFor="airplane-mode">Airplane Mode</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Switch id="notifications" defaultChecked />
+                <Label htmlFor="notifications">Notifications</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Switch id="two-factor" />
+                <Label htmlFor="two-factor">Two-factor authentication</Label>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Checkbox Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Checkbox</CardTitle>
+              <CardDescription>Checkbox inputs</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <Checkbox id="terms" />
+                <Label htmlFor="terms">Accept terms and conditions</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox id="newsletter" defaultChecked />
+                <Label htmlFor="newsletter">Subscribe to newsletter</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox id="marketing" />
+                <Label htmlFor="marketing">Receive marketing emails</Label>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Radio Group Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Radio Group</CardTitle>
+              <CardDescription>Radio button groups</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <RadioGroup defaultValue="comfortable">
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="default" id="r1" />
+                  <Label htmlFor="r1">Default</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="comfortable" id="r2" />
+                  <Label htmlFor="r2">Comfortable</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="compact" id="r3" />
+                  <Label htmlFor="r3">Compact</Label>
+                </div>
+              </RadioGroup>
+            </CardContent>
+          </Card>
+
+          {/* Separator Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Separator</CardTitle>
+              <CardDescription>Horizontal and vertical dividers</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <h4 className="text-sm font-medium text-white-primary">Horizontal</h4>
+                <div className="space-y-1">
+                  <p className="text-sm text-white-secondary">Content above</p>
+                  <Separator />
+                  <p className="text-sm text-white-secondary">Content below</p>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <h4 className="text-sm font-medium text-white-primary">Vertical</h4>
+                <div className="flex h-5 items-center space-x-4">
+                  <span className="text-sm text-white-secondary">Item 1</span>
+                  <Separator orientation="vertical" />
+                  <span className="text-sm text-white-secondary">Item 2</span>
+                  <Separator orientation="vertical" />
+                  <span className="text-sm text-white-secondary">Item 3</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Slider Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Slider</CardTitle>
+              <CardDescription>Range sliders</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="volume-slider">Volume</Label>
+                <Slider id="volume-slider" defaultValue={[50]} max={100} step={1} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="brightness-slider">Brightness</Label>
+                <Slider id="brightness-slider" defaultValue={[75]} max={100} step={1} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="range-slider">Range</Label>
+                <Slider id="range-slider" defaultValue={[25, 75]} max={100} step={1} />
+              </div>
             </CardContent>
           </Card>
 

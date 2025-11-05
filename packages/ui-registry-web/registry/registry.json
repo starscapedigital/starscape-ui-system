@@ -104,6 +104,72 @@
       "type": "components:ui",
       "files": ["components/skeleton.tsx"],
       "dependencies": ["class-variance-authority"]
+    },
+    {
+      "name": "badge",
+      "type": "components:ui",
+      "files": ["components/badge.tsx"],
+      "dependencies": ["class-variance-authority"]
+    },
+    {
+      "name": "avatar",
+      "type": "components:ui",
+      "files": ["components/avatar.tsx"],
+      "dependencies": ["class-variance-authority"]
+    },
+    {
+      "name": "divider",
+      "type": "components:ui",
+      "files": ["components/divider.tsx"],
+      "dependencies": ["class-variance-authority"]
+    },
+    {
+      "name": "accordion",
+      "type": "components:ui",
+      "files": ["components/accordion.tsx"],
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"]
+    },
+    {
+      "name": "select",
+      "type": "components:ui",
+      "files": ["components/select.tsx"],
+      "dependencies": ["@radix-ui/react-select", "lucide-react"]
+    },
+    {
+      "name": "switch",
+      "type": "components:ui",
+      "files": ["components/switch.tsx"],
+      "dependencies": ["@radix-ui/react-switch"]
+    },
+    {
+      "name": "checkbox",
+      "type": "components:ui",
+      "files": ["components/checkbox.tsx"],
+      "dependencies": ["@radix-ui/react-checkbox", "lucide-react"]
+    },
+    {
+      "name": "label",
+      "type": "components:ui",
+      "files": ["components/label.tsx"],
+      "dependencies": ["@radix-ui/react-label"]
+    },
+    {
+      "name": "radio-group",
+      "type": "components:ui",
+      "files": ["components/radio-group.tsx"],
+      "dependencies": ["@radix-ui/react-radio-group", "lucide-react"]
+    },
+    {
+      "name": "separator",
+      "type": "components:ui",
+      "files": ["components/separator.tsx"],
+      "dependencies": ["@radix-ui/react-separator"]
+    },
+    {
+      "name": "slider",
+      "type": "components:ui",
+      "files": ["components/slider.tsx"],
+      "dependencies": ["@radix-ui/react-slider"]
     }
   ]
 }
