@@ -5,9 +5,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/starscapedigital/starscape-ui-system.git"
+    "url": "git+https://github.com/starscapedigital/starscape-ui-system.git"
   },
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Starscape design system tokens",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
