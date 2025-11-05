@@ -614,6 +614,18 @@
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
 }
 
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@utility animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
+
 /* Companion pseudo-element for cosmic background starfield */
 .cosmic-bg::before {
   content: "";

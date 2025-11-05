@@ -16,16 +16,17 @@ program
   .action(init)
 
 program
-  .command('add [component]')
-  .description('Add a component to your project')
+  .command('add [components...]')
+  .description('Add one or more components to your project')
   .option('--all', 'Add all available components')
-  .action((component: string, options: { all?: boolean }) => {
+  .action((components: string[], options: { all?: boolean }) => {
     if (options.all) {
-      install('', { all: true })
-    } else if (component) {
-      install(component, { all: false })
+      install([], { all: true })
+    } else if (components && components.length > 0) {
+      install(components, { all: false })
     } else {
-      console.error('Please provide a component name or use --all flag')
+      console.error('Please provide component name(s) or use --all flag')
+      console.error('Example: starscape-ui add tabs table tooltip')
       process.exit(1)
     }
   })

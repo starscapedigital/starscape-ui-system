@@ -5,9 +5,9 @@ const ora = require('ora')
 const { resolveUtilsPath, readComponentsJson, writeComponentsJson, replaceTemplatePlaceholders } = require('./utils')
 
 /**
- * Install component from registry
+ * Install component(s) from registry
  */
-async function install(componentName: string, options: { all?: boolean }) {
+async function install(componentNames: string[], options: { all?: boolean }) {
   const spinner = ora('Installing component...').start()
   
   try {
@@ -40,13 +40,27 @@ async function install(componentName: string, options: { all?: boolean }) {
       componentsToInstall = registryJson.components
       spinner.text = `Installing ${componentsToInstall.length} components...`
     } else {
-      const component = registryJson.components.find((c: any) => c.name === componentName)
-      if (!component) {
-        spinner.fail(`Component "${componentName}" not found`)
+      // Find all requested components
+      const found: any[] = []
+      const notFound: string[] = []
+      
+      for (const componentName of componentNames) {
+        const component = registryJson.components.find((c: any) => c.name === componentName)
+        if (component) {
+          found.push(component)
+        } else {
+          notFound.push(componentName)
+        }
+      }
+      
+      if (notFound.length > 0) {
+        spinner.fail(`Component(s) not found: ${notFound.join(', ')}`)
         console.error(chalk.red(`Available components: ${registryJson.components.map((c: any) => c.name).join(', ')}`))
         process.exit(1)
       }
-      componentsToInstall = [component]
+      
+      componentsToInstall = found
+      spinner.text = `Installing ${componentsToInstall.length} component(s)...`
     }
     
     // Resolve utils path

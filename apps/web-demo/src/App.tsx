@@ -12,7 +12,15 @@ import Hero from './components/Hero'
 import ExpandableUISystem from './components/ExpandableUISystem'
 import Footer from './components/Footer'
 import GlassMorphismPlayground from './components/GlassMorphismPlayground'
-import { Sparkles, Star, SunDim, Zap, Heart, Wand2, Waves, Leaf, Circle } from 'lucide-react'
+import { Sparkles, Star, SunDim, Zap, Heart, Wand2, Waves, Leaf, Circle, Info, AlertCircle } from 'lucide-react'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './components/ui/table'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './components/ui/tooltip'
+import { ScrollArea } from './components/ui/scroll-area'
+import { Progress } from './components/ui/progress'
+import { useToast } from './components/ui/use-toast'
+import { Alert, AlertDescription, AlertTitle } from './components/ui/alert'
+import { Skeleton } from './components/ui/skeleton'
 
 // # Install components
 // starscape-ui add animated-star
@@ -26,6 +34,7 @@ import { Sparkles, Star, SunDim, Zap, Heart, Wand2, Waves, Leaf, Circle } from '
 
 function App() {
   const [dialogOpen, setDialogOpen] = useState(false)
+  const { toast } = useToast()
 
   return (
     <main className="cosmic-background">
@@ -608,6 +617,455 @@ function App() {
               <Input type="email" placeholder="Enter your email..." />
               <Input type="password" placeholder="Enter password..." />
               <Input disabled placeholder="Disabled input" />
+            </CardContent>
+          </Card>
+
+          {/* Tabs Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Tabs</CardTitle>
+              <CardDescription>Tab navigation with hotswappable color schemes</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Chic Color Scheme</h4>
+                <Tabs defaultValue="account" colorScheme="chic" className="w-full">
+                  <TabsList colorScheme="chic">
+                    <TabsTrigger colorScheme="chic" value="account">Account</TabsTrigger>
+                    <TabsTrigger colorScheme="chic" value="password">Password</TabsTrigger>
+                    <TabsTrigger colorScheme="chic" value="settings">Settings</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="account" className="mt-4">
+                    <p className="text-body text-white-secondary">Make changes to your account here.</p>
+                  </TabsContent>
+                  <TabsContent value="password" className="mt-4">
+                    <p className="text-body text-white-secondary">Change your password here.</p>
+                  </TabsContent>
+                  <TabsContent value="settings" className="mt-4">
+                    <p className="text-body text-white-secondary">Manage your settings here.</p>
+                  </TabsContent>
+                </Tabs>
+              </div>
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Gradient Variants</h4>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Purple-Pink</p>
+                    <Tabs defaultValue="overview" colorScheme="purple-pink" className="w-full">
+                      <TabsList colorScheme="purple-pink">
+                        <TabsTrigger colorScheme="purple-pink" value="overview">Overview</TabsTrigger>
+                        <TabsTrigger colorScheme="purple-pink" value="analytics">Analytics</TabsTrigger>
+                      </TabsList>
+                      <TabsContent value="overview" className="mt-4">
+                        <p className="text-body text-white-secondary">View your dashboard overview.</p>
+                      </TabsContent>
+                    </Tabs>
+                  </div>
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Blue-Cyan</p>
+                    <Tabs defaultValue="overview" colorScheme="blue-cyan" className="w-full">
+                      <TabsList colorScheme="blue-cyan">
+                        <TabsTrigger colorScheme="blue-cyan" value="overview">Overview</TabsTrigger>
+                        <TabsTrigger colorScheme="blue-cyan" value="analytics">Analytics</TabsTrigger>
+                      </TabsList>
+                      <TabsContent value="overview" className="mt-4">
+                        <p className="text-body text-white-secondary">View your dashboard overview.</p>
+                      </TabsContent>
+                    </Tabs>
+                  </div>
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Cosmic</p>
+                    <Tabs defaultValue="overview" colorScheme="cosmic" className="w-full">
+                      <TabsList colorScheme="cosmic">
+                        <TabsTrigger colorScheme="cosmic" value="overview">Overview</TabsTrigger>
+                        <TabsTrigger colorScheme="cosmic" value="analytics">Analytics</TabsTrigger>
+                      </TabsList>
+                      <TabsContent value="overview" className="mt-4">
+                        <p className="text-body text-white-secondary">View your dashboard overview.</p>
+                      </TabsContent>
+                    </Tabs>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Table Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Table</CardTitle>
+              <CardDescription>Data tables with color scheme variants</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Chic Color Scheme</h4>
+                <div className="rounded-md border border-light-blue/20 overflow-hidden">
+                  <Table colorScheme="chic">
+                    <TableHeader>
+                      <TableRow colorScheme="chic">
+                        <TableHead colorScheme="chic">Name</TableHead>
+                        <TableHead colorScheme="chic">Status</TableHead>
+                        <TableHead colorScheme="chic">Role</TableHead>
+                        <TableHead colorScheme="chic" className="text-right">Actions</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow colorScheme="chic">
+                        <TableCell className="font-medium">John Doe</TableCell>
+                        <TableCell>Active</TableCell>
+                        <TableCell>Admin</TableCell>
+                        <TableCell className="text-right">Edit</TableCell>
+                      </TableRow>
+                      <TableRow colorScheme="chic">
+                        <TableCell className="font-medium">Jane Smith</TableCell>
+                        <TableCell>Active</TableCell>
+                        <TableCell>User</TableCell>
+                        <TableCell className="text-right">Edit</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </div>
+              </div>
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Gradient Variants</h4>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Purple-Pink</p>
+                    <div className="rounded-md border border-purple-500/30 overflow-hidden">
+                      <Table colorScheme="purple-pink">
+                        <TableHeader>
+                          <TableRow colorScheme="purple-pink">
+                            <TableHead colorScheme="purple-pink">Game</TableHead>
+                            <TableHead colorScheme="purple-pink">Status</TableHead>
+                            <TableHead colorScheme="purple-pink">Score</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          <TableRow colorScheme="purple-pink">
+                            <TableCell className="font-medium">Asteroid Runner</TableCell>
+                            <TableCell>Passed</TableCell>
+                            <TableCell>95%</TableCell>
+                          </TableRow>
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Blue-Cyan</p>
+                    <div className="rounded-md border border-blue-500/30 overflow-hidden">
+                      <Table colorScheme="blue-cyan">
+                        <TableHeader>
+                          <TableRow colorScheme="blue-cyan">
+                            <TableHead colorScheme="blue-cyan">Game</TableHead>
+                            <TableHead colorScheme="blue-cyan">Status</TableHead>
+                            <TableHead colorScheme="blue-cyan">Score</TableHead>
+                          </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                          <TableRow colorScheme="blue-cyan">
+                            <TableCell className="font-medium">Space Quest</TableCell>
+                            <TableCell>Passed</TableCell>
+                            <TableCell>88%</TableCell>
+                          </TableRow>
+                        </TableBody>
+                      </Table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Tooltip Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Tooltip</CardTitle>
+              <CardDescription>Hover tooltips with beautiful styling</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Chic Color Scheme</h4>
+                <div className="flex flex-wrap gap-4">
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button variant="outline">Hover me (Chic)</Button>
+                      </TooltipTrigger>
+                      <TooltipContent colorScheme="chic">
+                        <p>This is a chic styled tooltip</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+              </div>
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Gradient Variants</h4>
+                <div className="flex flex-wrap gap-4">
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button variant="cosmic">Purple-Pink</Button>
+                      </TooltipTrigger>
+                      <TooltipContent colorScheme="purple-pink">
+                        <p>Purple-Pink gradient tooltip</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button variant="gradient">Blue-Cyan</Button>
+                      </TooltipTrigger>
+                      <TooltipContent colorScheme="blue-cyan">
+                        <p>Blue-Cyan gradient tooltip</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button variant="cosmicSolid">Cosmic</Button>
+                      </TooltipTrigger>
+                      <TooltipContent colorScheme="cosmic">
+                        <p>Cosmic gradient tooltip</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Scroll Area Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Scroll Area</CardTitle>
+              <CardDescription>Scrollable containers with themed scrollbars</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Chic Color Scheme</h4>
+                <ScrollArea colorScheme="chic" className="h-32 w-full rounded-md border border-light-blue/20 p-4">
+                  <div className="space-y-2">
+                    {Array.from({ length: 10 }).map((_, i) => (
+                      <p key={i} className="text-body text-white-secondary">Scroll item {i + 1}</p>
+                    ))}
+                  </div>
+                </ScrollArea>
+              </div>
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Gradient Variants</h4>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Purple-Pink</p>
+                    <ScrollArea colorScheme="purple-pink" className="h-32 w-full rounded-md border border-purple-500/30 p-4">
+                      <div className="space-y-2">
+                        {Array.from({ length: 10 }).map((_, i) => (
+                          <p key={i} className="text-body text-white-secondary">Scroll item {i + 1}</p>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </div>
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Blue-Cyan</p>
+                    <ScrollArea colorScheme="blue-cyan" className="h-32 w-full rounded-md border border-blue-500/30 p-4">
+                      <div className="space-y-2">
+                        {Array.from({ length: 10 }).map((_, i) => (
+                          <p key={i} className="text-body text-white-secondary">Scroll item {i + 1}</p>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Progress Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Progress</CardTitle>
+              <CardDescription>Progress bars with animated gradients</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Chic Color Scheme</h4>
+                <div className="space-y-4">
+                  <Progress colorScheme="chic" value={33} />
+                  <Progress colorScheme="chic" value={66} />
+                  <Progress colorScheme="chic" value={100} />
+                </div>
+              </div>
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Gradient Variants</h4>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Purple-Pink</p>
+                    <Progress colorScheme="purple-pink" value={33} />
+                  </div>
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Blue-Cyan</p>
+                    <Progress colorScheme="blue-cyan" value={66} />
+                  </div>
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Cosmic (Animated)</p>
+                    <Progress colorScheme="cosmic" value={100} />
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Toast Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Toast</CardTitle>
+              <CardDescription>Toast notifications with color schemes</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  onClick={() => {
+                    toast({
+                      colorScheme: "chic",
+                      title: "Chic Toast",
+                      description: "This is a chic styled toast notification.",
+                    })
+                  }}
+                >
+                  Show Chic Toast
+                </Button>
+                <Button
+                  variant="cosmic"
+                  onClick={() => {
+                    toast({
+                      colorScheme: "purple-pink",
+                      title: "Purple-Pink Toast",
+                      description: "This is a purple-pink gradient toast.",
+                    })
+                  }}
+                >
+                  Show Purple-Pink Toast
+                </Button>
+                <Button
+                  variant="gradient"
+                  onClick={() => {
+                    toast({
+                      colorScheme: "blue-cyan",
+                      title: "Blue-Cyan Toast",
+                      description: "This is a blue-cyan gradient toast.",
+                    })
+                  }}
+                >
+                  Show Blue-Cyan Toast
+                </Button>
+                <Button
+                  variant="destructive"
+                  onClick={() => {
+                    toast({
+                      colorScheme: "chic",
+                      variant: "destructive",
+                      title: "Error",
+                      description: "Something went wrong!",
+                    })
+                  }}
+                >
+                  Show Error Toast
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Alert Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Alert</CardTitle>
+              <CardDescription>Alert messages with color scheme variants</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Chic Color Scheme</h4>
+                <div className="space-y-4">
+                  <Alert colorScheme="chic">
+                    <Info className="h-4 w-4" />
+                    <AlertTitle>Information</AlertTitle>
+                    <AlertDescription>
+                      This is a chic styled alert with important information.
+                    </AlertDescription>
+                  </Alert>
+                  <Alert colorScheme="chic" variant="destructive">
+                    <AlertCircle className="h-4 w-4" />
+                    <AlertTitle>Error</AlertTitle>
+                    <AlertDescription>
+                      This is a chic styled error alert.
+                    </AlertDescription>
+                  </Alert>
+                </div>
+              </div>
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Gradient Variants</h4>
+                <div className="space-y-4">
+                  <Alert colorScheme="purple-pink">
+                    <Info className="h-4 w-4" />
+                    <AlertTitle>Purple-Pink Alert</AlertTitle>
+                    <AlertDescription>
+                      This is a purple-pink gradient styled alert.
+                    </AlertDescription>
+                  </Alert>
+                  <Alert colorScheme="blue-cyan">
+                    <Info className="h-4 w-4" />
+                    <AlertTitle>Blue-Cyan Alert</AlertTitle>
+                    <AlertDescription>
+                      This is a blue-cyan gradient styled alert.
+                    </AlertDescription>
+                  </Alert>
+                  <Alert colorScheme="cosmic" variant="destructive">
+                    <AlertCircle className="h-4 w-4" />
+                    <AlertTitle>Cosmic Error</AlertTitle>
+                    <AlertDescription>
+                      This is a cosmic gradient error alert.
+                    </AlertDescription>
+                  </Alert>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Skeleton Section */}
+          <Card variant="dark-glass">
+            <CardHeader>
+              <CardTitle>Skeleton</CardTitle>
+              <CardDescription>Loading skeletons with color schemes</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Chic Color Scheme</h4>
+                <div className="space-y-4">
+                  <Skeleton colorScheme="chic" className="h-4 w-full" />
+                  <Skeleton colorScheme="chic" className="h-4 w-5/6" />
+                  <Skeleton colorScheme="chic" className="h-4 w-4/6" />
+                  <Skeleton colorScheme="chic" className="h-20 w-full rounded-md" />
+                </div>
+              </div>
+              <div>
+                <h4 className="text-body-large text-white-primary mb-3">Gradient Variants</h4>
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <p className="text-caption text-white-tertiary mb-2">Purple-Pink</p>
+                    <Skeleton colorScheme="purple-pink" className="h-4 w-full" />
+                    <Skeleton colorScheme="purple-pink" className="h-4 w-5/6" />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-caption text-white-tertiary mb-2">Blue-Cyan</p>
+                    <Skeleton colorScheme="blue-cyan" className="h-4 w-full" />
+                    <Skeleton colorScheme="blue-cyan" className="h-4 w-5/6" />
+                  </div>
+                  <div>
+                    <p className="text-caption text-white-tertiary mb-2">Cosmic</p>
+                    <Skeleton colorScheme="cosmic" className="h-20 w-full rounded-md" />
+                  </div>
+                </div>
+              </div>
             </CardContent>
           </Card>
 

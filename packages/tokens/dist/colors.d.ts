@@ -74,7 +74,7 @@ export declare const colors: {
         readonly 'card-foreground': "1 0 0";
         readonly primary: "0.788 0.0904 270";
         readonly 'primary-foreground': "0.275 0.0228 248.7";
-        readonly secondary: "0.341 0.0771 260.6";
+        readonly secondary: "0.68 0.1841 305.9";
         readonly 'secondary-foreground': "1 0 0";
         readonly muted: "0.329 0.0273 259.8";
         readonly 'muted-foreground': "0.744 0.0455 259.9";

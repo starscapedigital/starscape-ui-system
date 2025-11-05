@@ -56,6 +56,54 @@
       "type": "components:ui",
       "files": ["components/promo-link-card-starscape-star.tsx"],
       "dependencies": ["framer-motion"]
+    },
+    {
+      "name": "tabs",
+      "type": "components:ui",
+      "files": ["components/tabs.tsx"],
+      "dependencies": ["@radix-ui/react-tabs", "class-variance-authority"]
+    },
+    {
+      "name": "table",
+      "type": "components:ui",
+      "files": ["components/table.tsx"],
+      "dependencies": ["class-variance-authority"]
+    },
+    {
+      "name": "tooltip",
+      "type": "components:ui",
+      "files": ["components/tooltip.tsx"],
+      "dependencies": ["@radix-ui/react-tooltip", "class-variance-authority"]
+    },
+    {
+      "name": "scroll-area",
+      "type": "components:ui",
+      "files": ["components/scroll-area.tsx"],
+      "dependencies": ["@radix-ui/react-scroll-area", "class-variance-authority"]
+    },
+    {
+      "name": "progress",
+      "type": "components:ui",
+      "files": ["components/progress.tsx"],
+      "dependencies": ["@radix-ui/react-progress", "class-variance-authority"]
+    },
+    {
+      "name": "toast",
+      "type": "components:ui",
+      "files": ["components/toast.tsx", "components/toaster.tsx", "components/use-toast.ts"],
+      "dependencies": ["@radix-ui/react-toast", "class-variance-authority", "lucide-react"]
+    },
+    {
+      "name": "alert",
+      "type": "components:ui",
+      "files": ["components/alert.tsx"],
+      "dependencies": ["class-variance-authority"]
+    },
+    {
+      "name": "skeleton",
+      "type": "components:ui",
+      "files": ["components/skeleton.tsx"],
+      "dependencies": ["class-variance-authority"]
     }
   ]
 }

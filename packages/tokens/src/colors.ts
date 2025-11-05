@@ -87,7 +87,7 @@ export const colors = {
     'card-foreground': '1 0 0',
     primary: '0.788 0.0904 270',          // lightBlue
     'primary-foreground': '0.275 0.0228 248.7',  // darkNavy for contrast
-    secondary: '0.341 0.0771 260.6',        // deepBlue
+    secondary: '0.68 0.1841 305.9',        // purpleBase (chromatic purple)
     'secondary-foreground': '1 0 0',
     muted: '0.329 0.0273 259.8',
     'muted-foreground': '0.744 0.0455 259.9',
