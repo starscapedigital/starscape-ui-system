@@ -1520,27 +1520,27 @@ The following shadcn/ui components have not yet been themed/extended with Starsc
 - ⚠️ **Command** - Command palette/search
 - ⚠️ **Date Picker** - Date selection input
 - ✅ **Divider** - Vertical dividers
-- ⚠️ **Form** - Form wrapper with validation
-- ⚠️ **Hover Card** - Hover-triggered cards
+- ⚠️ **Field** - Form wrapper with validation
+- ✅ **Hover Card** - Hover-triggered cards
 - ✅ **Label** - Form labels
-- ⚠️ **Menubar** - Application menu bar
-- ⚠️ **Navigation Menu** - Navigation menus
-- ⚠️ **Popover** - Floating content containers
+- ✅ **Menubar** - Application menu bar
+- ✅ **Navigation Menu** - Navigation menus
+- ✅ **Popover** - Floating content containers
 - ✅ **Progress** - Progress bars
 - ✅ **Radio Group** - Radio button groups
 - ⚠️ **Resizable** - Resizable panels
 - ✅ **Scroll Area** - Custom scrollbars
 - ✅ **Select** - Dropdown select inputs
 - ✅ **Separator** - Horizontal dividers
-- ⚠️ **Sheet** - Slide-out panels
+- ✅ **Sheet** - Slide-out panels
 - ✅ **Skeleton** - Loading placeholders
 - ✅ **Switch** - Toggle switches
 - ✅ **Table** - Data tables
 - ✅ **Tabs** - Tabbed interfaces
 - ✅ **Textarea** - Multi-line text inputs
 - ✅ **Toast** - Toast notifications
-- ⚠️ **Toggle** - Toggle buttons
-- ⚠️ **Toggle Group** - Grouped toggles
+- ✅ **Toggle** - Toggle buttons
+- ✅ **Toggle Group** - Grouped toggles
 - ✅ **Tooltip** - Hover tooltips
 
 ### Already Themed ✅

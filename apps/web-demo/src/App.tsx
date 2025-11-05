@@ -1374,7 +1374,7 @@ function App() {
                 <div>
                   <h4 className="text-body-large text-white-primary mb-3">Single Toggles - Background Highlight</h4>
                   <div className="flex flex-wrap gap-4">
-                    <Toggle aria-label="Toggle bold" className="text-white">
+                    <Toggle variant="outline" aria-label="Toggle bold" className="text-white">
                       <Bold className="h-4 w-4" />
                     </Toggle>
                     <Toggle variant="outline" aria-label="Toggle italic" className="text-white">
@@ -1391,7 +1391,7 @@ function App() {
                     <Toggle variant="ghost" aria-label="Toggle bold">
                       <Bold className="h-4 w-4" />
                     </Toggle>
-                    <Toggle variant="ghost" aria-label="Toggle italic">
+                    <Toggle variant="ghost" aria-label="Toggle italic" className="data-[state=on]:*:[svg]:fill-purple-500 data-[state=on]:*:[svg]:stroke-purple-500">
                       <Italic className="h-4 w-4" />
                     </Toggle>
                     <Toggle variant="ghost" aria-label="Toggle underline">
@@ -1418,12 +1418,12 @@ function App() {
                 </div>
                 <div>
                   <h4 className="text-body-large text-white-primary mb-3">Toggle Group - Icon Highlight Only</h4>
-                  <ToggleGroup type="multiple" defaultValue={["star"]} variant="ghost">
+                  <ToggleGroup type="multiple" defaultValue={["star"]} variant="ghost-bordered">
                     <ToggleGroupItem value="star" aria-label="Star" className="gap-2">
                       <Star className="h-4 w-4" />
                       <span>Star</span>
                     </ToggleGroupItem>
-                    <ToggleGroupItem value="heart" aria-label="Heart" className="gap-2">
+                    <ToggleGroupItem value="heart" aria-label="Heart" className="gap-2 data-[state=on]:*:[svg]:fill-red-500 data-[state=on]:*:[svg]:stroke-red-500">
                       <Heart className="h-4 w-4" />
                       <span>Heart</span>
                     </ToggleGroupItem>

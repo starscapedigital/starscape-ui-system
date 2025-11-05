@@ -7,17 +7,19 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const toggleVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-transparent",
+        default: "bg-transparent text-white-primary",
         outline:
-          "border border-light-blue/30 bg-transparent hover:bg-light-blue/20 hover:text-light-blue data-[state=on]:bg-light-blue data-[state=on]:text-dark-navy",
+          "border border-light-blue/30 bg-transparent text-white-primary hover:bg-light-blue/20 data-[state=on]:bg-light-blue data-[state=on]:text-dark-navy",
         cosmic:
-          "border border-purple-500/30 bg-gradient-to-r from-purple-500/10 to-pink-500/10 hover:from-purple-500/20 hover:to-pink-500/20 data-[state=on]:from-purple-500/30 data-[state=on]:to-pink-500/30 data-[state=on]:text-white",
+          "border border-purple-500/30 bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-white-primary hover:from-purple-500/20 hover:to-pink-500/20 data-[state=on]:from-purple-500/30 data-[state=on]:to-pink-500/30 data-[state=on]:text-white",
         ghost:
-          "bg-transparent text-white-secondary hover:text-light-blue data-[state=on]:text-light-blue data-[state=on]:bg-transparent",
+          "bg-transparent text-white-primary hover:*:[svg]:fill-light-blue/20 data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-light-blue data-[state=on]:*:[svg]:stroke-light-blue",
+        "ghost-bordered":
+          "border border-light-blue/30 bg-transparent text-white-primary hover:*:[svg]:fill-light-blue/20 data-[state=on]:bg-transparent data-[state=on]:*:[svg]:fill-light-blue data-[state=on]:*:[svg]:stroke-light-blue",
       },
       size: {
         default: "h-10 px-3",
