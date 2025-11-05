@@ -7,6 +7,19 @@ import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Navigation Menu Component
+ * 
+ * NOTE: Known limitation with backdrop-filter stacking contexts
+ * If the navigation menu dropdown appears behind sibling elements with `backdrop-filter` CSS,
+ * this is a browser-level CSS stacking context issue. Solutions:
+ * - Remove `backdrop-filter` from sibling/parent containers
+ * - Add `isolation: isolate` to conflicting containers
+ * - Ensure NavigationMenu is in a higher stacking context than siblings
+ * 
+ * See: https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#specifications
+ */
+
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
@@ -85,7 +98,7 @@ const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
 >(({ className, ...props }, ref) => (
-  <div className={cn("absolute left-0 top-full flex justify-center z-[9999]")}>
+  <div className={cn("absolute left-0 top-full flex justify-center z-[137]")}>
     <NavigationMenuPrimitive.Viewport
       className={cn(
         "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border border-light-blue/20 bg-dark-navy/95 backdrop-blur-xl text-white-primary shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",

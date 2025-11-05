@@ -16,6 +16,8 @@ const toggleVariants = cva(
           "border border-light-blue/30 bg-transparent hover:bg-light-blue/20 hover:text-light-blue data-[state=on]:bg-light-blue data-[state=on]:text-dark-navy",
         cosmic:
           "border border-purple-500/30 bg-gradient-to-r from-purple-500/10 to-pink-500/10 hover:from-purple-500/20 hover:to-pink-500/20 data-[state=on]:from-purple-500/30 data-[state=on]:to-pink-500/30 data-[state=on]:text-white",
+        ghost:
+          "bg-transparent text-white-secondary hover:text-light-blue data-[state=on]:text-light-blue data-[state=on]:bg-transparent",
       },
       size: {
         default: "h-10 px-3",

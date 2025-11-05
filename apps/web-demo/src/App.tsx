@@ -1372,7 +1372,7 @@ function App() {
             <CardContent className="space-y-6">
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-body-large text-white-primary mb-3">Single Toggles</h4>
+                  <h4 className="text-body-large text-white-primary mb-3">Single Toggles - Background Highlight</h4>
                   <div className="flex flex-wrap gap-4">
                     <Toggle aria-label="Toggle bold" className="text-white">
                       <Bold className="h-4 w-4" />
@@ -1386,8 +1386,22 @@ function App() {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-body-large text-white-primary mb-3">Toggle Group</h4>
-                  <ToggleGroup type="single" defaultValue="star" variant="outline">
+                  <h4 className="text-body-large text-white-primary mb-3">Single Toggles - Icon Highlight Only</h4>
+                  <div className="flex flex-wrap gap-4">
+                    <Toggle variant="ghost" aria-label="Toggle bold">
+                      <Bold className="h-4 w-4" />
+                    </Toggle>
+                    <Toggle variant="ghost" aria-label="Toggle italic">
+                      <Italic className="h-4 w-4" />
+                    </Toggle>
+                    <Toggle variant="ghost" aria-label="Toggle underline">
+                      <Underline className="h-4 w-4" />
+                    </Toggle>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Toggle Group - Background Highlight</h4>
+                  <ToggleGroup type="multiple" defaultValue={["star"]} variant="outline">
                     <ToggleGroupItem value="star" aria-label="Star" className="gap-2 text-white">
                       <Star className="h-4 w-4" />
                       <span>Star</span>
@@ -1397,6 +1411,23 @@ function App() {
                       <span>Heart</span>
                     </ToggleGroupItem>
                     <ToggleGroupItem value="bookmark" aria-label="Bookmark" className="gap-2 text-white">
+                      <Bookmark className="h-4 w-4" />
+                      <span>Bookmark</span>
+                    </ToggleGroupItem>
+                  </ToggleGroup>
+                </div>
+                <div>
+                  <h4 className="text-body-large text-white-primary mb-3">Toggle Group - Icon Highlight Only</h4>
+                  <ToggleGroup type="multiple" defaultValue={["star"]} variant="ghost">
+                    <ToggleGroupItem value="star" aria-label="Star" className="gap-2">
+                      <Star className="h-4 w-4" />
+                      <span>Star</span>
+                    </ToggleGroupItem>
+                    <ToggleGroupItem value="heart" aria-label="Heart" className="gap-2">
+                      <Heart className="h-4 w-4" />
+                      <span>Heart</span>
+                    </ToggleGroupItem>
+                    <ToggleGroupItem value="bookmark" aria-label="Bookmark" className="gap-2">
                       <Bookmark className="h-4 w-4" />
                       <span>Bookmark</span>
                     </ToggleGroupItem>
