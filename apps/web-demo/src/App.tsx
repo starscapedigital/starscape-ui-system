@@ -18,7 +18,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './components/ui/tooltip'
 import { ScrollArea } from './components/ui/scroll-area'
 import { Progress } from './components/ui/progress'
-import { useToast } from './components/ui/use-toast'
+import { toast } from 'sonner'
 import { Alert, AlertDescription, AlertTitle } from './components/ui/alert'
 import { Skeleton } from './components/ui/skeleton'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './components/ui/accordion'
@@ -47,7 +47,6 @@ import { Spinner } from './components/ui/spinner'
 
 function App() {
   const [dialogOpen, setDialogOpen] = useState(false)
-  const { toast } = useToast()
 
   return (
     <main className="cosmic-background">
@@ -1025,58 +1024,72 @@ function App() {
           {/* Toast Section */}
           <Card variant="dark-glass">
             <CardHeader>
-              <CardTitle>Toast</CardTitle>
-              <CardDescription>Toast notifications with color schemes</CardDescription>
+              <CardTitle>Toast (Sonner)</CardTitle>
+              <CardDescription>Toast notifications with rich colors</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex flex-wrap gap-4">
                 <Button
                   onClick={() => {
-                    toast({
-                      colorScheme: "chic",
-                      title: "Chic Toast",
-                      description: "This is a chic styled toast notification.",
+                    toast("Event has been created", {
+                      description: "Sunday, December 03, 2023 at 9:00 AM",
                     })
                   }}
                 >
-                  Show Chic Toast
+                  Show Toast
                 </Button>
                 <Button
                   variant="cosmic"
                   onClick={() => {
-                    toast({
-                      colorScheme: "purple-pink",
-                      title: "Purple-Pink Toast",
-                      description: "This is a purple-pink gradient toast.",
+                    toast.info("Information", {
+                      description: "This is an info toast notification.",
                     })
                   }}
                 >
-                  Show Purple-Pink Toast
+                  Show Info Toast
                 </Button>
                 <Button
                   variant="gradient"
                   onClick={() => {
-                    toast({
-                      colorScheme: "blue-cyan",
-                      title: "Blue-Cyan Toast",
-                      description: "This is a blue-cyan gradient toast.",
+                    toast.success("Success!", {
+                      description: "This is a success toast notification.",
                     })
                   }}
                 >
-                  Show Blue-Cyan Toast
+                  Show Success Toast
                 </Button>
                 <Button
                   variant="destructive"
                   onClick={() => {
-                    toast({
-                      colorScheme: "chic",
-                      variant: "destructive",
-                      title: "Error",
+                    toast.error("Error", {
                       description: "Something went wrong!",
                     })
                   }}
                 >
                   Show Error Toast
+                </Button>
+                <Button
+                  onClick={() => {
+                    toast.warning("Warning", {
+                      description: "Please review this carefully.",
+                    })
+                  }}
+                >
+                  Show Warning Toast
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    toast("Event has been created", {
+                      description: "Sunday, December 03, 2023 at 9:00 AM",
+                      action: {
+                        label: "Undo",
+                        onClick: () => console.log("Undo"),
+                      },
+                    })
+                  }}
+                >
+                  Show Toast with Action
                 </Button>
               </div>
             </CardContent>

@@ -88,10 +88,10 @@
       "dependencies": ["@radix-ui/react-progress", "class-variance-authority"]
     },
     {
-      "name": "toast",
+      "name": "sonner",
       "type": "components:ui",
-      "files": ["components/toast.tsx", "components/toaster.tsx", "components/use-toast.ts"],
-      "dependencies": ["@radix-ui/react-toast", "class-variance-authority", "lucide-react"]
+      "files": ["components/sonner.tsx"],
+      "dependencies": ["sonner"]
     },
     {
       "name": "alert",
