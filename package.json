@@ -1,6 +1,6 @@
 {
   "name": "starscape-ui-system",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "description": "Starscape UI System Monorepo",
   "workspaces": [

@@ -1032,6 +1032,7 @@ function App() {
                 <Button
                   onClick={() => {
                     toast("Event has been created", {
+                      position: "top-center",
                       description: "Sunday, December 03, 2023 at 9:00 AM",
                     })
                   }}
