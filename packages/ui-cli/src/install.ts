@@ -132,7 +132,7 @@ async function install(componentNames: string[], options: { all?: boolean }) {
         }
       }
       
-      // Check dependencies
+      // Check and install dependencies
       if (component.dependencies && component.dependencies.length > 0) {
         spinner.text = `Checking dependencies for ${component.name}...`
         const packageJsonPath = path.join(cwd, 'package.json')
@@ -142,8 +142,33 @@ async function install(componentNames: string[], options: { all?: boolean }) {
           const missingDeps = component.dependencies.filter((dep: string) => !allDeps[dep])
           
           if (missingDeps.length > 0) {
-            spinner.warn(`Missing dependencies: ${missingDeps.join(', ')}`)
-            console.log(chalk.yellow(`⚠ Install: npm install ${missingDeps.join(' ')}`))
+            spinner.text = `Installing missing dependencies: ${missingDeps.join(', ')}...`
+            const { execSync } = require('child_process')
+            // Detect package manager (check for lock files)
+            let packageManager = 'npm'
+            if (fs.existsSync(path.join(cwd, 'pnpm-lock.yaml'))) {
+              packageManager = 'pnpm'
+            } else if (fs.existsSync(path.join(cwd, 'yarn.lock'))) {
+              packageManager = 'yarn'
+            } else if (fs.existsSync(path.join(cwd, 'bun.lockb'))) {
+              packageManager = 'bun'
+            }
+            
+            try {
+              const installCmd = packageManager === 'npm' 
+                ? `npm install ${missingDeps.join(' ')}`
+                : packageManager === 'pnpm'
+                ? `pnpm add ${missingDeps.join(' ')}`
+                : packageManager === 'yarn'
+                ? `yarn add ${missingDeps.join(' ')}`
+                : `bun add ${missingDeps.join(' ')}`
+              
+              execSync(installCmd, { cwd, stdio: 'inherit' })
+              spinner.succeed(`Installed dependencies: ${missingDeps.join(', ')}`)
+            } catch (error: any) {
+              spinner.warn(`Failed to auto-install dependencies`)
+              console.log(chalk.yellow(`⚠ Please install manually: ${packageManager} install ${missingDeps.join(' ')}`))
+            }
           }
         }
       }
