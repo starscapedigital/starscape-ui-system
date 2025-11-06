@@ -1866,6 +1866,10 @@ function App() {
                     <Spinner variant="cosmic" />
                     <span className="text-caption text-white-tertiary">Cosmic</span>
                   </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <Spinner variant="starscape" size="lg" />
+                    <span className="text-caption text-white-tertiary">Starscape</span>
+                  </div>
                 </div>
               </div>
             </CardContent>
